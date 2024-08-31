@@ -1,0 +1,191 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+
+import '../../../app/lang/ui_texts.dart';
+import '../../../app/theme/ui_colors.dart';
+import '../../../app/theme/ui_text_styles.dart';
+import '../behaviors/ontap_wrapper.dart';
+import '../menu/menu.dart';
+import 'error_message_cubit.dart';
+
+class BaseBackground extends StatelessWidget {
+  const BaseBackground({
+    super.key,
+    required this.backActions,
+    this.backgroundColor,
+    this.backgroundImage = "",
+    this.hasBackButton = false,
+    this.hasFavoriteButton = false,
+    this.hasAppBar = false,
+    this.hasMenu = false,
+    required this.content,
+  });
+
+  final Future<void> Function() backActions;
+  final Color? backgroundColor;
+  final String backgroundImage;
+
+  final bool hasBackButton;
+  final bool hasFavoriteButton;
+  final bool hasAppBar;
+  final bool hasMenu;
+
+  final Widget content;
+
+  @override
+  Widget build(BuildContext context) {
+    UiTexts uiTexts = Provider.of<UiTexts>(context);
+    Size screenSize = MediaQuery.of(context).size;
+
+    double safeAreaTop = 30;
+    double sideMargin = 32;
+    Size touchingArea = Size(sideMargin + 40, safeAreaTop + 40);
+
+    double appBarHeight = 64;
+
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (value, _) async {
+        if (value) {
+          return;
+        }
+
+        await backActions();
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: backgroundColor ?? cBackground,
+        body: Stack(
+          children: [
+            backgroundImage.isNotEmpty
+                ? Image.asset(
+                    backgroundImage,
+                    width: screenSize.width,
+                    fit: BoxFit.fitWidth,
+                  )
+                : const SizedBox.shrink(),
+            SizedBox(
+              width: screenSize.width,
+              height: screenSize.height,
+              child: content,
+            ),
+            hasBackButton
+                ? OnTapWrapper(
+                    widgetToWrap: Container(
+                      width: touchingArea.width,
+                      height: touchingArea.height,
+                      padding:
+                          EdgeInsets.only(top: safeAreaTop, left: sideMargin),
+                      child: SvgPicture.asset(
+                        "assets/images/arrow_back.svg",
+                      ),
+                    ),
+                    actionsToDo: backActions,
+                  )
+                : const SizedBox.shrink(),
+            hasFavoriteButton
+                ? Align(
+                    alignment: Alignment.topRight,
+                    child: OnTapWrapper(
+                      widgetToWrap: Container(
+                        width: touchingArea.width,
+                        height: touchingArea.height,
+                        padding: EdgeInsets.only(
+                            top: safeAreaTop, right: sideMargin),
+                        child: SvgPicture.asset(
+                          "assets/images/favorite.svg",
+                        ),
+                      ),
+                      actionsToDo: backActions,
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            hasAppBar
+                ? Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      width: double.infinity,
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFF051F44),
+                            Color(0xFF82BC00),
+                          ],
+                          stops: [0.0, 1.0],
+                          transform: GradientRotation(150),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: safeAreaTop),
+                          SizedBox(
+                            height: appBarHeight,
+                            child: Row(
+                              children: [
+                                const SizedBox(width: 20),
+                                Text(
+                                  uiTexts.title,
+                                  style: styleSemiBold(18, cWhite),
+                                ),
+                                const Expanded(child: SizedBox.shrink()),
+                                Image.asset(
+                                  "assets/images/avatar.png",
+                                  width: 24,
+                                  height: 24,
+                                ),
+                                const SizedBox(width: 10),
+                                SvgPicture.asset(
+                                  "assets/images/notifications.svg",
+                                ),
+                                const SizedBox(width: 6),
+                                SvgPicture.asset(
+                                  "assets/images/menu.svg",
+                                ),
+                                const SizedBox(width: 20),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            hasMenu
+                ? const Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Menu(),
+                  )
+                : const SizedBox.shrink(),
+            BlocBuilder<ErrorMessageCubit, String>(
+              builder: (context, message) {
+                return message.isNotEmpty
+                    ? Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 4,
+                          ),
+                          margin: const EdgeInsets.only(bottom: 50),
+                          color: cBlackOpacity15,
+                          child: Text(
+                            message,
+                            style: styleRegular(),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      )
+                    : const SizedBox.shrink();
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

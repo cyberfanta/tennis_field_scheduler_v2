@@ -1,0 +1,195 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../app/theme/ui_colors.dart';
+import '../../../app/theme/ui_text_styles.dart';
+import '../../../utils/stamp.dart';
+import '../behaviors/ontap_wrapper.dart';
+import 'custom_dropdown_data_cubit.dart';
+import 'custom_dropdown_open_cubit.dart';
+
+class CustomDropdown extends StatelessWidget {
+  const CustomDropdown({
+    super.key,
+    required this.index,
+    required this.list,
+    required this.hint,
+    this.focusNode,
+  });
+
+  final int index;
+  final List<String> list;
+  final String hint;
+  final FocusNode? focusNode;
+
+  final String _tag = "CustomDropdown";
+
+  @override
+  Widget build(BuildContext context) {
+    double height = 50;
+    double maxHeight = 42 * 5.7;
+    List<String> listConverted = [];
+
+    return BlocBuilder<CustomDropdownOpenCubit, List<bool>>(
+      builder: (context, isOpen) {
+        return BlocBuilder<CustomDropdownDataCubit, List<int>>(
+          builder: (context, data) {
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                OnTapWrapper(
+                  widgetToWrap: Container(
+                    height: height,
+                    decoration: BoxDecoration(
+                      color: cWhite,
+                      border: Border.all(color: cBlack, width: 2),
+                      borderRadius: isOpen[index]
+                          ? const BorderRadius.only(
+                              topRight: Radius.circular(20),
+                              topLeft: Radius.circular(20),
+                            )
+                          : BorderRadius.circular(20),
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            data[index] != -1 ? listConverted[data[index]] : hint,
+                            style: styleRegular(14, cBlack),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Container(
+                          width: 30,
+                          height: 30,
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(
+                            width: 23,
+                            height: 10,
+                            isOpen[index]
+                                ? "assets/images/dropdown_open.svg"
+                                : "assets/images/dropdown_closed.svg",
+                            fit: isOpen[index]
+                                ? BoxFit.fitHeight
+                                : BoxFit.fitWidth,
+                            clipBehavior: Clip.hardEdge,
+                            colorFilter: const ColorFilter.mode(
+                              cBlack,
+                              BlendMode.srcIn,
+                            ),
+                          ),
+                        ),
+                        data[index] != -1
+                            ? OnTapWrapper(
+                                widgetToWrap: Container(
+                                  width: 30,
+                                  height: 30,
+                                  alignment: Alignment.center,
+                                  child: SvgPicture.asset(
+                                    width: 15,
+                                    height: 15,
+                                    "assets/images/x.svg",
+                                    colorFilter: const ColorFilter.mode(
+                                      cBlack,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                ),
+                                actionsToDo: () {
+                                  stamp(_tag, "Dropdown: $hint - Reset");
+                                  context
+                                      .read<CustomDropdownOpenCubit>()
+                                      .reset();
+                                  context
+                                      .read<CustomDropdownDataCubit>()
+                                      .reset();
+                                },
+                              )
+                            : const SizedBox.shrink(),
+                      ],
+                    ),
+                  ),
+                  actionsToDo: () {
+                    if (focusNode != null) {
+                      FocusScope.of(context).requestFocus(focusNode);
+                    }
+
+                    if (isOpen[index]) {
+                      stamp(_tag, "Dropdown: $hint - Closed");
+                      context.read<CustomDropdownOpenCubit>().reset();
+                    } else {
+                      stamp(_tag, "Dropdown: $hint - Opened");
+                      context.read<CustomDropdownOpenCubit>().open(index);
+                    }
+                  },
+                ),
+                isOpen[index]
+                    ? Container(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 4,
+                          horizontal: 20,
+                        ),
+                        constraints: BoxConstraints(maxHeight: maxHeight),
+                        decoration: const BoxDecoration(
+                          color: cWhite,
+                          border: Border(
+                            bottom: BorderSide(
+                              color: cBlack,
+                              width: 2,
+                            ),
+                            left: BorderSide(
+                              color: cBlack,
+                              width: 2,
+                            ),
+                            right: BorderSide(
+                              color: cBlack,
+                              width: 2,
+                            ),
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                          ),
+                        ),
+                        child: ListView.separated(
+                          shrinkWrap: true,
+                          padding: EdgeInsets.zero,
+                          itemBuilder: (context, indexes) {
+                            return OnTapWrapper(
+                              widgetToWrap: Container(
+                                height: 38,
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  listConverted[indexes],
+                                  style: styleRegular(14, cBlack),
+                                ),
+                              ),
+                              actionsToDo: () {
+                                stamp(_tag,
+                                    "Dropdown: $hint - Selected - $indexes: ${listConverted[indexes]}");
+                                context.read<CustomDropdownOpenCubit>().reset();
+                                context
+                                    .read<CustomDropdownDataCubit>()
+                                    .updateData(index, indexes);
+                              },
+                            );
+                          },
+                          separatorBuilder: (context, index) {
+                            return const SizedBox(height: 4);
+                          },
+                          itemCount: listConverted.length,
+                        ),
+                      )
+                    : const SizedBox.shrink(),
+              ],
+            );
+          },
+        );
+      },
+    );
+  }
+}
