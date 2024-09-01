@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_152458" data-name="Rectángulo 152458" width="20" height="20" transform="translate(80)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Enmascarar_grupo_46" data-name="Enmascarar grupo 46" transform="translate(-80)" clip-path="url(#clip-path)">
+    <g id="Icon" transform="translate(83.746 3.86)">
+      <rect id="Area" width="12.281" height="12.281" fill="#fcfcfc" opacity="0"/>
+      <g id="Icon-2" data-name="Icon" transform="translate(0 3.127)">
+        <path id="_06aab864-1010-457a-a727-50aaf586cde0" data-name="06aab864-1010-457a-a727-50aaf586cde0" d="M10,15l6.254,6.254L22.508,15" transform="translate(-10 -15)" fill="none" stroke="#3d3d3d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
