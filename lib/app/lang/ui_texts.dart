@@ -131,4 +131,48 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().stillNotAccount;
   }
+
+  String get warning {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().warning;
+    }
+
+    return UiTextEn().warning;
+  }
+
+  String get closeAppContext {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().closeAppContext;
+    }
+
+    return UiTextEn().closeAppContext;
+  }
+
+  String get yes {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().yes;
+    }
+
+    return UiTextEn().yes;
+  }
+
+  String get no {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().no;
+    }
+
+    return UiTextEn().no;
+  }
+
+  String get notImplementedContext {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().notImplementedContext;
+    }
+
+    return UiTextEn().notImplementedContext;
+  }
+
+  String get ok {
+    return UiTextEn().ok;
+  }
 }

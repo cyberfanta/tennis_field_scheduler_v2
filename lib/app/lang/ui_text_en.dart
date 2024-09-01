@@ -58,4 +58,28 @@ class UiTextEn {
   String get stillNotAccount {
     return "Need an account?";
   }
+
+  String get warning {
+    return "Warning!!!";
+  }
+
+  String get closeAppContext {
+    return "You are about to close the app.\nAre you sure?";
+  }
+
+  String get yes {
+    return "Yes";
+  }
+
+  String get no {
+    return "No";
+  }
+
+  String get notImplementedContext {
+    return "This functionality still not implemented";
+  }
+
+  String get ok {
+    return "Ok";
+  }
 }

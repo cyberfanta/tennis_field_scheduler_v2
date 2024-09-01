@@ -18,6 +18,10 @@ const cWhiteOpacity80 = Color.fromRGBO(255, 255, 255, .8);
 
 const cBlackOpacity15 = Color.fromRGBO(0, 0, 0, .15);
 const cBlackOpacity40 = Color.fromRGBO(0, 0, 0, .4);
+const cBlackOpacity50 = Color.fromRGBO(0, 0, 0, .5);
+
+const cBlueTransparent75 = Color(0xBB346BC3);
+const cBlueDark = Color(0xFF011840);
 
 const cGrayShadow = Color(0x29000000);
 
