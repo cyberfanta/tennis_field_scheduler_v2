@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
+import '../app_bar/app_bar.dart';
 import '../behaviors/ontap_wrapper.dart';
 import '../menu/menu.dart';
 import 'error_message_cubit.dart';
@@ -105,53 +106,10 @@ class BaseBackground extends StatelessWidget {
             hasAppBar
                 ? Align(
                     alignment: Alignment.topCenter,
-                    child: Container(
-                      width: double.infinity,
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color(0xFF051F44),
-                            Color(0xFF82BC00),
-                          ],
-                          stops: [0.0, 1.0],
-                          transform: GradientRotation(150),
-                        ),
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(height: safeAreaTop),
-                          SizedBox(
-                            height: appBarHeight,
-                            child: Row(
-                              children: [
-                                const SizedBox(width: 20),
-                                Text(
-                                  uiTexts.title,
-                                  style: styleSemiBold(18, cWhite),
-                                ),
-                                const Expanded(child: SizedBox.shrink()),
-                                Image.asset(
-                                  "assets/images/avatar.png",
-                                  width: 24,
-                                  height: 24,
-                                ),
-                                const SizedBox(width: 10),
-                                SvgPicture.asset(
-                                  "assets/images/notifications.svg",
-                                ),
-                                const SizedBox(width: 6),
-                                SvgPicture.asset(
-                                  "assets/images/menu.svg",
-                                ),
-                                const SizedBox(width: 20),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: CustomAppBar(
+                      safeAreaTop: safeAreaTop,
+                      appBarHeight: appBarHeight,
+                      uiTexts: uiTexts,
                     ),
                   )
                 : const SizedBox.shrink(),

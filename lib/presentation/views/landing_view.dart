@@ -31,10 +31,10 @@ class _LandingViewState extends State<LandingView> {
 
     return BaseBackground(
       backActions: landingViewUseCases.backActions(tag, context),
-      hasBackButton: true,
-      hasFavoriteButton: true,
+      // hasBackButton: true,
+      // hasFavoriteButton: true,
       hasAppBar: true,
-      hasMenu: true,
+      // hasMenu: true,
       // backgroundImage: "assets/images/landing_background.png",
       content: buildContent(
         screenSize,

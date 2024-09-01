@@ -20,6 +20,14 @@ class UiTexts extends ChangeNotifier {
     return UiTextEn().title;
   }
 
+  String get tennis {
+    return UiTextEn().tennis;
+  }
+
+  String get court {
+    return UiTextEn().court;
+  }
+
   String get begin {
     if (_locale.languageCode == 'es') {
       return UiTextEs().begin;
