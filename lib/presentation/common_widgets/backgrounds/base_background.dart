@@ -40,7 +40,7 @@ class BaseBackground extends StatelessWidget {
     UiTexts uiTexts = Provider.of<UiTexts>(context);
     Size screenSize = MediaQuery.of(context).size;
 
-    double safeAreaTop = 30;
+    double safeAreaTop = 40;
     double sideMargin = 32;
     Size touchingArea = Size(sideMargin + 40, safeAreaTop + 40);
 
@@ -78,9 +78,11 @@ class BaseBackground extends StatelessWidget {
                       width: touchingArea.width,
                       height: touchingArea.height,
                       padding:
-                          EdgeInsets.only(top: safeAreaTop, left: sideMargin),
+                          EdgeInsets.only(top: safeAreaTop, left: sideMargin,),
+                      alignment: Alignment.topLeft,
                       child: SvgPicture.asset(
                         "assets/images/arrow_back.svg",
+                        fit: BoxFit.none,
                       ),
                     ),
                     actionsToDo: backActions,
@@ -94,9 +96,11 @@ class BaseBackground extends StatelessWidget {
                         width: touchingArea.width,
                         height: touchingArea.height,
                         padding: EdgeInsets.only(
-                            top: safeAreaTop, right: sideMargin),
+                            top: safeAreaTop, right: sideMargin,),
+                        alignment: Alignment.topRight,
                         child: SvgPicture.asset(
                           "assets/images/favorite.svg",
+                          fit: BoxFit.none,
                         ),
                       ),
                       actionsToDo: backActions,

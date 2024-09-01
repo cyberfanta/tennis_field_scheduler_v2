@@ -5,7 +5,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/backgrounds/error_message_cubit.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/menu/menu_cubit.dart';
-import 'package:tennis_field_scheduler_v2/presentation/views/landing_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/inner_view/begin_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/inner_view/favorites_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/initial_view/landing_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/inner_view/reservations_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/login_view/login_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/login_view/signup_view.dart';
 
 import 'app/lang/ui_texts.dart';
 
@@ -43,6 +48,13 @@ class MyApp extends StatelessWidget {
       initialRoute: LandingView.routeName,
       routes: {
         LandingView.routeName: (context) => const LandingView(),
+
+        LoginView.routeName: (context) => const LoginView(),
+        SignUpView.routeName: (context) => const SignUpView(),
+
+        BeginView.routeName: (context) => const BeginView(),
+        ReservationsView.routeName: (context) => const ReservationsView(),
+        FavoritesView.routeName: (context) => const FavoritesView(),
       },
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,

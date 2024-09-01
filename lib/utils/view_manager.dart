@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:tennis_field_scheduler_v2/utils/stacks.dart';
 import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 
-import '../presentation/views/landing_view.dart';
+import '../presentation/views/initial_view/landing_view.dart';
+import '../presentation/views/inner_view/begin_view.dart';
+import '../presentation/views/inner_view/favorites_view.dart';
+import '../presentation/views/inner_view/reservations_view.dart';
+import '../presentation/views/login_view/login_view.dart';
+import '../presentation/views/login_view/signup_view.dart';
 
 class ViewManager {
   final String _tag = "ViewManager";
@@ -30,10 +35,7 @@ class ViewManager {
   }
 
   void push(BuildContext context, String value) {
-    stamp(_tag, "Before: $_viewStack");
-    _viewStack.push(value);
-    stamp(_tag, "Push View: ${value.substring(1)}");
-    stamp(_tag, "Now: $_viewStack", extraLine: true);
+    pushAndStay(context, value);
     _executeNavigation(context, value);
   }
 
@@ -50,15 +52,16 @@ class ViewManager {
       return;
     }
 
-    stamp(_tag, "Before: $_viewStack");
-    String? value = _viewStack.pop();
-    stamp(_tag, "Pop View: ${value?.substring(1)}");
-    stamp(_tag, "Now: $_viewStack", extraLine: true);
-    value = _viewStack.last;
-    _executeNavigation(context, value!, true);
+    popAndStay(context);
+    _executeNavigation(context, _viewStack.last!, true);
   }
 
   void popAndStay(BuildContext context) {
+    if (_viewStack.length == 1) {
+      stamp(_tag, "Can pop anymore\n");
+      return;
+    }
+
     stamp(_tag, "Before: $_viewStack");
     String? value = _viewStack.pop();
     stamp(_tag, "Pop View: ${value?.substring(1)}");
@@ -97,29 +100,20 @@ class ViewManager {
   }
 
   void goToControlPoint(BuildContext context) {
-    stamp(_tag, "Control Point - Processing: $_controlPoint");
-
-    do {
-      popAndStay(context);
-    } while (getCurrent() != _controlPoint);
-
-    stamp(_tag, "Control Point- Finishing: $_controlPoint", extraLine: true);
+    goToControlPointAndStay(context);
 
     String value = _controlPoint;
-    _controlPoint = "";
     _executeNavigation(context, value);
   }
 
   void goToControlPointAndStay(BuildContext context) {
     stamp(_tag, "Control Point - Processing: $_controlPoint");
 
-    do {
+    while (getCurrent() != _controlPoint) {
       popAndStay(context);
-    } while (getCurrent() != _controlPoint);
+    }
 
     stamp(_tag, "Control Point- Finishing: $_controlPoint", extraLine: true);
-
-    _controlPoint = "";
   }
 
   String getCurrent() {
@@ -189,6 +183,36 @@ class ViewManager {
         pageRouteBuilder = PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
               const LandingView(),
+          transitionsBuilder: slideTransitionFunction,
+        );
+      case BeginView.routeName:
+        pageRouteBuilder = PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const BeginView(),
+          transitionsBuilder: slideTransitionFunction,
+        );
+      case LoginView.routeName:
+        pageRouteBuilder = PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const LoginView(),
+          transitionsBuilder: slideTransitionFunction,
+        );
+      case SignUpView.routeName:
+        pageRouteBuilder = PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const SignUpView(),
+          transitionsBuilder: slideTransitionFunction,
+        );
+      case ReservationsView.routeName:
+        pageRouteBuilder = PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const ReservationsView(),
+          transitionsBuilder: slideTransitionFunction,
+        );
+      case FavoritesView.routeName:
+        pageRouteBuilder = PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const FavoritesView(),
           transitionsBuilder: slideTransitionFunction,
         );
       default:

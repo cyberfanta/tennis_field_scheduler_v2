@@ -13,8 +13,8 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     UiTexts uiTexts = Provider.of<UiTexts>(context);
-    double itemWidth = 80;
-    double itemHeight = 54;
+    double itemWidth = 70;
+    double itemHeight = 50;
 
     MenuUseCases menuUseCases = MenuUseCases();
 

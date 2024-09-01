@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../app/lang/ui_texts.dart';
-import '../../domain/use_cases/landing_view/reservations_view_use_cases.dart';
-import '../common_widgets/backgrounds/base_background.dart';
+import '../../../app/lang/ui_texts.dart';
+import '../../../domain/use_cases/inner_view/reservations_view_use_cases.dart';
+import '../../common_widgets/backgrounds/base_background.dart';
 
 class ReservationsView extends StatefulWidget {
   const ReservationsView({super.key});
@@ -31,6 +31,8 @@ class _ReservationsViewState extends State<ReservationsView> {
 
     return BaseBackground(
       backActions: reservationsViewUseCases.backActions(tag, context),
+      hasAppBar: true,
+      hasMenu: true,
       content: buildContent(
         screenSize,
         uiTexts,

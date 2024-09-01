@@ -22,4 +22,12 @@ class UiTextEn {
   String get favorites {
     return "Favorites";
   }
+
+  String get goLogin {
+    return "Login";
+  }
+
+  String get goSignUp {
+    return "SignUp";
+  }
 }

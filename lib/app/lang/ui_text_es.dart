@@ -14,4 +14,12 @@ class UiTextEs {
   String get favorites {
     return "Favoritos";
   }
+
+  String get goLogin {
+    return "Iniciar Sesión";
+  }
+
+  String get goSignUp {
+    return "Registrarme";
+  }
 }

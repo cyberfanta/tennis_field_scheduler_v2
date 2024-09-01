@@ -23,13 +23,10 @@ class CustomButton extends StatelessWidget {
     return OnTapWrapper(
       widgetToWrap: Container(
         width: double.infinity,
+        height: 53,
         decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        padding: const EdgeInsets.symmetric(
-          vertical: 15,
-          horizontal: 10,
+          borderRadius: BorderRadius.circular(12),
         ),
         alignment: Alignment.center,
         child: Text(

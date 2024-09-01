@@ -11,6 +11,7 @@ const cGray = Color.fromRGBO(205, 205, 205, 1);
 
 const cGreenForeground = Color(0xFF82BC00);
 
+const cWhiteOpacity30 = Color.fromRGBO(255, 255, 255, .3);
 const cWhiteOpacity50 = Color.fromRGBO(255, 255, 255, .5);
 const cWhiteOpacity80 = Color.fromRGBO(255, 255, 255, .8);
 

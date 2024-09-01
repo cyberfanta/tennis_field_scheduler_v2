@@ -51,4 +51,20 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().favorites;
   }
+
+  String get goLogin {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().goLogin;
+    }
+
+    return UiTextEn().goLogin;
+  }
+
+  String get goSignUp {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().goSignUp;
+    }
+
+    return UiTextEn().goSignUp;
+  }
 }
