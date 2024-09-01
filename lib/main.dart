@@ -24,7 +24,7 @@ void main() {
       MultiBlocProvider(
         providers: [
           ChangeNotifierProvider(
-            create: (context) => UiTexts(const Locale('en')),
+            create: (context) => UiTexts(const Locale('es')),
           ),
           BlocProvider<MenuCubit>(
             create: (context) => MenuCubit(),

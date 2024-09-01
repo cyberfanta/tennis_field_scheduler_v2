@@ -24,10 +24,38 @@ class UiTextEn {
   }
 
   String get goLogin {
-    return "Login";
+    return "Log In";
   }
 
   String get goSignUp {
-    return "SignUp";
+    return "Sign Up";
+  }
+
+  String get email {
+    return "Email";
+  }
+
+  String get hintEmail {
+    return "Write your email";
+  }
+
+  String get pass {
+    return "Password";
+  }
+
+  String get hintPass {
+    return "Write your password";
+  }
+
+  String get rememberPass {
+    return "Remember password";
+  }
+
+  String get forgotYourPass {
+    return "Forgot your password?";
+  }
+
+  String get stillNotAccount {
+    return "Need an account?";
   }
 }

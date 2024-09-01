@@ -67,4 +67,68 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().goSignUp;
   }
+
+  String get goSignUp2 {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().goSignUp2;
+    }
+
+    return UiTextEn().goSignUp;
+  }
+
+  String get email {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().email;
+    }
+
+    return UiTextEn().email;
+  }
+
+  String get hintEmail {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().hintEmail;
+    }
+
+    return UiTextEn().hintEmail;
+  }
+
+  String get pass {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().pass;
+    }
+
+    return UiTextEn().pass;
+  }
+
+  String get hintPass {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().hintPass;
+    }
+
+    return UiTextEn().hintPass;
+  }
+
+  String get rememberPass {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().rememberPass;
+    }
+
+    return UiTextEn().rememberPass;
+  }
+
+  String get forgotYourPass {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().forgotYourPass;
+    }
+
+    return UiTextEn().forgotYourPass;
+  }
+
+  String get stillNotAccount {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().stillNotAccount;
+    }
+
+    return UiTextEn().stillNotAccount;
+  }
 }

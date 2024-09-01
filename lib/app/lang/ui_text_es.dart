@@ -16,10 +16,42 @@ class UiTextEs {
   }
 
   String get goLogin {
-    return "Iniciar Sesión";
+    return "Iniciar sesión";
   }
 
   String get goSignUp {
     return "Registrarme";
+  }
+
+  String get goSignUp2 {
+    return "Regístrate";
+  }
+
+  String get email {
+    return "Email";
+  }
+
+  String get hintEmail {
+    return "Escribe tu correo";
+  }
+
+  String get pass {
+    return "Contraseña";
+  }
+
+  String get hintPass {
+    return "Escribe tu clave";
+  }
+
+  String get rememberPass {
+    return "Recordar contraseña";
+  }
+
+  String get forgotYourPass {
+    return "¿Olvidaste tu contraseña?";
+  }
+
+  String get stillNotAccount {
+    return "¿Aun no tienes cuenta?";
   }
 }
