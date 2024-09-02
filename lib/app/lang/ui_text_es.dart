@@ -7,6 +7,10 @@ class UiTextEs {
     return "Inicio";
   }
 
+  String get reserve {
+    return "Reservar";
+  }
+
   String get reservations {
     return "Reservas";
   }
@@ -169,5 +173,25 @@ class UiTextEs {
 
   String get myFavorites {
     return "Mis favoritos";
+  }
+
+  String get fieldA {
+    return "Cancha tipo A";
+  }
+
+  String get fieldB {
+    return "Cancha tipo B";
+  }
+
+  String get fieldC {
+    return "Cancha tipo C";
+  }
+
+  String get available {
+    return "Disponible";
+  }
+
+  String get notAvailable {
+    return "No disponible";
   }
 }

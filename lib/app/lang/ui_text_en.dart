@@ -15,6 +15,10 @@ class UiTextEn {
     return "Begin";
   }
 
+  String get reserve {
+    return "Reserve";
+  }
+
   String get reservations {
     return "Reserves";
   }
@@ -173,5 +177,25 @@ class UiTextEn {
 
   String get myFavorites {
     return "My favorites";
+  }
+
+  String get fieldA {
+    return "Field type A";
+  }
+
+  String get fieldB {
+    return "Field type B";
+  }
+
+  String get fieldC {
+    return "Field type C";
+  }
+
+  String get available {
+    return "Available";
+  }
+
+  String get notAvailable {
+    return "Not available";
   }
 }

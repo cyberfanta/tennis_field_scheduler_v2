@@ -36,4 +36,6 @@ const cInputTextError = cRed;
 
 const cCheckBoxBorder = Color(0xFF9B9C9D);
 
+const cCardBorder = Color(0xFFEEEFF1);
+
 const cSeparator = Color(0xFFECEFF4);

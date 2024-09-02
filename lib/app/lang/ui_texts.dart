@@ -36,6 +36,14 @@ class UiTexts extends ChangeNotifier {
     return UiTextEn().begin;
   }
 
+  String get reserve {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().reserve;
+    }
+
+    return UiTextEn().reserve;
+  }
+
   String get reservations {
     if (_locale.languageCode == 'es') {
       return UiTextEs().reservations;
@@ -366,5 +374,45 @@ class UiTexts extends ChangeNotifier {
     }
 
     return UiTextEn().myFavorites;
+  }
+
+  String get fieldA {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().fieldA;
+    }
+
+    return UiTextEn().fieldA;
+  }
+
+  String get fieldB {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().fieldB;
+    }
+
+    return UiTextEn().fieldB;
+  }
+
+  String get fieldC {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().fieldC;
+    }
+
+    return UiTextEn().fieldC;
+  }
+
+  String get available {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().available;
+    }
+
+    return UiTextEn().available;
+  }
+
+  String get notAvailable {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().notAvailable;
+    }
+
+    return UiTextEn().notAvailable;
   }
 }

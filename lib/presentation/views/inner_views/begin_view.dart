@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/app/static_data/static_data.dart';
+import 'package:tennis_field_scheduler_v2/domain/entities/field_schedule.dart';
 
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
-import '../../../domain/use_cases/inner_views/begin_view_use_cases.dart';
+import '../../../domain/use_cases/inner_views/begin_view/begin_view_use_cases.dart';
 import '../../common_widgets/backgrounds/base_background.dart';
+import '../../common_widgets/cards/reserve_field_card.dart';
 import '../../common_widgets/other_widgets/lower_margin.dart';
 import '../../common_widgets/other_widgets/upper_margin.dart';
 import '../../common_widgets/separator/custom_separator.dart';
@@ -83,26 +85,24 @@ class _BeginViewState extends State<BeginView> {
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.horizontal,
-                  children: const [
-                    SizedBox(width: 23),
-                    SizedBox(
-                      width: 245,
-                      height: double.infinity,
-                      child: Placeholder(),
+                  children: [
+                    const SizedBox(width: 23),
+                    ListView.separated(
+                      shrinkWrap: true,
+                      padding: EdgeInsets.zero,
+                      scrollDirection: Axis.horizontal,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        return ReserveFieldCard(
+                          field: fields[index],
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return const SizedBox(width: 20);
+                      },
+                      itemCount: fields.length,
                     ),
-                    SizedBox(width: 20),
-                    SizedBox(
-                      width: 245,
-                      height: double.infinity,
-                      child: Placeholder(),
-                    ),
-                    SizedBox(width: 20),
-                    SizedBox(
-                      width: 245,
-                      height: double.infinity,
-                      child: Placeholder(),
-                    ),
-                    SizedBox(width: 23),
+                    const SizedBox(width: 23),
                   ],
                 ),
               ),

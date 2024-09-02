@@ -4,30 +4,17 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Login View): Login and Sign up view full functional.">
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/other_widgets/lower_margin.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/other_widgets/upper_margin.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/separator/custom_separator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Inner View): Scaffold for inner views.">
+      <change afterPath="$PROJECT_DIR$/lib/domain/entities/field_schedule.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/get_next_available_hour.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/filed_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/field_3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/theme/ui_colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/ui_colors.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/reservations_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/reservations_view_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/backgrounds/base_background.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/backgrounds/base_background.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/log_out_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/log_out_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/not_implemented_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/not_implemented_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/one_button_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/one_button_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/two_button_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/two_button_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/menu/menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/menu/menu.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/login_views/login_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/login_views/login_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/login_views/signup_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/login_views/signup_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tennis_field_scheduler_v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tennis_field_scheduler_v2.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725250766218</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Feat (Inner View): Scaffold for inner views.">
+      <option name="closed" value="true" />
+      <created>1725301637153</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1725301637153</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +183,7 @@
     <MESSAGE value="Feat (Login View): Custom input and majority of login view functionalities done." />
     <MESSAGE value="Feat (Login View): Custom dialogs to improve UX." />
     <MESSAGE value="Feat (Login View): Login and Sign up view full functional." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Login View): Login and Sign up view full functional." />
+    <MESSAGE value="Feat (Inner View): Scaffold for inner views." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Inner View): Scaffold for inner views." />
   </component>
 </project>
