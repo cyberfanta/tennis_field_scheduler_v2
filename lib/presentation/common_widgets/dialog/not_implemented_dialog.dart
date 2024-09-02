@@ -20,14 +20,14 @@ class NotImplementedDialog extends StatelessWidget {
 
     return OneButtonDialog(
       tag: tag,
-      titleText: uiTexts.warning,
+      titleText: uiTexts.info,
       titleTextStyle: styleMedium(18, cWhite),
       contentWidget: Text(
         uiTexts.notImplementedContext,
         style: styleRegular(14, cWhite),
         textAlign: TextAlign.center,
       ),
-      backgroundColor: cBlueTransparent75,
+      backgroundColor: cBlueTransparent90,
       borderColor: cWhite,
       borderWidth: 1,
       buttonText: uiTexts.ok,

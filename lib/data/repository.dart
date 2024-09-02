@@ -1,16 +1,54 @@
 import 'dart:convert';
 
+import 'package:tennis_field_scheduler_v2/app/static_data/static_data.dart';
 import 'package:tennis_field_scheduler_v2/data/sources/local_data/local_data.dart';
 import 'package:tennis_field_scheduler_v2/data/sources/weather_api/weather_api.dart';
 import 'package:tennis_field_scheduler_v2/domain/entities/base_forecast.dart';
+import 'package:tennis_field_scheduler_v2/domain/entities/base_user.dart';
 import 'package:tennis_field_scheduler_v2/domain/entities/reserved_date.dart';
+import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 
 class Repository {
   final LocalData _localData = LocalData();
   final Api _api = Api();
 
   final String _tag = "Repository";
+
+  final String sharedPreferenceUser = "User";
   final String sharedPreferenceReservations = "Reservations";
+
+  Future<BaseUser?> getLogin() async {
+    final String data = await _localData.getString(sharedPreferenceUser);
+
+    if (data.isEmpty) {
+      stamp(_tag, "No user saved");
+      return null;
+    }
+
+    stamp(_tag, "Restoring saved user");
+    BaseUser baseUser = baseUserFromJson(data);
+    currentUser = baseUser;
+    return baseUser;
+  }
+
+  Future<BaseUser?> validateLogin() async {
+    final String data = await _localData.getString(sharedPreferenceUser);
+
+    if (data.isEmpty) {
+      stamp(_tag, "No user saved");
+      return null;
+    }
+
+    return baseUserFromJson(data);
+  }
+
+  Future<void> saveLogin(BaseUser baseUser) async {
+    await _localData.setString(sharedPreferenceUser, baseUserToJson(baseUser));
+  }
+
+  Future<void> removeLogin() async {
+    await _localData.setString(sharedPreferenceUser, "");
+  }
 
   Future<List<ReservedDate>> loadReservedDates() async {
     final List<String> data =

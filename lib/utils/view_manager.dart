@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:tennis_field_scheduler_v2/utils/stacks.dart';
 import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 
-import '../presentation/views/initial_view/landing_view.dart';
-import '../presentation/views/inner_view/begin_view.dart';
-import '../presentation/views/inner_view/favorites_view.dart';
-import '../presentation/views/inner_view/reservations_view.dart';
-import '../presentation/views/login_view/login_view.dart';
-import '../presentation/views/login_view/signup_view.dart';
+import '../presentation/views/initial_views/welcome_view.dart';
+import '../presentation/views/inner_views/begin_view.dart';
+import '../presentation/views/inner_views/favorites_view.dart';
+import '../presentation/views/inner_views/reservations_view.dart';
+import '../presentation/views/login_views/login_view.dart';
+import '../presentation/views/login_views/signup_view.dart';
 
 class ViewManager {
   final String _tag = "ViewManager";
@@ -15,7 +15,7 @@ class ViewManager {
   bool _isInitialized = false;
   String _controlPoint = "";
 
-  final String _viewManagerRoot = LandingView.routeName;
+  final String _viewManagerRoot = WelcomeView.routeName;
 
   ViewManager() {
     init();
@@ -103,7 +103,7 @@ class ViewManager {
     goToControlPointAndStay(context);
 
     String value = _controlPoint;
-    _executeNavigation(context, value);
+    _executeNavigation(context, value, true);
   }
 
   void goToControlPointAndStay(BuildContext context) {
@@ -148,7 +148,7 @@ class ViewManager {
       [bool isRetuning = false]) {
     animationOpen(BuildContext context, Animation<double> animation,
         Animation<double> secondaryAnimation, Widget child) {
-      var begin = const Offset(-1.0, 0.0);
+      var begin = const Offset(1.0, 0.0);
       var end = Offset.zero;
       var curve = Curves.ease;
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
@@ -161,7 +161,7 @@ class ViewManager {
 
     animationClose(BuildContext context, Animation<double> animation,
         Animation<double> secondaryAnimation, Widget child) {
-      var begin = const Offset(1.0, 0.0);
+      var begin = const Offset(-1.0, 0.0);
       var end = Offset.zero;
       var curve = Curves.ease;
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
@@ -179,10 +179,10 @@ class ViewManager {
     PageRouteBuilder pageRouteBuilder;
 
     switch (value) {
-      case LandingView.routeName:
+      case WelcomeView.routeName:
         pageRouteBuilder = PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              const LandingView(),
+              const WelcomeView(),
           transitionsBuilder: slideTransitionFunction,
         );
       case BeginView.routeName:
@@ -218,7 +218,7 @@ class ViewManager {
       default:
         pageRouteBuilder = PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              const LandingView(),
+              const WelcomeView(),
           transitionsBuilder: slideTransitionFunction,
         );
     }

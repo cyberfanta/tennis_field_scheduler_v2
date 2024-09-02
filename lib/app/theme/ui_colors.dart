@@ -20,7 +20,7 @@ const cBlackOpacity15 = Color.fromRGBO(0, 0, 0, .15);
 const cBlackOpacity40 = Color.fromRGBO(0, 0, 0, .4);
 const cBlackOpacity50 = Color.fromRGBO(0, 0, 0, .5);
 
-const cBlueTransparent75 = Color(0xBB346BC3);
+const cBlueTransparent90 = Color(0xEE346BC3);
 const cBlueDark = Color(0xFF011840);
 
 const cGrayShadow = Color(0x29000000);
@@ -32,6 +32,7 @@ const cMenuForegroundUnSelected = cBlack;
 
 const cInputTextTitle = Color(0xFF9B9C9D);
 const cInputTextBorder = Color(0xFF9B9C9D);
+const cInputTextError = cRed;
 
 const cCheckBoxBorder = Color(0xFF9B9C9D);
 

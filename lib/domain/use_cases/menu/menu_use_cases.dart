@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../app/static_data/static_data.dart';
 import '../../../presentation/common_widgets/menu/menu_cubit.dart';
-import '../../../presentation/views/inner_view/begin_view.dart';
-import '../../../presentation/views/inner_view/favorites_view.dart';
-import '../../../presentation/views/inner_view/reservations_view.dart';
+import '../../../presentation/views/inner_views/begin_view.dart';
+import '../../../presentation/views/inner_views/favorites_view.dart';
+import '../../../presentation/views/inner_views/reservations_view.dart';
 
 class MenuUseCases {
   void Function() goToBegin(BuildContext context) => () {

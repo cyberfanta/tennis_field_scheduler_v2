@@ -76,6 +76,30 @@ class UiTexts extends ChangeNotifier {
     return UiTextEn().goSignUp;
   }
 
+  String get goSignUp3 {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().goSignUp3;
+    }
+
+    return UiTextEn().goSignUp;
+  }
+
+  String get hintName {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().hintName;
+    }
+
+    return UiTextEn().hintName;
+  }
+
+  String get nameError {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().nameError;
+    }
+
+    return UiTextEn().nameError;
+  }
+
   String get email {
     if (_locale.languageCode == 'es') {
       return UiTextEs().email;
@@ -92,6 +116,14 @@ class UiTexts extends ChangeNotifier {
     return UiTextEn().hintEmail;
   }
 
+  String get emailError {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().emailError;
+    }
+
+    return UiTextEn().emailError;
+  }
+
   String get pass {
     if (_locale.languageCode == 'es') {
       return UiTextEs().pass;
@@ -100,12 +132,60 @@ class UiTexts extends ChangeNotifier {
     return UiTextEn().pass;
   }
 
+  String get confirmPass {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().confirmPass;
+    }
+
+    return UiTextEn().confirmPass;
+  }
+
   String get hintPass {
     if (_locale.languageCode == 'es') {
       return UiTextEs().hintPass;
     }
 
     return UiTextEn().hintPass;
+  }
+
+  String get passError1 {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().passError1;
+    }
+
+    return UiTextEn().passError1;
+  }
+
+  String get passError2 {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().passError2;
+    }
+
+    return UiTextEn().passError2;
+  }
+
+  String get confirmPassError {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().confirmPassError;
+    }
+
+    return UiTextEn().confirmPassError;
+  }
+
+  String get hintPhone {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().hintPhone;
+    }
+
+    return UiTextEn().hintPhone;
+  }
+
+  String get phoneError {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().phoneError;
+    }
+
+    return UiTextEn().phoneError;
   }
 
   String get rememberPass {
@@ -132,12 +212,28 @@ class UiTexts extends ChangeNotifier {
     return UiTextEn().stillNotAccount;
   }
 
+  String get youHaveAccount {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().youHaveAccount;
+    }
+
+    return UiTextEn().youHaveAccount;
+  }
+
   String get warning {
     if (_locale.languageCode == 'es') {
       return UiTextEs().warning;
     }
 
     return UiTextEn().warning;
+  }
+
+  String get info {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().info;
+    }
+
+    return UiTextEn().info;
   }
 
   String get closeAppContext {
@@ -174,5 +270,53 @@ class UiTexts extends ChangeNotifier {
 
   String get ok {
     return UiTextEn().ok;
+  }
+
+  String get nameEmpty {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().nameEmpty;
+    }
+
+    return UiTextEn().nameEmpty;
+  }
+
+  String get emailEmpty {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().emailEmpty;
+    }
+
+    return UiTextEn().emailEmpty;
+  }
+
+  String get phoneEmpty {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().phoneEmpty;
+    }
+
+    return UiTextEn().phoneEmpty;
+  }
+
+  String get passEmpty {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().passEmpty;
+    }
+
+    return UiTextEn().passEmpty;
+  }
+
+  String get noData {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().noData;
+    }
+
+    return UiTextEn().noData;
+  }
+
+  String get wrongCredential {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().wrongCredential;
+    }
+
+    return UiTextEn().wrongCredential;
   }
 }

@@ -5,14 +5,16 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/backgrounds/error_message_cubit.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/menu/menu_cubit.dart';
-import 'package:tennis_field_scheduler_v2/presentation/views/inner_view/begin_view.dart';
-import 'package:tennis_field_scheduler_v2/presentation/views/inner_view/favorites_view.dart';
-import 'package:tennis_field_scheduler_v2/presentation/views/initial_view/landing_view.dart';
-import 'package:tennis_field_scheduler_v2/presentation/views/inner_view/reservations_view.dart';
-import 'package:tennis_field_scheduler_v2/presentation/views/login_view/login_view.dart';
-import 'package:tennis_field_scheduler_v2/presentation/views/login_view/signup_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/begin_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/favorites_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/initial_views/welcome_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/reservations_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/login_views/login_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/login_views/signup_view.dart';
 
 import 'app/lang/ui_texts.dart';
+import 'domain/use_cases/login_views/login_view_cubit.dart';
+import 'domain/use_cases/login_views/signup_view_cubit.dart';
 
 void main() {
   // ignore: unused_local_variable
@@ -32,6 +34,12 @@ void main() {
           BlocProvider<ErrorMessageCubit>(
             create: (context) => ErrorMessageCubit(),
           ),
+          BlocProvider<LoginViewCubit>(
+            create: (context) => LoginViewCubit(),
+          ),
+          BlocProvider<SignUpViewCubit>(
+            create: (context) => SignUpViewCubit(),
+          ),
         ],
         child: const MyApp(),
       ),
@@ -45,9 +53,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: LandingView.routeName,
+      initialRoute: WelcomeView.routeName,
       routes: {
-        LandingView.routeName: (context) => const LandingView(),
+        WelcomeView.routeName: (context) => const WelcomeView(),
 
         LoginView.routeName: (context) => const LoginView(),
         SignUpView.routeName: (context) => const SignUpView(),

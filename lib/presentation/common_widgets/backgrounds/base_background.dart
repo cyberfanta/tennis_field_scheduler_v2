@@ -77,8 +77,10 @@ class BaseBackground extends StatelessWidget {
                     widgetToWrap: Container(
                       width: touchingArea.width,
                       height: touchingArea.height,
-                      padding:
-                          EdgeInsets.only(top: safeAreaTop, left: sideMargin,),
+                      padding: EdgeInsets.only(
+                        top: safeAreaTop,
+                        left: sideMargin,
+                      ),
                       alignment: Alignment.topLeft,
                       child: SvgPicture.asset(
                         "assets/images/arrow_back.svg",
@@ -96,7 +98,9 @@ class BaseBackground extends StatelessWidget {
                         width: touchingArea.width,
                         height: touchingArea.height,
                         padding: EdgeInsets.only(
-                            top: safeAreaTop, right: sideMargin,),
+                          top: safeAreaTop,
+                          right: sideMargin,
+                        ),
                         alignment: Alignment.topRight,
                         child: SvgPicture.asset(
                           "assets/images/favorite.svg",
@@ -130,11 +134,14 @@ class BaseBackground extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 4,
+                            horizontal: 12,
+                            vertical: 8,
                           ),
-                          margin: const EdgeInsets.only(bottom: 50),
-                          color: cBlackOpacity15,
+                          margin: const EdgeInsets.only(bottom: 40),
+                          decoration: BoxDecoration(
+                            color: cBlackOpacity40,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
                           child: Text(
                             message,
                             style: styleRegular(),

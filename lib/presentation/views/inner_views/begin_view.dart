@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../app/lang/ui_texts.dart';
-import '../../../domain/use_cases/inner_view/reservations_view_use_cases.dart';
+import '../../../domain/use_cases/inner_views/begin_view_use_cases.dart';
 import '../../common_widgets/backgrounds/base_background.dart';
 
-class ReservationsView extends StatefulWidget {
-  const ReservationsView({super.key});
+class BeginView extends StatefulWidget {
+  const BeginView({super.key});
 
-  static const routeName = '/ReservationsView';
+  static const routeName = '/BeginView';
 
   @override
-  State<ReservationsView> createState() => _ReservationsViewState();
+  State<BeginView> createState() => _BeginViewState();
 }
 
-class _ReservationsViewState extends State<ReservationsView> {
-  String tag = ReservationsView.routeName.substring(1, ReservationsView.routeName.length);
-  ReservationsViewUseCases reservationsViewUseCases = ReservationsViewUseCases();
+class _BeginViewState extends State<BeginView> {
+  String tag = BeginView.routeName.substring(1, BeginView.routeName.length);
+  BeginViewUseCases beginViewUseCases = BeginViewUseCases();
 
   @override
   void initState() {
     super.initState();
-    reservationsViewUseCases.initState(context)();
+    beginViewUseCases.initState(context)();
   }
 
   @override
@@ -30,7 +30,7 @@ class _ReservationsViewState extends State<ReservationsView> {
     Size screenSize = MediaQuery.of(context).size;
 
     return BaseBackground(
-      backActions: reservationsViewUseCases.backActions(tag, context),
+      backActions: beginViewUseCases.backActions(tag, context),
       hasAppBar: true,
       hasMenu: true,
       content: buildContent(

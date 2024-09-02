@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../app/lang/ui_texts.dart';
-import '../../../domain/use_cases/inner_view/begin_view_use_cases.dart';
+import '../../../domain/use_cases/inner_views/favorites_view_use_cases.dart';
 import '../../common_widgets/backgrounds/base_background.dart';
 
-class BeginView extends StatefulWidget {
-  const BeginView({super.key});
+class FavoritesView extends StatefulWidget {
+  const FavoritesView({super.key});
 
-  static const routeName = '/BeginView';
+  static const routeName = '/FavoritesView';
 
   @override
-  State<BeginView> createState() => _BeginViewState();
+  State<FavoritesView> createState() => _FavoritesViewState();
 }
 
-class _BeginViewState extends State<BeginView> {
-  String tag = BeginView.routeName.substring(1, BeginView.routeName.length);
-  BeginViewUseCases beginViewUseCases = BeginViewUseCases();
+class _FavoritesViewState extends State<FavoritesView> {
+  String tag = FavoritesView.routeName.substring(1, FavoritesView.routeName.length);
+  FavoritesViewUseCases favoritesViewUseCases = FavoritesViewUseCases();
 
   @override
   void initState() {
     super.initState();
-    beginViewUseCases.initState(context)();
+    favoritesViewUseCases.initState(context)();
   }
 
   @override
@@ -30,7 +30,7 @@ class _BeginViewState extends State<BeginView> {
     Size screenSize = MediaQuery.of(context).size;
 
     return BaseBackground(
-      backActions: beginViewUseCases.backActions(tag, context),
+      backActions: favoritesViewUseCases.backActions(tag, context),
       hasAppBar: true,
       hasMenu: true,
       content: buildContent(

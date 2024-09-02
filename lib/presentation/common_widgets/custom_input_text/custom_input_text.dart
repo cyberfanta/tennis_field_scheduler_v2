@@ -5,9 +5,7 @@ import 'package:tennis_field_scheduler_v2/presentation/common_widgets/behaviors/
 import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
 
-ValueNotifier<bool> _isPassVisible = ValueNotifier(false);
-
-class CustomInputText extends StatelessWidget {
+class CustomInputText extends StatefulWidget {
   const CustomInputText({
     super.key,
     required this.title,
@@ -17,6 +15,8 @@ class CustomInputText extends StatelessWidget {
     required this.keyboard,
     required this.textInputAction,
     required this.validator,
+    required this.hasError,
+    required this.errorMessage,
   });
 
   final String title;
@@ -26,6 +26,15 @@ class CustomInputText extends StatelessWidget {
   final TextInputType keyboard;
   final TextInputAction textInputAction;
   final bool Function(String) validator;
+  final bool hasError;
+  final String errorMessage;
+
+  @override
+  State<CustomInputText> createState() => _CustomInputTextState();
+}
+
+class _CustomInputTextState extends State<CustomInputText> {
+  final ValueNotifier<bool> _isPassVisible = ValueNotifier(false);
 
   @override
   Widget build(BuildContext context) {
@@ -39,18 +48,22 @@ class CustomInputText extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: styleRegular(12, cInputTextTitle),
-              ),
-              const SizedBox(height: 4),
+              widget.title.isNotEmpty
+                  ? Text(
+                      widget.title,
+                      style: styleRegular(12, cInputTextTitle),
+                    )
+                  : const SizedBox.shrink(),
+              widget.title.isNotEmpty
+                  ? const SizedBox(height: 4)
+                  : const SizedBox.shrink(),
               Row(
                 children: [
                   Container(
                     width: 15,
                     alignment: Alignment.center,
                     child: SvgPicture.asset(
-                      icon,
+                      widget.icon,
                       fit: BoxFit.none,
                       colorFilter: const ColorFilter.mode(
                         cBlack,
@@ -62,6 +75,7 @@ class CustomInputText extends StatelessWidget {
                   Container(
                     width: 1,
                     height: 16,
+                    // color: hasError ? cInputTextError : cBlack,
                     color: cBlack,
                   ),
                   const SizedBox(width: 8),
@@ -72,30 +86,30 @@ class CustomInputText extends StatelessWidget {
                         valueListenable: _isPassVisible,
                         builder: (context, isVisible, _) {
                           return TextField(
-                            controller: controller,
+                            controller: widget.controller,
                             decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: hint,
+                              hintText: widget.hint,
                               hintStyle: styleRegular(14, cBlack),
                             ),
                             cursorColor: cBlack,
-                            keyboardType: keyboard,
-                            textInputAction: textInputAction,
+                            keyboardType: widget.keyboard,
+                            textInputAction: widget.textInputAction,
                             obscureText:
-                                (keyboard == TextInputType.visiblePassword) &&
+                                (widget.keyboard == TextInputType.visiblePassword) &&
                                     !isVisible,
                             obscuringCharacter: '*',
                             style: styleRegular(14, cBlack),
-                            onChanged: validator,
+                            onChanged: widget.validator,
                           );
                         },
                       ),
                     ),
                   ),
-                  keyboard == TextInputType.visiblePassword
+                  widget.keyboard == TextInputType.visiblePassword
                       ? const SizedBox(width: 8)
                       : const SizedBox.shrink(),
-                  keyboard == TextInputType.visiblePassword
+                  widget.keyboard == TextInputType.visiblePassword
                       ? ValueListenableBuilder(
                           valueListenable: _isPassVisible,
                           builder: (context, isVisible, _) {
@@ -131,8 +145,15 @@ class CustomInputText extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 1,
-          color: cInputTextBorder,
+          color: widget.hasError ? cInputTextError : cInputTextBorder,
         ),
+        widget.hasError ? const SizedBox(height: 4) : const SizedBox.shrink(),
+        widget.hasError
+            ? Text(
+                widget.errorMessage,
+                style: styleRegular(12, cInputTextError),
+              )
+            : const SizedBox.shrink(),
       ],
     );
   }

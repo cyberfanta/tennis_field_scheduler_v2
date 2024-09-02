@@ -4,25 +4,25 @@ import 'package:tennis_field_scheduler_v2/app/theme/ui_colors.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_button/custom_button.dart';
 
 import '../../../app/lang/ui_texts.dart';
-import '../../../domain/use_cases/initial_view/landing_view_use_cases.dart';
+import '../../../domain/use_cases/initial_views/welcome_view_use_cases.dart';
 import '../../common_widgets/backgrounds/base_background.dart';
 
-class LandingView extends StatefulWidget {
-  const LandingView({super.key});
+class WelcomeView extends StatefulWidget {
+  const WelcomeView({super.key});
 
   static const routeName = '/';
 
   @override
-  State<LandingView> createState() => _LandingViewState();
+  State<WelcomeView> createState() => _WelcomeViewState();
 }
 
-class _LandingViewState extends State<LandingView> {
-  LandingViewUseCases landingViewUseCases = LandingViewUseCases();
+class _WelcomeViewState extends State<WelcomeView> {
+  WelcomeViewUseCases welcomeViewUseCases = WelcomeViewUseCases();
 
   @override
   void initState() {
     super.initState();
-    landingViewUseCases.initState(context)();
+    welcomeViewUseCases.initState(context)();
   }
 
   @override
@@ -31,7 +31,7 @@ class _LandingViewState extends State<LandingView> {
     Size screenSize = MediaQuery.of(context).size;
 
     return BaseBackground(
-      backActions: landingViewUseCases.backActions(context),
+      backActions: welcomeViewUseCases.backActions(context),
       backgroundImage: "assets/images/landing_background.png",
       content: buildContent(
         screenSize,
@@ -63,7 +63,7 @@ class _LandingViewState extends State<LandingView> {
                   context: context,
                   text: uiTexts.goLogin,
                   backgroundColor: cGreenForeground,
-                  actionsToDo: landingViewUseCases.goLogin(context),
+                  actionsToDo: welcomeViewUseCases.goLogin(context),
                 ),
               ),
               const SizedBox(height: 20),
@@ -73,7 +73,7 @@ class _LandingViewState extends State<LandingView> {
                   context: context,
                   text: uiTexts.goSignUp,
                   backgroundColor: cWhiteOpacity30,
-                  actionsToDo: landingViewUseCases.goSignUp(context),
+                  actionsToDo: welcomeViewUseCases.goSignUp(context),
                 ),
               ),
             ],

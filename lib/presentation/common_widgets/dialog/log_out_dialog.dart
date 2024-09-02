@@ -28,7 +28,7 @@ class LogOutDialog extends StatelessWidget {
         style: styleRegular(14, cWhite),
         textAlign: TextAlign.center,
       ),
-      backgroundColor: cBlueTransparent75,
+      backgroundColor: cBlueTransparent90,
       borderColor: cWhite,
       borderWidth: 1,
       firstButtonText: uiTexts.yes,
@@ -37,7 +37,7 @@ class LogOutDialog extends StatelessWidget {
         Navigator.pop(context);
         SystemNavigator.pop();
       },
-      firstButtonColor: cBlueTransparent75,
+      firstButtonColor: cBlueTransparent90,
       firstButtonBorderColor: cWhite,
       firstButtonBorderWidth: 1,
       firstButtonSize: const Size(80, 24),

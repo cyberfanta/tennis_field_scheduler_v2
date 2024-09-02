@@ -27,6 +27,18 @@ class UiTextEs {
     return "Regístrate";
   }
 
+  String get goSignUp3 {
+    return "Registro";
+  }
+
+  String get hintName {
+    return "Nombre y apellido";
+  }
+
+  String get nameError {
+    return "Verifica tu nombre";
+  }
+
   String get email {
     return "Email";
   }
@@ -35,12 +47,40 @@ class UiTextEs {
     return "Escribe tu correo";
   }
 
+  String get emailError {
+    return "Verifica tu correo";
+  }
+
   String get pass {
     return "Contraseña";
   }
 
+  String get confirmPass {
+    return "Confirmar contraseña";
+  }
+
   String get hintPass {
     return "Escribe tu clave";
+  }
+
+  String get passError1 {
+    return "Tu clave debe tener una minúscula, una mayúscula, un número y un caracter entre \$@!%*?&_.";
+  }
+
+  String get passError2 {
+    return "Clave muy corta";
+  }
+
+  String get confirmPassError {
+    return "Clave no coincide";
+  }
+
+  String get hintPhone {
+    return "Teléfono";
+  }
+
+  String get phoneError {
+    return "Verifica tu teléfono";
   }
 
   String get rememberPass {
@@ -55,8 +95,16 @@ class UiTextEs {
     return "¿Aun no tienes cuenta?";
   }
 
+  String get youHaveAccount {
+    return "Ya tengo cuenta";
+  }
+
   String get warning {
     return "Advertencia!!!";
+  }
+
+  String get info {
+    return "Información!!!";
   }
 
   String get closeAppContext {
@@ -73,5 +121,29 @@ class UiTextEs {
 
   String get no {
     return "No";
+  }
+
+  String get nameEmpty {
+    return "No se puede ingresar - Nombre vacío";
+  }
+
+  String get emailEmpty {
+    return "No se puede ingresar - Email vacío";
+  }
+
+  String get phoneEmpty {
+    return "No se puede ingresar - Teléfono vacío";
+  }
+
+  String get passEmpty {
+    return "No se puede ingresar - Contraseña vacía";
+  }
+
+  String get noData {
+    return "No se puede ingresar - No hay una cuenta registrada";
+  }
+
+  String get wrongCredential {
+    return "No se puede ingresar - Credenciales incorrectas";
   }
 }

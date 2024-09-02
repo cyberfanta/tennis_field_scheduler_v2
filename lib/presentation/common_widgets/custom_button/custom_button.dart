@@ -10,13 +10,15 @@ class CustomButton extends StatelessWidget {
     required this.context,
     required this.text,
     this.backgroundColor = cBlack,
-    required this.actionsToDo,
+    this.textColor = cWhite,
+    this.actionsToDo,
   });
 
   final BuildContext context;
   final String text;
   final Color backgroundColor;
-  final void Function() actionsToDo;
+  final Color textColor;
+  final void Function()? actionsToDo;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class CustomButton extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           text,
-          style: styleBold(16, cWhite),
+          style: styleBold(16, textColor),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
