@@ -10,21 +10,23 @@ import '../behaviors/ontap_wrapper.dart';
 import 'custom_dropdown_data_cubit.dart';
 import 'custom_dropdown_open_cubit.dart';
 
-class CustomDropdown extends StatelessWidget {
-  const CustomDropdown({
+class CustomDropdownWithTitle extends StatelessWidget {
+  const CustomDropdownWithTitle({
     super.key,
     required this.index,
     required this.list,
+    required this.title,
     required this.hint,
     this.focusNode,
   });
 
   final int index;
   final List<String> list;
+  final String title;
   final String hint;
   final FocusNode? focusNode;
 
-  final String _tag = "CustomDropdown";
+  final String _tag = "CustomDropdownWithTitle";
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class CustomDropdown extends StatelessWidget {
                     height: height,
                     decoration: BoxDecoration(
                       color: cWhite,
-                      border: Border.all(color: cBlack, width: 1),
+                      border: Border.all(color: cCardBorder, width: 1),
                       borderRadius: isOpen[index]
                           ? const BorderRadius.only(
                               topRight: Radius.circular(4),
@@ -137,15 +139,15 @@ class CustomDropdown extends StatelessWidget {
                           color: cWhite,
                           border: Border(
                             bottom: BorderSide(
-                              color: cBlack,
+                              color: cCardBorder,
                               width: 1,
                             ),
                             left: BorderSide(
-                              color: cBlack,
+                              color: cCardBorder,
                               width: 1,
                             ),
                             right: BorderSide(
-                              color: cBlack,
+                              color: cCardBorder,
                               width: 1,
                             ),
                           ),

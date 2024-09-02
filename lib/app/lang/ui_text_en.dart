@@ -198,4 +198,32 @@ class UiTextEn {
   String get notAvailable {
     return "Not available";
   }
+
+  String get perHour {
+    return "Per hour";
+  }
+
+  String get addTeacher {
+    return "Add teacher";
+  }
+
+  String get dateTime {
+    return "Set date and time";
+  }
+
+  String get date {
+    return "Date";
+  }
+
+  String get initHour {
+    return "Begin hour";
+  }
+
+  String get endHour {
+    return "End hour";
+  }
+
+  String get addComment {
+    return "Add comment";
+  }
 }

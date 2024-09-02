@@ -194,4 +194,32 @@ class UiTextEs {
   String get notAvailable {
     return "No disponible";
   }
+
+  String get perHour {
+    return "Por hora";
+  }
+
+  String get addTeacher {
+    return "Agregar instructor";
+  }
+
+  String get dateTime {
+    return "Establecer fecha y hora";
+  }
+
+  String get date {
+    return "Fecha";
+  }
+
+  String get initHour {
+    return "Hora de inicio";
+  }
+
+  String get endHour {
+    return "Hora de fin";
+  }
+
+  String get addComment {
+    return "Agregar un comentario";
+  }
 }

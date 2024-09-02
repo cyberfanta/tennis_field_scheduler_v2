@@ -415,4 +415,60 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().notAvailable;
   }
+
+  String get perHour {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().perHour;
+    }
+
+    return UiTextEn().perHour;
+  }
+
+  String get addTeacher {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().addTeacher;
+    }
+
+    return UiTextEn().addTeacher;
+  }
+
+  String get dateTime {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().dateTime;
+    }
+
+    return UiTextEn().dateTime;
+  }
+
+  String get date {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().date;
+    }
+
+    return UiTextEn().date;
+  }
+
+  String get initHour {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().initHour;
+    }
+
+    return UiTextEn().initHour;
+  }
+
+  String get endHour {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().endHour;
+    }
+
+    return UiTextEn().endHour;
+  }
+
+  String get addComment {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().addComment;
+    }
+
+    return UiTextEn().addComment;
+  }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tennis_field_scheduler_v2/utils/stacks.dart';
 import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 
+import '../presentation/views/full_page_view/reserve_full_page_view.dart';
 import '../presentation/views/initial_views/welcome_view.dart';
 import '../presentation/views/inner_views/begin_view.dart';
 import '../presentation/views/inner_views/favorites_view.dart';
@@ -213,6 +214,12 @@ class ViewManager {
         pageRouteBuilder = PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
               const FavoritesView(),
+          transitionsBuilder: slideTransitionFunction,
+        );
+      case ReserveFullPageView.routeName:
+        pageRouteBuilder = PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const ReserveFullPageView(),
           transitionsBuilder: slideTransitionFunction,
         );
       default:

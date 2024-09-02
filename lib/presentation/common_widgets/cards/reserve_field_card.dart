@@ -8,6 +8,7 @@ import '../../../app/lang/ui_texts.dart';
 import '../../../app/theme/ui_text_styles.dart';
 import '../../../domain/entities/field_schedule.dart';
 import '../../../domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart';
+import '../../views/full_page_view/reserve_full_page_view.dart';
 
 class ReserveFieldCard extends StatefulWidget {
   const ReserveFieldCard({
@@ -42,6 +43,8 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
 
   @override
   Widget build(BuildContext context) {
+    String tag = ReserveFullPageView.routeName
+        .substring(1, ReserveFullPageView.routeName.length);
     UiTexts uiTexts = Provider.of<UiTexts>(context);
     double margin = 16;
 
@@ -171,7 +174,8 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
               context: context,
               text: uiTexts.reserve,
               backgroundColor: cGreenForeground,
-              actionsToDo: reserveFieldCardUseCases.goReserve(context),
+              actionsToDo: reserveFieldCardUseCases.goReserve(
+                  tag, context, widget.field),
             ),
           ),
           const SizedBox(height: 12),

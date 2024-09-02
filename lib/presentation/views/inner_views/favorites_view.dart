@@ -83,10 +83,10 @@ class _FavoritesViewState extends State<FavoritesView> {
                 itemCount: 5,
               ),
               const SizedBox(height: 20),
-              const LowerMargin(),
             ],
           ),
         ),
+        const LowerMargin(),
       ],
     );
   }

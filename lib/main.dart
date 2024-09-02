@@ -4,7 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/backgrounds/error_message_cubit.dart';
+import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_dropdown/custom_dropdown_data_cubit.dart';
+import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_dropdown/custom_dropdown_open_cubit.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/menu/menu_cubit.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/full_page_view/reserve_full_page_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/begin_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/favorites_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/initial_views/welcome_view.dart';
@@ -40,6 +43,12 @@ void main() {
           BlocProvider<SignUpViewCubit>(
             create: (context) => SignUpViewCubit(),
           ),
+          BlocProvider<CustomDropdownOpenCubit>(
+            create: (context) => CustomDropdownOpenCubit(),
+          ),
+          BlocProvider<CustomDropdownDataCubit>(
+            create: (context) => CustomDropdownDataCubit(),
+          ),
         ],
         child: const MyApp(),
       ),
@@ -63,6 +72,8 @@ class MyApp extends StatelessWidget {
         BeginView.routeName: (context) => const BeginView(),
         ReservationsView.routeName: (context) => const ReservationsView(),
         FavoritesView.routeName: (context) => const FavoritesView(),
+
+        ReserveFullPageView.routeName: (context) => const ReserveFullPageView(),
       },
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,

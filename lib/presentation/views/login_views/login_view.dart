@@ -236,13 +236,13 @@ class _LoginViewState extends State<LoginView> {
                         ),
                       ],
                     ),
-                    const LowerMargin(hasKeyboard: true),
                   ],
                 ),
               ],
             ),
           ),
         ),
+        const LowerMargin(hasKeyboard: true),
       ],
     );
   }

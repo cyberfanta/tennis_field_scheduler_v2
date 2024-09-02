@@ -19,7 +19,24 @@ String turnTimeStampIntoAsianDate(String timestamp) {
   DateTime date = DateTime.parse(timestamp);
   final localTimeZone = DateTime.now().timeZoneOffset;
   date = date.add(localTimeZone);
-  return DateFormat('yyyy-mm-dd').format(date);
+  return DateFormat('yyyy-MM-dd').format(date);
+}
+
+String turnTimeStampIntoLatinDate(String timestamp) {
+  if (timestamp.isEmpty) {
+    return "";
+  }
+
+  DateTime date = DateTime.parse(timestamp);
+  final localTimeZone = DateTime.now().timeZoneOffset;
+  date = date.add(localTimeZone);
+  return DateFormat('dd-MM-yyyy').format(date);
+}
+
+String turnDateTimeIntoLatinDate(DateTime date) {
+  final localTimeZone = DateTime.now().timeZoneOffset;
+  date = date.add(localTimeZone);
+  return DateFormat('dd-MM-yyyy').format(date);
 }
 
 String turnTimeStampIntoTime(String timestamp) {

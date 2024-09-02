@@ -134,10 +134,10 @@ class _BeginViewState extends State<BeginView> {
                 itemCount: 3,
               ),
               const SizedBox(height: 20),
-              const LowerMargin(),
             ],
           ),
         ),
+        const LowerMargin(),
       ],
     );
   }

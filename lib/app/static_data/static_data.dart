@@ -5,3 +5,5 @@ import '../../utils/view_manager.dart';
 ViewManager viewManager = ViewManager();
 
 late BaseUser currentUser;
+
+List<String> teachers = ["Mark Gonzales", "Julio León", "Solange García"];

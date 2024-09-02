@@ -3,7 +3,7 @@ import '../domain/entities/field_schedule.dart';
 String getNextAvailableHour(String field, DateTime currentDate) {
   final FieldSchedule fieldSchedule = fields.firstWhere(
     (h) => h.name == field,
-    orElse: () => const FieldSchedule("", FieldType.a, "", "", []),
+    orElse: () => const FieldSchedule("", FieldType.a, "", "", "", 0, "", []),
   );
 
   if (fieldSchedule.name == "") {

@@ -107,10 +107,10 @@ class _ReservationsViewState extends State<ReservationsView> {
                 itemCount: 5,
               ),
               const SizedBox(height: 20),
-              const LowerMargin(),
             ],
           ),
         ),
+        const LowerMargin(),
       ],
     );
   }

@@ -8,7 +8,9 @@ const cBlack = Color.fromRGBO(30, 30, 30, 1);
 const cRed = Color.fromRGBO(255, 0, 0, 1);
 const cGreen = Color.fromRGBO(0, 145, 0, 1);
 const cGray = Color.fromRGBO(205, 205, 205, 1);
+const cGray2 = Color(0xFF9B9C9D);
 const cBlue = Color(0xFF346BC3);
+const cBlueLight = Color(0xFFF4F7FC);
 
 const cGreenForeground = Color(0xFF82BC00);
 
