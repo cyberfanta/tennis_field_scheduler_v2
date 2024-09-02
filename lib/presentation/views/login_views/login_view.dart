@@ -12,6 +12,7 @@ import '../../../domain/use_cases/login_views/login_view_cubit.dart';
 import '../../../domain/use_cases/login_views/login_view_use_cases.dart';
 import '../../common_widgets/backgrounds/base_background.dart';
 import '../../common_widgets/custom_button/custom_button.dart';
+import '../../common_widgets/other_widgets/lower_margin.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -235,7 +236,7 @@ class _LoginViewState extends State<LoginView> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 340),
+                    const LowerMargin(hasKeyboard: true),
                   ],
                 ),
               ],

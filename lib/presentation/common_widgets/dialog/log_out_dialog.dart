@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:tennis_field_scheduler_v2/presentation/common_widgets/dialog/two_button_dialog.dart';
+import 'package:tennis_field_scheduler_v2/presentation/common_widgets/dialog/templates/two_button_dialog.dart';
 
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/theme/ui_colors.dart';

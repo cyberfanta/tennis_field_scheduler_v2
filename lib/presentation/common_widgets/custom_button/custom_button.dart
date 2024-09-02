@@ -11,6 +11,8 @@ class CustomButton extends StatelessWidget {
     required this.text,
     this.backgroundColor = cBlack,
     this.textColor = cWhite,
+    this.textStyle,
+    this.imageIcon,
     this.actionsToDo,
   });
 
@@ -18,6 +20,8 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Color backgroundColor;
   final Color textColor;
+  final TextStyle? textStyle;
+  final Widget? imageIcon;
   final void Function()? actionsToDo;
 
   @override
@@ -31,11 +35,20 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         alignment: Alignment.center,
-        child: Text(
-          text,
-          style: styleBold(16, textColor),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            imageIcon != null ? imageIcon! : const SizedBox.shrink(),
+            imageIcon != null
+                ? const SizedBox(width: 14.5)
+                : const SizedBox.shrink(),
+            Text(
+              text,
+              style: textStyle ?? styleBold(16, textColor),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
         ),
       ),
       actionsToDo: actionsToDo,

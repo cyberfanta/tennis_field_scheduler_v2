@@ -5,6 +5,7 @@ import 'package:tennis_field_scheduler_v2/app/theme/ui_colors.dart';
 
 import '../../../app/lang/ui_texts.dart';
 import '../../../domain/use_cases/menu/menu_use_cases.dart';
+import '../other_widgets/lower_margin.dart';
 import 'menu_card.dart';
 
 class Menu extends StatelessWidget {
@@ -24,7 +25,7 @@ class Menu extends StatelessWidget {
       sigma: 6,
       child: Container(
         width: double.infinity,
-        height: 74,
+        height: menuHeight,
         alignment: Alignment.center,
         decoration: const BoxDecoration(
           color: cWhite,

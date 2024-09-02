@@ -319,4 +319,52 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().wrongCredential;
   }
+
+  String get fields {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().fields;
+    }
+
+    return UiTextEn().fields;
+  }
+
+  String get hello {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().hello;
+    }
+
+    return UiTextEn().hello;
+  }
+
+  String get scheduledReserves {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().scheduledReserves;
+    }
+
+    return UiTextEn().scheduledReserves;
+  }
+
+  String get scheduleReserve {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().scheduleReserve;
+    }
+
+    return UiTextEn().scheduleReserve;
+  }
+
+  String get myReserves {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().myReserves;
+    }
+
+    return UiTextEn().myReserves;
+  }
+
+  String get myFavorites {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().myFavorites;
+    }
+
+    return UiTextEn().myFavorites;
+  }
 }

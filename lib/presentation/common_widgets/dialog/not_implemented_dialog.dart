@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
-import 'one_button_dialog.dart';
+import 'templates/one_button_dialog.dart';
 
 class NotImplementedDialog extends StatelessWidget {
   const NotImplementedDialog({

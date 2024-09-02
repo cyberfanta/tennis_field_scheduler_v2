@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="" />
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Login View): Login and Sign up view full functional.">
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/other_widgets/lower_margin.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/other_widgets/upper_margin.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/separator/custom_separator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/theme/ui_colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/ui_colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/reservations_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/reservations_view_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/backgrounds/base_background.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/backgrounds/base_background.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/log_out_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/log_out_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/not_implemented_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/not_implemented_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/one_button_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/one_button_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/two_button_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/two_button_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/menu/menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/menu/menu.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/login_views/login_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/login_views/login_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/login_views/signup_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/login_views/signup_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tennis_field_scheduler_v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tennis_field_scheduler_v2.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,19 +37,36 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="8bf64b9a-4f1f-4f43-a8e3-86cc5eb6e3d2" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Google/AndroidStudio2024.1/device-explorer/430x932 API 35/_/data/data/com.example.tennis_field_scheduler_v2/shared_prefs/FlutterSharedPreferences.xml" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2lQs09kva04posXR5ueoRmzpo9r" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Flutter.main.dart.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -33,10 +74,32 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
+    "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/lib/presentation/common_widgets/other_widgets",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.android.studio.ml.bot.mainConfigurable",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\other_widgets" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\login_views" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\dialog" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\utils" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\initial_view" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\dialog\templates" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\backgrounds" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\views\inner_view" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\views\initial_view" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\login_view" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -46,6 +109,85 @@
       <option name="presentableId" value="Default" />
       <updated>1725123408421</updated>
     </task>
+    <task id="LOCAL-00001" summary="Feat (Base Setting): Base setting to the UI and scaffold for future views and logic.">
+      <option name="closed" value="true" />
+      <created>1725143273185</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725143273185</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Feat (Base Setting): App bar final ui update.">
+      <option name="closed" value="true" />
+      <created>1725160498315</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725160498316</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Feat (Base Setting): Navigation between landing, login/signup and inner views.">
+      <option name="closed" value="true" />
+      <created>1725167690577</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725167690577</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Feat (Icon): Uploading icons from Adobe XD.">
+      <option name="closed" value="true" />
+      <created>1725169034026</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725169034026</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Feat (Login View): Custom input and majority of login view functionalities done.">
+      <option name="closed" value="true" />
+      <created>1725175996441</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1725175996441</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Feat (Login View): Custom dialogs to improve UX.">
+      <option name="closed" value="true" />
+      <created>1725205052589</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725205052589</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Feat (Login View): Login and Sign up view full functional.">
+      <option name="closed" value="true" />
+      <created>1725250766218</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725250766218</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Feat (Base Setting): Base setting to the UI and scaffold for future views and logic." />
+    <MESSAGE value="Feat (Base Setting): App bar final ui update." />
+    <MESSAGE value="Feat (Base Setting): Navigation between landing, login/signup and inner views." />
+    <MESSAGE value="Feat (Icon): Uploading icons from Adobe XD." />
+    <MESSAGE value="Feat (Login View): Custom input and majority of login view functionalities done." />
+    <MESSAGE value="Feat (Login View): Custom dialogs to improve UX." />
+    <MESSAGE value="Feat (Login View): Login and Sign up view full functional." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Login View): Login and Sign up view full functional." />
   </component>
 </project>

@@ -150,4 +150,28 @@ class UiTextEn {
   String get wrongCredential {
     return "Can not login - Credential do not match";
   }
+
+  String get fields {
+    return "Fields";
+  }
+
+  String get hello {
+    return "Hello";
+  }
+
+  String get scheduledReserves {
+    return "Scheduled reserves";
+  }
+
+  String get scheduleReserve {
+    return "Schedule a reserve";
+  }
+
+  String get myReserves {
+    return "My reserves";
+  }
+
+  String get myFavorites {
+    return "My favorites";
+  }
 }

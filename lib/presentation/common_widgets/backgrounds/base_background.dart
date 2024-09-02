@@ -9,6 +9,7 @@ import '../../../app/theme/ui_text_styles.dart';
 import '../app_bar/app_bar.dart';
 import '../behaviors/ontap_wrapper.dart';
 import '../menu/menu.dart';
+import '../other_widgets/upper_margin.dart';
 import 'error_message_cubit.dart';
 
 class BaseBackground extends StatelessWidget {
@@ -40,11 +41,8 @@ class BaseBackground extends StatelessWidget {
     UiTexts uiTexts = Provider.of<UiTexts>(context);
     Size screenSize = MediaQuery.of(context).size;
 
-    double safeAreaTop = 40;
     double sideMargin = 32;
     Size touchingArea = Size(sideMargin + 40, safeAreaTop + 40);
-
-    double appBarHeight = 64;
 
     return PopScope(
       canPop: false,

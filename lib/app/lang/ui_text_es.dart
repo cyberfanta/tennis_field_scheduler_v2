@@ -146,4 +146,28 @@ class UiTextEs {
   String get wrongCredential {
     return "No se puede ingresar - Credenciales incorrectas";
   }
+
+  String get fields {
+    return "Canchas";
+  }
+
+  String get hello {
+    return "Hola";
+  }
+
+  String get scheduledReserves {
+    return "Reservas programadas";
+  }
+
+  String get scheduleReserve {
+    return "Programar reserva";
+  }
+
+  String get myReserves {
+    return "Mis reservas";
+  }
+
+  String get myFavorites {
+    return "Mis favoritos";
+  }
 }

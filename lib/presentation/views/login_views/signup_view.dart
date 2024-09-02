@@ -11,6 +11,7 @@ import '../../common_widgets/backgrounds/base_background.dart';
 import '../../common_widgets/behaviors/ontap_wrapper.dart';
 import '../../common_widgets/custom_button/custom_button.dart';
 import '../../common_widgets/custom_input_text/custom_input_text.dart';
+import '../../common_widgets/other_widgets/lower_margin.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -263,7 +264,7 @@ class _SignUpViewState extends State<SignUpView> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 340),
+                    const LowerMargin(hasKeyboard: true),
                   ],
                 ),
               ],

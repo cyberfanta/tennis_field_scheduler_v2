@@ -10,6 +10,8 @@ class ReservationsViewUseCases {
         context.read<MenuCubit>().setData(1);
       };
 
+  Future<void> Function() goReserve(BuildContext context) => () async {};
+
   Future<void> Function() backActions(String tag, BuildContext context) =>
       () async {
         stamp(tag, "Button Pressed: \"Back\"",
