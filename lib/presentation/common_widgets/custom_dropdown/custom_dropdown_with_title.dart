@@ -30,7 +30,6 @@ class CustomDropdownWithTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = 50;
     double maxHeight = 42 * 5.7;
 
     return BlocBuilder<CustomDropdownOpenCubit, List<bool>>(
@@ -42,7 +41,6 @@ class CustomDropdownWithTitle extends StatelessWidget {
               children: [
                 OnTapWrapper(
                   widgetToWrap: Container(
-                    height: height,
                     decoration: BoxDecoration(
                       color: cWhite,
                       border: Border.all(color: cCardBorder, width: 1),
@@ -53,64 +51,78 @@ class CustomDropdownWithTitle extends StatelessWidget {
                             )
                           : BorderRadius.circular(4),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                          child: Text(
-                            data[index] != -1
-                                ? list[data[index]]
-                                : hint,
-                            style: styleRegular(14, cBlack),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                        const SizedBox(height: 6),
+                        Text(
+                          title,
+                          style: styleRegular(12, cBlack),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        Container(
-                          width: 30,
-                          height: 30,
-                          alignment: Alignment.center,
-                          child: SvgPicture.asset(
-                            width: 20,
-                            isOpen[index]
-                                ? "assets/images/dropdown_opened.svg"
-                                : "assets/images/dropdown_closed.svg",
-                            fit: isOpen[index]
-                                ? BoxFit.fitHeight
-                                : BoxFit.fitWidth,
-                            clipBehavior: Clip.hardEdge,
-                            colorFilter: const ColorFilter.mode(
-                              cBlack,
-                              BlendMode.srcIn,
+                        const SizedBox(height: 4),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                data[index] != -1 ? list[data[index]] : hint,
+                                style: styleRegular(
+                                    14, data[index] != -1 ? cBlack : cGray2),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                          ),
-                        ),
-                        data[index] != -1
-                            ? OnTapWrapper(
-                                widgetToWrap: Container(
-                                  width: 30,
-                                  height: 30,
-                                  alignment: Alignment.center,
-                                  child: SvgPicture.asset(
-                                    width: 20,
-                                    "assets/images/x.svg",
-                                    colorFilter: const ColorFilter.mode(
-                                      cBlack,
-                                      BlendMode.srcIn,
-                                    ),
-                                  ),
+                            Container(
+                              width: 30,
+                              height: 30,
+                              alignment: Alignment.center,
+                              child: SvgPicture.asset(
+                                width: 20,
+                                isOpen[index]
+                                    ? "assets/images/dropdown_opened.svg"
+                                    : "assets/images/dropdown_closed.svg",
+                                fit: isOpen[index]
+                                    ? BoxFit.fitHeight
+                                    : BoxFit.fitWidth,
+                                clipBehavior: Clip.hardEdge,
+                                colorFilter: const ColorFilter.mode(
+                                  cBlack,
+                                  BlendMode.srcIn,
                                 ),
-                                actionsToDo: () {
-                                  stamp(_tag, "Dropdown: $hint - Reset");
-                                  context
-                                      .read<CustomDropdownOpenCubit>()
-                                      .reset();
-                                  context
-                                      .read<CustomDropdownDataCubit>()
-                                      .reset();
-                                },
-                              )
-                            : const SizedBox.shrink(),
+                              ),
+                            ),
+                            data[index] != -1
+                                ? OnTapWrapper(
+                                    widgetToWrap: Container(
+                                      width: 30,
+                                      height: 30,
+                                      alignment: Alignment.center,
+                                      child: SvgPicture.asset(
+                                        width: 20,
+                                        "assets/images/x.svg",
+                                        colorFilter: const ColorFilter.mode(
+                                          cBlack,
+                                          BlendMode.srcIn,
+                                        ),
+                                      ),
+                                    ),
+                                    actionsToDo: () {
+                                      stamp(_tag, "Dropdown: $hint - Reset");
+                                      context
+                                          .read<CustomDropdownOpenCubit>()
+                                          .reset();
+                                      context
+                                          .read<CustomDropdownDataCubit>()
+                                          .reset();
+                                    },
+                                  )
+                                : const SizedBox.shrink(),
+                          ],
+                        ),
                       ],
                     ),
                   ),

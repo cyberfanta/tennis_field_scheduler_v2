@@ -11,6 +11,7 @@ import '../../../presentation/views/inner_views/begin_view.dart';
 import '../../../presentation/views/login_views/signup_view.dart';
 import '../../../utils/stamp.dart';
 import '../../entities/base_user.dart';
+import '../../entities/scheduled_field.dart';
 
 class SignUpViewUseCases {
   final String _tag =
@@ -69,6 +70,7 @@ class SignUpViewUseCases {
 
         stamp(_tag, "Sign up success!!!");
         currentUser = baseUser;
+        scheduleList.value = defaultScheduled;
 
         await repository.saveLogin(baseUser);
 

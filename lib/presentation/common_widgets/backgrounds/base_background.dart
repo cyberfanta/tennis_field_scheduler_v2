@@ -15,17 +15,17 @@ import 'error_message_cubit.dart';
 class BaseBackground extends StatelessWidget {
   const BaseBackground({
     super.key,
-    required this.backActions,
     this.backgroundColor,
     this.backgroundImage = "",
     this.hasBackButton = false,
     this.hasFavoriteButton = false,
     this.hasAppBar = false,
     this.hasMenu = false,
+    this.favoriteActions,
+    required this.backActions,
     required this.content,
   });
 
-  final Future<void> Function() backActions;
   final Color? backgroundColor;
   final String backgroundImage;
 
@@ -33,6 +33,9 @@ class BaseBackground extends StatelessWidget {
   final bool hasFavoriteButton;
   final bool hasAppBar;
   final bool hasMenu;
+
+  final Future<void> Function()? favoriteActions;
+  final Future<void> Function() backActions;
 
   final Widget content;
 
@@ -105,7 +108,7 @@ class BaseBackground extends StatelessWidget {
                           fit: BoxFit.none,
                         ),
                       ),
-                      actionsToDo: backActions,
+                      actionsToDo: favoriteActions,
                     ),
                   )
                 : const SizedBox.shrink(),

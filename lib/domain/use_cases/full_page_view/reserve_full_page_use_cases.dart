@@ -3,12 +3,20 @@ import 'package:flutter/material.dart';
 import '../../../app/static_data/static_data.dart';
 import '../../../presentation/views/full_page_view/reserve_full_page_view.dart';
 import '../../../utils/stamp.dart';
+import '../../entities/field_schedule.dart';
+
+late TennisField fieldSelected;
 
 class ReserveFullPageViewUseCases {
   final String _tag = ReserveFullPageView.routeName
       .substring(1, ReserveFullPageView.routeName.length);
 
   Future<void> Function() initState(BuildContext context) => () async {};
+
+  Future<void> Function() toggleFavorite(BuildContext context) => () async {
+        stamp(_tag, "Button Pressed: \"toggleFavorite\"",
+            decoratorChar: " * ", extraLine: true);
+      };
 
   Future<void> Function() makeReserve(BuildContext context) => () async {
         stamp(_tag, "Button Pressed: \"makeReserve\"",

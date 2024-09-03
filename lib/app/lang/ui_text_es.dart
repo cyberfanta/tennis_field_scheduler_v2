@@ -222,4 +222,16 @@ class UiTextEs {
   String get addComment {
     return "Agregar un comentario";
   }
+
+  String get reservedBy {
+    return "Reservado por";
+  }
+
+  String get hours {
+    return "horas";
+  }
+
+  String get noSchedules {
+    return "No hay reservaciones hechas";
+  }
 }

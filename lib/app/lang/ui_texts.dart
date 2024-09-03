@@ -471,4 +471,28 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().addComment;
   }
+
+  String get reservedBy {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().reservedBy;
+    }
+
+    return UiTextEn().reservedBy;
+  }
+
+  String get hours {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().hours;
+    }
+
+    return UiTextEn().hours;
+  }
+
+  String get noSchedules {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().noSchedules;
+    }
+
+    return UiTextEn().noSchedules;
+  }
 }

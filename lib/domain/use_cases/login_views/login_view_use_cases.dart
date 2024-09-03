@@ -13,6 +13,7 @@ import '../../../presentation/common_widgets/dialog/not_implemented_dialog.dart'
 import '../../../presentation/views/login_views/login_view.dart';
 import '../../../utils/stamp.dart';
 import '../../entities/base_user.dart';
+import '../../entities/scheduled_field.dart';
 
 class LoginViewUseCases {
   final String _tag =
@@ -107,6 +108,7 @@ class LoginViewUseCases {
         await repository.saveLogin(savingUser);
 
         currentUser = savingUser;
+        scheduleList.value = defaultScheduled;
 
         viewManager.setControlPoint(BeginView.routeName);
         // ignore: use_build_context_synchronously

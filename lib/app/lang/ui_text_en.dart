@@ -226,4 +226,16 @@ class UiTextEn {
   String get addComment {
     return "Add comment";
   }
+
+  String get reservedBy {
+    return "Reserved by";
+  }
+
+  String get hours {
+    return "hours";
+  }
+
+  String get noSchedules {
+    return "No schedules has been set";
+  }
 }

@@ -4,38 +4,33 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Begin View): Reserve field card ready.">
-      <change afterPath="$PROJECT_DIR$/assets/images/dropdown_opened.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/field_1_cropped.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/field_2_cropped.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/field_3_cropped.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/x.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_dropdown/custom_dropdown_with_title.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_input_text/custom_clean_input_text.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" afterDir="false" />
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Reserve Full Page View): Scaffold ready for logic and states.">
+      <change afterPath="$PROJECT_DIR$/assets/images/delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/entities/scheduled_field.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/behaviors/dismissable_wrapper.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card_2.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/other_widgets/delete_icon.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/dropdown_close.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/dropdown_closed.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/static_data/static_data_query_urls.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/static_data/static_data_us_states.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/theme/ui_colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/ui_colors.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/domain/entities/field_schedule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/entities/field_schedule.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/login_views/signup_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/login_views/signup_view_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/app_bar/app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/app_bar/app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/backgrounds/base_background.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/backgrounds/base_background.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_dropdown/custom_dropdown.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_dropdown/custom_dropdown.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_dropdown/custom_dropdown_with_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_dropdown/custom_dropdown_with_title.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/login_views/login_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/login_views/login_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/login_views/signup_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/login_views/signup_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/utils/get_next_available_hour.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/get_next_available_hour.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_us_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_us_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/view_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/view_manager.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +79,7 @@
     "git-widget-placeholder": "master",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/lib/presentation/common_widgets/custom_input_text",
+    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/lib/presentation/common_widgets/cards",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -94,11 +89,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\cards" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\custom_input_text" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\custom_dropdown" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\other_widgets" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\login_views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\inner_views\begin_view" />
@@ -189,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725308156246</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Feat (Reserve Full Page View): Scaffold ready for logic and states.">
+      <option name="closed" value="true" />
+      <created>1725315029595</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1725315029595</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,6 +217,7 @@
     <MESSAGE value="Feat (Login View): Login and Sign up view full functional." />
     <MESSAGE value="Feat (Inner View): Scaffold for inner views." />
     <MESSAGE value="Feat (Begin View): Reserve field card ready." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Begin View): Reserve field card ready." />
+    <MESSAGE value="Feat (Reserve Full Page View): Scaffold ready for logic and states." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Reserve Full Page View): Scaffold ready for logic and states." />
   </component>
 </project>
