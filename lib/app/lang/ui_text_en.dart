@@ -246,4 +246,8 @@ class UiTextEn {
   String get wrongDates {
     return "Starting date must be before the ending date";
   }
+
+  String get addedFavorite {
+    return "Item added to favorites";
+  }
 }

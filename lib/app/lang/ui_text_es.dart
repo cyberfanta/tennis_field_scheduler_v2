@@ -242,4 +242,8 @@ class UiTextEs {
   String get wrongDates {
     return "La fecha inicial debe estar antes que la fecha final";
   }
+
+  String get addedFavorite {
+    return "Item agregado a favoritos";
+  }
 }

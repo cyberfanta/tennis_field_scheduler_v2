@@ -107,7 +107,8 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      availableDate,
+                      buildAvailableDates(
+                          availableDate, widget.field.availableDates),
                       style: styleRegular(12, cBlack),
                     ),
                     const Expanded(child: SizedBox.shrink()),
@@ -138,7 +139,9 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
                           const SizedBox(width: 4),
                           Expanded(
                             child: Text(
-                              availableDate,
+                              widget.field.availableHours.isEmpty
+                                  ? availableDate
+                                  : "${widget.field.availableHours[0]} - ${widget.field.availableHours.last}",
                               style: styleRegular(12, cBlack),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
@@ -182,5 +185,44 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
         ],
       ),
     );
+  }
+
+  String buildAvailableDates(
+      String defaultText, List<FieldDays> availableDates) {
+    String answer = "";
+
+    if (availableDates.isEmpty) {
+      return defaultText;
+    }
+
+    if (availableDates.contains(FieldDays.monday)) {
+      answer += "Lunes, ";
+    }
+
+    if (availableDates.contains(FieldDays.tuesday)) {
+      answer += "Martes, ";
+    }
+
+    if (availableDates.contains(FieldDays.wednesday)) {
+      answer += "Miercole, ";
+    }
+
+    if (availableDates.contains(FieldDays.thursday)) {
+      answer += "Jueves, ";
+    }
+
+    if (availableDates.contains(FieldDays.friday)) {
+      answer += "Viernes, ";
+    }
+
+    if (availableDates.contains(FieldDays.saturday)) {
+      answer += "Sabado, ";
+    }
+
+    if (availableDates.contains(FieldDays.sunday)) {
+      answer += "Domingo, ";
+    }
+
+    return answer.substring(0, answer.length - 2);
   }
 }

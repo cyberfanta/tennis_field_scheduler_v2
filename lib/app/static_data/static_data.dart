@@ -62,8 +62,8 @@ final List<TennisField> fields = [
 ValueNotifier<List<ScheduledField>> scheduleList = ValueNotifier([]);
 ValueNotifier<List<ScheduledField>> favoriteList = ValueNotifier([]);
 
-const List<ScheduledField> defaultScheduled = [
-  ScheduledField("0", 0, "06/07/2024", "5pm", 2, "Julio leon", 0, .3, true),
-  ScheduledField("1", 1, "06/07/2024", "3pm", 1, "Julio leon", 1, .6, true),
-  ScheduledField("2", 2, "06/07/2024", "4pm", 3, "Julio leon", 2, .1, false),
+List<ScheduledField> defaultScheduled = [
+  const ScheduledField("0", 0, "06/07/2024", "5pm", 2, "Julio leon", 0, .3, true),
+  const ScheduledField("1", 1, "06/07/2024", "3pm", 1, "Julio leon", 1, .6, true),
+  const ScheduledField("2", 2, "06/07/2024", "4pm", 3, "Julio leon", 2, .1, false),
 ];

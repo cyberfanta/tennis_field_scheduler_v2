@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Favorites View): Delete behavior when drag is done.">
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button_with_title.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/wrong_dates_dialog.dart" afterDir="false" />
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Reserve Full Page View): Date time picker working.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/initial_views/welcome_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/initial_views/welcome_view_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/log_out_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/log_out_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/not_implemented_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/not_implemented_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/one_button_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/one_button_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/two_button_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/two_button_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_us_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_dates.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_dates.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_dates.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -199,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725336314510</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Feat (Reserve Full Page View): Date time picker working.">
+      <option name="closed" value="true" />
+      <created>1725343777330</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1725343777330</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,6 +229,7 @@
     <MESSAGE value="Feat (Reserve Full Page View): Scaffold ready for logic and states." />
     <MESSAGE value="Feat (Begin/Reserve View): Delete behavior when drag is done." />
     <MESSAGE value="Feat (Favorites View): Delete behavior when drag is done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Favorites View): Delete behavior when drag is done." />
+    <MESSAGE value="Feat (Reserve Full Page View): Date time picker working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Reserve Full Page View): Date time picker working." />
   </component>
 </project>

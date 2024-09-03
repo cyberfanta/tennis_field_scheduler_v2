@@ -511,4 +511,12 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().wrongDates;
   }
+
+  String get addedFavorite {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().addedFavorite;
+    }
+
+    return UiTextEn().addedFavorite;
+  }
 }

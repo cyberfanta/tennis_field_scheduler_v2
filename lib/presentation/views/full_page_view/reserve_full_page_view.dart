@@ -65,6 +65,7 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
       backActions: reserveFullPageViewUseCases.backActions(context),
       hasBackButton: true,
       hasFavoriteButton: true,
+      favoriteActions: reserveFullPageViewUseCases.toggleFavorite(context, uiTexts),
       content: buildContent(
         screenSize,
         uiTexts,
@@ -332,7 +333,7 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                 context: context,
                 text: uiTexts.reserve,
                 backgroundColor: cGreenForeground,
-                actionsToDo: reserveFullPageViewUseCases.makeReserve(context),
+                actionsToDo: reserveFullPageViewUseCases.makePayment(context),
               ),
               const LowerMargin(hasKeyboard: true),
             ],

@@ -34,8 +34,8 @@ String turnTimeStampIntoLatinDate(String timestamp) {
 }
 
 String turnDateTimeIntoLatinDate(DateTime date) {
-  final localTimeZone = DateTime.now().timeZoneOffset;
-  date = date.add(localTimeZone);
+  // final localTimeZone = DateTime.now().timeZoneOffset;
+  // date = date.add(localTimeZone);
   return DateFormat('dd-MM-yyyy').format(date);
 }
 
