@@ -21,7 +21,6 @@ class ReservedFieldCard extends StatelessWidget {
   Widget build(BuildContext context) {
     UiTexts uiTexts = Provider.of<UiTexts>(context);
     TennisField field = fields[scheduledField.fieldIndex];
-    String availableDate = "Next Date";
 
     return Container(
       width: double.infinity,
@@ -58,7 +57,7 @@ class ReservedFieldCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      availableDate,
+                      scheduledField.date,
                       style: styleRegular(12, cBlack),
                     ),
                     const Expanded(child: SizedBox.shrink()),
