@@ -140,7 +140,7 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
                           Expanded(
                             child: Text(
                               widget.field.availableHours.isEmpty
-                                  ? availableDate
+                                  ? availableHours
                                   : "${widget.field.availableHours[0]} - ${widget.field.availableHours.last}",
                               style: styleRegular(12, cBlack),
                               maxLines: 1,

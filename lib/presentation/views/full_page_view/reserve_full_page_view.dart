@@ -65,7 +65,8 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
       backActions: reserveFullPageViewUseCases.backActions(context),
       hasBackButton: true,
       hasFavoriteButton: true,
-      favoriteActions: reserveFullPageViewUseCases.toggleFavorite(context, uiTexts),
+      favoriteActions:
+          reserveFullPageViewUseCases.toggleFavorite(context, uiTexts),
       content: buildContent(
         screenSize,
         uiTexts,
@@ -147,7 +148,9 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          availableDate,
+                          fieldSelected.availableHours.isEmpty
+                              ? availableHours
+                              : "${fieldSelected.availableHours[0]} - ${fieldSelected.availableHours.last}",
                           style: styleRegular(12, cBlack),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,

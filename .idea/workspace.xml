@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Reserve Full Page View): Date time picker working.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_dates.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_dates.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Card): Fixed date reserved." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -201,7 +189,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725343777330</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Feat (Reserve Full Page View): Can now create new reserves and favorites.">
+      <option name="closed" value="true" />
+      <created>1725346490891</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1725346490891</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Feat (Card): Fixed date reserved.">
+      <option name="closed" value="true" />
+      <created>1725346666956</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1725346666956</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,6 +234,8 @@
     <MESSAGE value="Feat (Begin/Reserve View): Delete behavior when drag is done." />
     <MESSAGE value="Feat (Favorites View): Delete behavior when drag is done." />
     <MESSAGE value="Feat (Reserve Full Page View): Date time picker working." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Reserve Full Page View): Date time picker working." />
+    <MESSAGE value="Feat (Reserve Full Page View): Can now create new reserves and favorites." />
+    <MESSAGE value="Feat (Card): Fixed date reserved." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Card): Fixed date reserved." />
   </component>
 </project>
