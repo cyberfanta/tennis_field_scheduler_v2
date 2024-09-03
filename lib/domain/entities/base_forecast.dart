@@ -153,7 +153,7 @@ class ForecastDay {
 
   ForecastDay.fromJson(dynamic json) {
     _date = json['date'];
-    _dateEpoch = json['date_epoch'];
+    _dateEpoch = double.parse(json['date_epoch'].toString());
     _day = json['day'] != null ? Day.fromJson(json['day']) : null;
     _astro = json['astro'] != null ? Astro.fromJson(json['astro']) : null;
     if (json['hour'] != null) {
@@ -326,41 +326,41 @@ class Hour {
   }
 
   Hour.fromJson(dynamic json) {
-    _timeEpoch = json['time_epoch'];
+    _timeEpoch = double.parse(json['time_epoch'].toString());
     _time = json['time'];
-    _tempC = json['temp_c'];
-    _tempF = json['temp_f'];
-    _isDay = json['is_day'];
+    _tempC = double.parse(json['temp_c'].toString());
+    _tempF = double.parse(json['temp_f'].toString());
+    _isDay = double.parse(json['is_day'].toString());
     _condition = json['condition'] != null
         ? Condition.fromJson(json['condition'])
         : null;
-    _windMph = json['wind_mph'];
-    _windKph = json['wind_kph'];
-    _windDegree = json['wind_degree'];
+    _windMph = double.parse(json['wind_mph'].toString());
+    _windKph = double.parse(json['wind_kph'].toString());
+    _windDegree = double.parse(json['wind_degree'].toString());
     _windDir = json['wind_dir'];
-    _pressureMb = json['pressure_mb'];
-    _pressureIn = json['pressure_in'];
-    _precipMm = json['precip_mm'];
-    _precipIn = json['precip_in'];
-    _humidity = json['humidity'];
-    _cloud = json['cloud'];
-    _feelslikeC = json['feelslike_c'];
-    _feelslikeF = json['feelslike_f'];
-    _windchillC = json['windchill_c'];
-    _windchillF = json['windchill_f'];
-    _heatindexC = json['heatindex_c'];
-    _heatindexF = json['heatindex_f'];
-    _dewpointC = json['dewpoint_c'];
-    _dewpointF = json['dewpoint_f'];
-    _willItRain = json['will_it_rain'];
-    _chanceOfRain = json['chance_of_rain'];
-    _willItSnow = json['will_it_snow'];
-    _chanceOfSnow = json['chance_of_snow'];
-    _visKm = json['vis_km'];
-    _visMiles = json['vis_miles'];
-    _gustMph = json['gust_mph'];
-    _gustKph = json['gust_kph'];
-    _uv = json['uv'];
+    _pressureMb = double.parse(json['pressure_mb'].toString());
+    _pressureIn = double.parse(json['pressure_in'].toString());
+    _precipMm = double.parse(json['precip_mm'].toString());
+    _precipIn = double.parse(json['precip_in'].toString());
+    _humidity = double.parse(json['humidity'].toString());
+    _cloud = double.parse(json['cloud'].toString());
+    _feelslikeC = double.parse(json['feelslike_c'].toString());
+    _feelslikeF = double.parse(json['feelslike_f'].toString());
+    _windchillC = double.parse(json['windchill_c'].toString());
+    _windchillF = double.parse(json['windchill_f'].toString());
+    _heatindexC = double.parse(json['heatindex_c'].toString());
+    _heatindexF = double.parse(json['heatindex_f'].toString());
+    _dewpointC = double.parse(json['dewpoint_c'].toString());
+    _dewpointF = double.parse(json['dewpoint_f'].toString());
+    _willItRain = double.parse(json['will_it_rain'].toString());
+    _chanceOfRain = double.parse(json['chance_of_rain'].toString());
+    _willItSnow = double.parse(json['will_it_snow'].toString());
+    _chanceOfSnow = double.parse(json['chance_of_snow'].toString());
+    _visKm = double.parse(json['vis_km'].toString());
+    _visMiles = double.parse(json['vis_miles'].toString());
+    _gustMph = double.parse(json['gust_mph'].toString());
+    _gustKph = double.parse(json['gust_kph'].toString());
+    _uv = double.parse(json['uv'].toString());
   }
 
   double? _timeEpoch;
@@ -565,7 +565,7 @@ class Condition {
   Condition.fromJson(dynamic json) {
     _text = json['text'];
     _icon = json['icon'];
-    _code = json['code'];
+    _code = double.parse(json['code'].toString());
   }
 
   String? _text;
@@ -636,9 +636,9 @@ class Astro {
     _moonrise = json['moonrise'];
     _moonset = json['moonset'];
     _moonPhase = json['moon_phase'];
-    _moonIllumination = json['moon_illumination'];
-    _isMoonUp = json['is_moon_up'];
-    _isSunUp = json['is_sun_up'];
+    _moonIllumination = double.parse(json['moon_illumination'].toString());
+    _isMoonUp = double.parse(json['is_moon_up'].toString());
+    _isSunUp = double.parse(json['is_sun_up'].toString());
   }
 
   String? _sunrise;
@@ -778,11 +778,11 @@ class Day {
     _totalsnowCm = json['totalsnow_cm'];
     _avgvisKm = json['avgvis_km'];
     _avgvisMiles = json['avgvis_miles'];
-    _avghumidity = json['avghumidity'];
-    _dailyWillItRain = json['daily_will_it_rain'];
-    _dailyChanceOfRain = json['daily_chance_of_rain'];
-    _dailyWillItSnow = json['daily_will_it_snow'];
-    _dailyChanceOfSnow = json['daily_chance_of_snow'];
+    _avghumidity = double.parse(json['avghumidity'].toString());
+    _dailyWillItRain = double.parse(json['daily_will_it_rain'].toString());
+    _dailyChanceOfRain = double.parse(json['daily_chance_of_rain'].toString());
+    _dailyWillItSnow = double.parse(json['daily_will_it_snow'].toString());
+    _dailyChanceOfSnow = double.parse(json['daily_chance_of_snow'].toString());
     _condition = json['condition'] != null
         ? Condition.fromJson(json['condition'])
         : null;
@@ -984,24 +984,24 @@ class Current {
   }
 
   Current.fromJson(dynamic json) {
-    _lastUpdatedEpoch = json['last_updated_epoch'];
+    _lastUpdatedEpoch = double.parse(json['last_updated_epoch'].toString());
     _lastUpdated = json['last_updated'];
     _tempC = json['temp_c'];
     _tempF = json['temp_f'];
-    _isDay = json['is_day'];
+    _isDay = double.parse(json['is_day'].toString());
     _condition = json['condition'] != null
         ? Condition.fromJson(json['condition'])
         : null;
     _windMph = json['wind_mph'];
     _windKph = json['wind_kph'];
-    _windDegree = json['wind_degree'];
+    _windDegree = double.parse(json['wind_degree'].toString());
     _windDir = json['wind_dir'];
     _pressureMb = json['pressure_mb'];
     _pressureIn = json['pressure_in'];
     _precipMm = json['precip_mm'];
     _precipIn = json['precip_in'];
-    _humidity = json['humidity'];
-    _cloud = json['cloud'];
+    _humidity = double.parse(json['humidity'].toString());
+    _cloud = double.parse(json['cloud'].toString());
     _feelslikeC = json['feelslike_c'];
     _feelslikeF = json['feelslike_f'];
     _visKm = json['vis_km'];
@@ -1186,7 +1186,7 @@ class Location {
     _lat = json['lat'];
     _lon = json['lon'];
     _tzId = json['tz_id'];
-    _localtimeEpoch = json['localtime_epoch'];
+    _localtimeEpoch = double.parse(json['localtime_epoch'].toString());
     _localtime = json['localtime'];
   }
 

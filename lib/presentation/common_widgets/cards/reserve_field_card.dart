@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/app/theme/ui_colors.dart';
+import 'package:tennis_field_scheduler_v2/data/repository.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_button/custom_button.dart';
 
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_text_styles.dart';
+import '../../../domain/entities/base_forecast.dart';
 import '../../../domain/entities/field_schedule.dart';
 import '../../../domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart';
+import '../../../utils/get_next_available_day.dart';
 import '../../views/full_page_view/reserve_full_page_view.dart';
 
 class ReserveFieldCard extends StatefulWidget {
@@ -27,19 +30,29 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
   ReserveFieldCardUseCases reserveFieldCardUseCases =
       ReserveFieldCardUseCases();
 
-  double rainProbability = 0;
-  String availableDate = "";
+  String rainProbability = "";
+  String availableDate = "Next Date";
   bool hasAvailableHours = true;
-  String availableHours = "";
+  String availableHours = "Next Hours";
 
   @override
   void initState() {
     super.initState();
 
-    rainProbability = .3;
-    availableDate = "Next Date";
-    hasAvailableHours = true;
-    availableHours = "Next Hours";
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      Repository repository = Repository();
+      BaseForecast forecast =
+          await repository.getForecastOfDayWithDateTime(getNextClosestDay(
+        DateTime.now(),
+        widget.field.availableDates,
+      ));
+
+      rainProbability =
+          "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
+      rainProbability = rainProbability.replaceAll(".0", "%");
+
+      setState(() {});
+    });
   }
 
   @override
@@ -84,7 +97,7 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
                     ),
                     const SizedBox(width: 4),
                     Text(
-                      "${(rainProbability * 100).toInt()}%",
+                      rainProbability,
                       style: styleRegular(12, cBlack),
                     ),
                   ],

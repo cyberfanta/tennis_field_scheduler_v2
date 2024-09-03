@@ -16,7 +16,7 @@ String getNextAvailableHour(String field, DateTime currentDate) {
   final availableHours = fieldSchedule.availableHours;
 
   for (final hour in availableHours) {
-    final hourInt = int.parse(hour.replaceAll('am', ''));
+    final hourInt = int.parse(hour.replaceAll('am', '').replaceAll('pm', ''));
     if (hourInt > currentHour) {
       return hour;
     }

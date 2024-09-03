@@ -18,4 +18,17 @@ class Api {
 
     return BaseForecast.empty();
   }
+
+  Future<BaseForecast> getForecastWithoutTime(String date) async {
+    final response = await http.get(
+      Uri.parse(
+          "$baseApiUrl$forecastUrl?q=$defaultCity&days=$defaultAmountOfDays&dt=$date&key=$apiKey"),
+    );
+
+    if (response.statusCode == 200) {
+      return BaseForecast.fromJson(jsonDecode(response.body));
+    }
+
+    return BaseForecast.empty();
+  }
 }

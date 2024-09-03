@@ -8,6 +8,8 @@ import 'package:tennis_field_scheduler_v2/domain/entities/base_user.dart';
 import 'package:tennis_field_scheduler_v2/domain/entities/reserved_date.dart';
 import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 
+import '../utils/turn_timestamp_into_dates.dart';
+
 class Repository {
   final LocalData _localData = LocalData();
   final Api _api = Api();
@@ -67,5 +69,9 @@ class Repository {
 
   Future<BaseForecast> getForecast(String date, String time) {
     return _api.getForecast(date, time);
+  }
+
+  Future<BaseForecast> getForecastOfDayWithDateTime(DateTime date) {
+    return _api.getForecastWithoutTime(turnDateTimeIntoAsianDate(date));
   }
 }
