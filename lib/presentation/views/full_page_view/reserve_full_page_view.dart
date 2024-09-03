@@ -10,7 +10,10 @@ import '../../../app/lang/ui_texts.dart';
 import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
+import '../../../data/repository.dart';
+import '../../../domain/entities/base_forecast.dart';
 import '../../../domain/use_cases/full_page_view/reserve_full_page_use_cases.dart';
+import '../../../utils/get_next_available_day.dart';
 import '../../../utils/turn_timestamp_into_dates.dart';
 import '../../common_widgets/backgrounds/base_background.dart';
 import '../../common_widgets/custom_button/custom_button.dart';
@@ -33,10 +36,10 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
   ReserveFullPageViewUseCases reserveFullPageViewUseCases =
       ReserveFullPageViewUseCases();
 
-  double rainProbability = 0;
-  String availableDate = "";
+  String rainProbability = "";
+  String availableDate = "Next Date";
   bool hasAvailableHours = true;
-  String availableHours = "";
+  String availableHours = "Next Hours";
 
   String dateOfToday = "";
   String timeToday = "00:00";
@@ -48,10 +51,20 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
     super.initState();
     reserveFullPageViewUseCases.initState(context)();
 
-    rainProbability = .3;
-    availableDate = "Next Date";
-    hasAvailableHours = true;
-    availableHours = "Next Hours";
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      Repository repository = Repository();
+      BaseForecast forecast =
+          await repository.getForecastOfDayWithDateTime(getNextClosestDay(
+        DateTime.now(),
+        fieldSelected.availableDates,
+      ));
+
+      rainProbability =
+          "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
+      rainProbability = rainProbability.replaceAll(".0", "%");
+
+      setState(() {});
+    });
 
     dateOfToday = turnDateTimeIntoLatinDate(DateTime.now());
   }
@@ -65,8 +78,8 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
       backActions: reserveFullPageViewUseCases.backActions(context),
       hasBackButton: true,
       hasFavoriteButton: true,
-      favoriteActions:
-          reserveFullPageViewUseCases.toggleFavorite(context, uiTexts),
+      favoriteActions: reserveFullPageViewUseCases.toggleFavorite(
+          context, uiTexts, rainProbability),
       content: buildContent(
         screenSize,
         uiTexts,
@@ -162,7 +175,7 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          "${(rainProbability * 100).toInt()}%",
+                          rainProbability,
                           style: styleRegular(12, cBlack),
                         ),
                       ],
@@ -250,6 +263,18 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                       "${datePicked[0].hour}:00";
                   customButtonWithTitleData[3].value =
                       "${datePicked[1].hour}:00";
+
+                  Repository repository = Repository();
+                  BaseForecast forecast = await repository
+                      .getForecastOfDayWithDateTime(datePicked[0]);
+
+                  rainProbability =
+                      "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
+                  rainProbability = rainProbability.replaceAll(".0", "%");
+
+                  stamp(tag, "rainProbability: $rainProbability");
+
+                  setState(() {});
                 },
               ),
               const SizedBox(height: 20),
@@ -282,6 +307,18 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                             "${datePicked[0].hour}:00";
                         customButtonWithTitleData[3].value =
                             "${datePicked[1].hour}:00";
+
+                        Repository repository = Repository();
+                        BaseForecast forecast = await repository
+                            .getForecastOfDayWithDateTime(datePicked[0]);
+
+                        rainProbability =
+                            "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
+                        rainProbability = rainProbability.replaceAll(".0", "%");
+
+                        stamp(tag, "rainProbability: $rainProbability");
+
+                        setState(() {});
                       },
                     ),
                   ),
@@ -312,6 +349,18 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                             "${datePicked[0].hour}:00";
                         customButtonWithTitleData[3].value =
                             "${datePicked[1].hour}:00";
+
+                        Repository repository = Repository();
+                        BaseForecast forecast = await repository
+                            .getForecastOfDayWithDateTime(datePicked[0]);
+
+                        rainProbability =
+                            "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
+                        rainProbability = rainProbability.replaceAll(".0", "%");
+
+                        stamp(tag, "rainProbability: $rainProbability");
+
+                        setState(() {});
                       },
                     ),
                   ),
@@ -336,7 +385,10 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                 context: context,
                 text: uiTexts.reserve,
                 backgroundColor: cGreenForeground,
-                actionsToDo: reserveFullPageViewUseCases.makePayment(context),
+                actionsToDo: reserveFullPageViewUseCases.makePayment(
+                  context,
+                  rainProbability,
+                ),
               ),
               const LowerMargin(hasKeyboard: true),
             ],

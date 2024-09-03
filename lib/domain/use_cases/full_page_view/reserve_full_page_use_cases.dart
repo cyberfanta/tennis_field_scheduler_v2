@@ -21,7 +21,7 @@ class ReserveFullPageViewUseCases {
   Future<void> Function() initState(BuildContext context) => () async {};
 
   Future<void> Function() toggleFavorite(
-          BuildContext context, UiTexts uiTexts) =>
+          BuildContext context, UiTexts uiTexts, String rainChance) =>
       () async {
         stamp(_tag, "Button Pressed: \"toggleFavorite\"",
             decoratorChar: " * ", extraLine: true);
@@ -42,7 +42,7 @@ class ReserveFullPageViewUseCases {
               int.parse(customButtonWithTitleData[2].value.split(":")[0]),
           "${currentUser.name}",
           context.read<CustomDropdownDataCubit>().getData(0),
-          .3,
+          double.parse(rainChance.replaceAll("%", ".0")) / 100,
           true,
         );
 
@@ -56,7 +56,9 @@ class ReserveFullPageViewUseCases {
             decoratorChar: " * ", extraLine: true);
       };
 
-  Future<void> Function() makePayment(BuildContext context) => () async {
+  Future<void> Function() makePayment(
+          BuildContext context, String rainChance) =>
+      () async {
         stamp(_tag, "Button Pressed: \"makePayment\"",
             decoratorChar: " * ", extraLine: true);
 
@@ -76,7 +78,7 @@ class ReserveFullPageViewUseCases {
               int.parse(customButtonWithTitleData[2].value.split(":")[0]),
           "${currentUser.name}",
           context.read<CustomDropdownDataCubit>().getData(0),
-          .3,
+          double.parse(rainChance.replaceAll("%", ".0")) / 100,
           false,
         );
 

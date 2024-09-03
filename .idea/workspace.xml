@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Card): Fixed date reserved.">
-      <change afterPath="$PROJECT_DIR$/lib/utils/get_next_available_day.dart" afterDir="false" />
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Weather): Including the support to weather in field cards.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/sources/weather_api/weather_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/sources/weather_api/weather_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/entities/base_forecast.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/entities/base_forecast.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/get_next_available_hour.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/get_next_available_hour.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_dates.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_dates.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725346918530</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Feat (Weather): Including the support to weather in field cards.">
+      <option name="closed" value="true" />
+      <created>1725391526580</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1725391526580</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,6 +256,7 @@
     <MESSAGE value="Feat (Reserve Full Page View): Date time picker working." />
     <MESSAGE value="Feat (Reserve Full Page View): Can now create new reserves and favorites." />
     <MESSAGE value="Feat (Card): Fixed date reserved." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Card): Fixed date reserved." />
+    <MESSAGE value="Feat (Weather): Including the support to weather in field cards." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Weather): Including the support to weather in field cards." />
   </component>
 </project>
