@@ -5,6 +5,7 @@ import 'package:tennis_field_scheduler_v2/app/theme/ui_colors.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_button/custom_button.dart';
 
 import '../../../app/lang/ui_texts.dart';
+import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_text_styles.dart';
 import '../../../domain/entities/field_schedule.dart';
 import '../../../domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart';

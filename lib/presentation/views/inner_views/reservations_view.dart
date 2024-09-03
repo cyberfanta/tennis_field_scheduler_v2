@@ -5,6 +5,7 @@ import 'package:tennis_field_scheduler_v2/presentation/common_widgets/cards/rese
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_button/custom_button.dart';
 
 import '../../../app/lang/ui_texts.dart';
+import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
 import '../../../domain/entities/scheduled_field.dart';
@@ -74,7 +75,7 @@ class _ReservationsViewState extends State<ReservationsView> {
                 BlendMode.srcIn,
               ),
             ),
-            actionsToDo: reservationsViewUseCases.goReserve(context),
+            actionsToDo: reservationsViewUseCases.goReserve(tag, context),
           ),
           const SizedBox(height: 11),
           Expanded(
@@ -108,7 +109,8 @@ class _ReservationsViewState extends State<ReservationsView> {
                             scheduledField: list[index],
                           ),
                           actionToDo: (direction) {
-                            reservationsViewUseCases.deleteSchedule(tag, index)();
+                            reservationsViewUseCases.deleteSchedule(
+                                tag, index)();
                           },
                         );
                       },

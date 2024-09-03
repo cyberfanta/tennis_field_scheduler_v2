@@ -234,4 +234,8 @@ class UiTextEs {
   String get noSchedules {
     return "No hay reservaciones hechas";
   }
+
+  String get noFavorites {
+    return "No hay favoritos seleccionados";
+  }
 }

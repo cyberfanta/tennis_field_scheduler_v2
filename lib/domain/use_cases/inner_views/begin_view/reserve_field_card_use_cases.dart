@@ -12,7 +12,7 @@ class ReserveFieldCardUseCases {
   Future<void> Function() goReserve(
           String tag, BuildContext context, TennisField field) =>
       () async {
-        stamp(tag, "Button Pressed: \"Back\"",
+        stamp(tag, "Button Pressed: \"goReserve\"",
             decoratorChar: " * ", extraLine: true);
 
         fieldSelected = field;

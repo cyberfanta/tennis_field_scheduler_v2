@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../app/lang/ui_texts.dart';
+import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
+import '../../../domain/entities/scheduled_field.dart';
 import '../../../domain/use_cases/inner_views/favorites_view_use_cases.dart';
 import '../../common_widgets/backgrounds/base_background.dart';
+import '../../common_widgets/behaviors/dismissable_wrapper.dart';
+import '../../common_widgets/cards/reserved_field_card_2.dart';
 import '../../common_widgets/other_widgets/lower_margin.dart';
+import '../../common_widgets/other_widgets/no_favorites_text.dart';
 import '../../common_widgets/other_widgets/upper_margin.dart';
 
 class FavoritesView extends StatefulWidget {
@@ -66,21 +71,15 @@ class _FavoritesViewState extends State<FavoritesView> {
                 ),
               ),
               const SizedBox(height: 16),
-              ListView.separated(
-                shrinkWrap: true,
-                padding: EdgeInsets.zero,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return const SizedBox(
-                    width: double.infinity,
-                    height: 152,
-                    child: Placeholder(),
-                  );
+              ValueListenableBuilder(
+                valueListenable: favoriteList,
+                builder: (context, list, _) {
+                  if (list.isEmpty) {
+                    return const NoFavoritesText();
+                  }
+
+                  return buildColumn(list);
                 },
-                separatorBuilder: (context, index) {
-                  return const SizedBox(height: 16);
-                },
-                itemCount: 5,
               ),
               const SizedBox(height: 20),
             ],
@@ -88,6 +87,41 @@ class _FavoritesViewState extends State<FavoritesView> {
         ),
         const LowerMargin(),
       ],
+    );
+  }
+
+  Widget buildColumn(List<ScheduledField> list) {
+    List<Widget> answer = [];
+
+    for (int index = 0; index < list.length; index++) {
+      ScheduledField item = list[index];
+
+      if (!item.isFavorite) {
+        continue;
+      }
+
+      answer.add(DismissibleWrapper(
+        id: item.id,
+        widgetToWrap: ReservedFieldCard2(
+          scheduledField: list[index],
+        ),
+        actionToDo: (direction) {
+          favoritesViewUseCases.deleteSchedule(tag, index)();
+        },
+      ));
+
+      answer.add(const SizedBox(height: 8));
+    }
+
+    if (answer.isEmpty) {
+      return const NoFavoritesText();
+    }
+
+    answer.removeLast();
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: answer,
     );
   }
 }

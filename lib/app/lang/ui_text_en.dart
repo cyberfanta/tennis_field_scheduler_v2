@@ -236,6 +236,10 @@ class UiTextEn {
   }
 
   String get noSchedules {
-    return "No schedules has been set";
+    return "There are not schedules yet";
+  }
+
+  String get noFavorites {
+    return "There are not favorites yet";
   }
 }

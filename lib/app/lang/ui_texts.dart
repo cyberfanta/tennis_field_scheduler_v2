@@ -495,4 +495,12 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().noSchedules;
   }
+
+  String get noFavorites {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().noFavorites;
+    }
+
+    return UiTextEn().noFavorites;
+  }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/app/static_data/static_data.dart';
-import 'package:tennis_field_scheduler_v2/domain/entities/field_schedule.dart';
 
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/theme/ui_colors.dart';

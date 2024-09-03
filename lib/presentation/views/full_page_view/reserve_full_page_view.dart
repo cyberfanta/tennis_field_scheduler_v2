@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:tennis_field_scheduler_v2/domain/entities/field_schedule.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_dropdown/custom_dropdown.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/other_widgets/lower_margin.dart';
 
 import '../../../app/lang/ui_texts.dart';
+import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
 import '../../../domain/use_cases/full_page_view/reserve_full_page_use_cases.dart';

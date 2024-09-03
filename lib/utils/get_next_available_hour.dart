@@ -1,3 +1,4 @@
+import '../app/static_data/static_data.dart';
 import '../domain/entities/field_schedule.dart';
 
 String getNextAvailableHour(String field, DateTime currentDate) {
