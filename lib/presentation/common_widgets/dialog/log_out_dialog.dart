@@ -10,17 +10,14 @@ import '../../../app/theme/ui_text_styles.dart';
 class LogOutDialog extends StatelessWidget {
   const LogOutDialog({
     super.key,
-    required this.tag,
   });
 
-  final String tag;
 
   @override
   Widget build(BuildContext context) {
     UiTexts uiTexts = Provider.of<UiTexts>(context);
 
     return TwoButtonDialog(
-      tag: tag,
       titleText: uiTexts.warning,
       titleTextStyle: styleMedium(18, cWhite),
       contentWidget: Text(

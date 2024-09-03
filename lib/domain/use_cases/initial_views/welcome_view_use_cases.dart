@@ -38,7 +38,7 @@ class WelcomeViewUseCases {
           barrierColor: cBlackOpacity50,
           useSafeArea: false,
           builder: (BuildContext context) {
-            return const LogOutDialog(tag: "Dialog Opened: \"Logout\"");
+            return const LogOutDialog();
           },
         );
       };

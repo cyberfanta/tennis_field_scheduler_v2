@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class OneButtonDialog extends StatelessWidget {
   const OneButtonDialog({
     super.key,
-    required this.tag,
     required this.titleText,
     required this.titleTextStyle,
     required this.contentWidget,
@@ -19,7 +18,6 @@ class OneButtonDialog extends StatelessWidget {
     required this.buttonSize,
   });
 
-  final String tag;
   final String titleText;
   final TextStyle titleTextStyle;
   final Widget contentWidget;

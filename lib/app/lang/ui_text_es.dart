@@ -238,4 +238,8 @@ class UiTextEs {
   String get noFavorites {
     return "No hay favoritos seleccionados";
   }
+
+  String get wrongDates {
+    return "La fecha inicial debe estar antes que la fecha final";
+  }
 }

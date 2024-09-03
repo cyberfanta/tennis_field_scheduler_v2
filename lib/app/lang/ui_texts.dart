@@ -503,4 +503,12 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().noFavorites;
   }
+
+  String get wrongDates {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().wrongDates;
+    }
+
+    return UiTextEn().wrongDates;
+  }
 }

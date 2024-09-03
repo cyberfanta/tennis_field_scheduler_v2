@@ -53,8 +53,7 @@ class LoginViewUseCases {
           barrierColor: cBlackOpacity40,
           useSafeArea: false,
           builder: (BuildContext context) {
-            return const NotImplementedDialog(
-                tag: "Dialog Opened: \"NotImplemented\"");
+            return const NotImplementedDialog();
           },
         );
       };

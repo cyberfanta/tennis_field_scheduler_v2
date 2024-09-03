@@ -4,19 +4,24 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Begin/Reserve View): Delete behavior when drag is done.">
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Favorites View): Delete behavior when drag is done.">
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button_with_title.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/wrong_dates_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/entities/field_schedule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/entities/field_schedule.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/reservations_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/reservations_view_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card_2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card_2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/initial_views/welcome_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/initial_views/welcome_view_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/log_out_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/log_out_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/not_implemented_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/not_implemented_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/one_button_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/one_button_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/two_button_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/templates/two_button_dialog.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/get_next_available_hour.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/get_next_available_hour.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_us_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/turn_timestamp_into_dates.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +70,7 @@
     "git-widget-placeholder": "master",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/lib/presentation/common_widgets/cards",
+    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/lib/presentation/common_widgets/dialog",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -75,11 +80,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\dialog" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\custom_button" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\other_widgets" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\cards" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\custom_input_text" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\custom_dropdown" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\other_widgets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\inner_views\begin_view" />
@@ -186,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725334679545</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Feat (Favorites View): Delete behavior when drag is done.">
+      <option name="closed" value="true" />
+      <created>1725336314510</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1725336314510</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,6 +226,7 @@
     <MESSAGE value="Feat (Begin View): Reserve field card ready." />
     <MESSAGE value="Feat (Reserve Full Page View): Scaffold ready for logic and states." />
     <MESSAGE value="Feat (Begin/Reserve View): Delete behavior when drag is done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Begin/Reserve View): Delete behavior when drag is done." />
+    <MESSAGE value="Feat (Favorites View): Delete behavior when drag is done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Favorites View): Delete behavior when drag is done." />
   </component>
 </project>

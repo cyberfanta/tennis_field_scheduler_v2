@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class TwoButtonDialog extends StatelessWidget {
   const TwoButtonDialog({
     super.key,
-    required this.tag,
     required this.titleText,
     required this.titleTextStyle,
     required this.contentWidget,
@@ -26,7 +25,6 @@ class TwoButtonDialog extends StatelessWidget {
     required this.secondButtonSize,
   });
 
-  final String tag;
   final String titleText;
   final TextStyle titleTextStyle;
   final Widget contentWidget;

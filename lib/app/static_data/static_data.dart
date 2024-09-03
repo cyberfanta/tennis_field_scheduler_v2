@@ -67,4 +67,3 @@ const List<ScheduledField> defaultScheduled = [
   ScheduledField("1", 1, "06/07/2024", "3pm", 1, "Julio leon", 1, .6, true),
   ScheduledField("2", 2, "06/07/2024", "4pm", 3, "Julio leon", 2, .1, false),
 ];
-

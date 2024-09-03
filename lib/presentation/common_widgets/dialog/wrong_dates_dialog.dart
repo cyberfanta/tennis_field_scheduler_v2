@@ -6,8 +6,8 @@ import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
 import 'templates/one_button_dialog.dart';
 
-class NotImplementedDialog extends StatelessWidget {
-  const NotImplementedDialog({
+class WrongDatesDialog extends StatelessWidget {
+  const WrongDatesDialog({
     super.key,
   });
 
@@ -20,7 +20,7 @@ class NotImplementedDialog extends StatelessWidget {
       titleText: uiTexts.info,
       titleTextStyle: styleMedium(18, cWhite),
       contentWidget: Text(
-        uiTexts.notImplementedContext,
+        uiTexts.wrongDates,
         style: styleRegular(14, cWhite),
         textAlign: TextAlign.center,
       ),
