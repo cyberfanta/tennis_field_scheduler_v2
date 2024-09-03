@@ -512,6 +512,14 @@ class UiTexts extends ChangeNotifier {
     return UiTextEn().wrongDates;
   }
 
+  String get addedSchedule {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().addedSchedule;
+    }
+
+    return UiTextEn().addedSchedule;
+  }
+
   String get addedFavorite {
     if (_locale.languageCode == 'es') {
       return UiTextEs().addedFavorite;

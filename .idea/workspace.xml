@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Weather): Including the support to weather in field cards.">
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Weather): Including support in full page view.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725391526580</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Feat (Weather): Including support in full page view.">
+      <option name="closed" value="true" />
+      <created>1725392985696</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1725392985696</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,6 +264,7 @@
     <MESSAGE value="Feat (Reserve Full Page View): Can now create new reserves and favorites." />
     <MESSAGE value="Feat (Card): Fixed date reserved." />
     <MESSAGE value="Feat (Weather): Including the support to weather in field cards." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Weather): Including the support to weather in field cards." />
+    <MESSAGE value="Feat (Weather): Including support in full page view." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Weather): Including support in full page view." />
   </component>
 </project>

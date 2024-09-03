@@ -57,7 +57,7 @@ class ReserveFullPageViewUseCases {
       };
 
   Future<void> Function() makePayment(
-          BuildContext context, String rainChance) =>
+          BuildContext context, UiTexts uiTexts, String rainChance) =>
       () async {
         stamp(_tag, "Button Pressed: \"makePayment\"",
             decoratorChar: " * ", extraLine: true);
@@ -83,6 +83,9 @@ class ReserveFullPageViewUseCases {
         );
 
         scheduleList.value.add(item);
+
+        context.read<ErrorMessageCubit>().setValue(uiTexts.addedSchedule);
+
         viewManager.goToControlPoint(context);
       };
 

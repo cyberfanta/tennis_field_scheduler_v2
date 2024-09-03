@@ -387,6 +387,7 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                 backgroundColor: cGreenForeground,
                 actionsToDo: reserveFullPageViewUseCases.makePayment(
                   context,
+                  uiTexts,
                   rainProbability,
                 ),
               ),

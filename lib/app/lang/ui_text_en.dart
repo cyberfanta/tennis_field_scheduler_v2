@@ -247,6 +247,10 @@ class UiTextEn {
     return "Starting date must be before the ending date";
   }
 
+  String get addedSchedule {
+    return "Item added to scheduled fields";
+  }
+
   String get addedFavorite {
     return "Item added to favorites";
   }

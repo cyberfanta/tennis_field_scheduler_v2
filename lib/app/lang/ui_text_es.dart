@@ -243,6 +243,10 @@ class UiTextEs {
     return "La fecha inicial debe estar antes que la fecha final";
   }
 
+  String get addedSchedule {
+    return "Item agregado a reservados";
+  }
+
   String get addedFavorite {
     return "Item agregado a favoritos";
   }
