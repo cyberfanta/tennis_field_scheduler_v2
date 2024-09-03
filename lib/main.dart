@@ -16,6 +16,7 @@ import 'package:tennis_field_scheduler_v2/presentation/views/login_views/login_v
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/signup_view.dart';
 
 import 'app/lang/ui_texts.dart';
+import 'domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart';
 import 'domain/use_cases/login_views/login_view_cubit.dart';
 import 'domain/use_cases/login_views/signup_view_cubit.dart';
 
@@ -48,6 +49,9 @@ void main() {
           ),
           BlocProvider<CustomDropdownDataCubit>(
             create: (context) => CustomDropdownDataCubit(),
+          ),
+          BlocProvider<ReserveFullPageViewCubit>(
+            create: (context) => ReserveFullPageViewCubit(),
           ),
         ],
         child: const MyApp(),

@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:omni_datetime_picker/omni_datetime_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_dropdown/custom_dropdown.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/other_widgets/lower_margin.dart';
-import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_colors.dart';
 import '../../../app/theme/ui_text_styles.dart';
-import '../../../data/repository.dart';
-import '../../../domain/entities/base_forecast.dart';
-import '../../../domain/use_cases/full_page_view/reserve_full_page_use_cases.dart';
-import '../../../utils/get_next_available_day.dart';
-import '../../../utils/turn_timestamp_into_dates.dart';
+import '../../../domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart';
+import '../../../domain/use_cases/full_page_view/reserve_full_page_view_use_cases.dart';
 import '../../common_widgets/backgrounds/base_background.dart';
 import '../../common_widgets/custom_button/custom_button.dart';
 import '../../common_widgets/custom_button/custom_button_with_title.dart';
 import '../../common_widgets/custom_input_text/custom_clean_input_text.dart';
-import '../../common_widgets/dialog/wrong_dates_dialog.dart';
 
 class ReserveFullPageView extends StatefulWidget {
   const ReserveFullPageView({super.key});
@@ -36,37 +31,11 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
   ReserveFullPageViewUseCases reserveFullPageViewUseCases =
       ReserveFullPageViewUseCases();
 
-  String rainProbability = "";
-  String availableDate = "Next Date";
-  bool hasAvailableHours = true;
-  String availableHours = "Next Hours";
-
-  String dateOfToday = "";
-  String timeToday = "00:00";
-
-  DateTime today = DateTime.now();
-
   @override
   void initState() {
     super.initState();
+
     reserveFullPageViewUseCases.initState(context)();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      Repository repository = Repository();
-      BaseForecast forecast =
-          await repository.getForecastOfDayWithDateTime(getNextClosestDay(
-        DateTime.now(),
-        fieldSelected.availableDates,
-      ));
-
-      rainProbability =
-          "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
-      rainProbability = rainProbability.replaceAll(".0", "%");
-
-      setState(() {});
-    });
-
-    dateOfToday = turnDateTimeIntoLatinDate(DateTime.now());
   }
 
   @override
@@ -79,7 +48,9 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
       hasBackButton: true,
       hasFavoriteButton: true,
       favoriteActions: reserveFullPageViewUseCases.toggleFavorite(
-          context, uiTexts, rainProbability),
+          context,
+          uiTexts,
+          context.read<ReserveFullPageViewCubit>().getRainProbability()),
       content: buildContent(
         screenSize,
         uiTexts,
@@ -94,10 +65,14 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       children: [
-        Image.asset(
-          fieldSelected.imageCropped,
-          width: double.infinity,
-          fit: BoxFit.fitWidth,
+        BlocBuilder<ReserveFullPageViewCubit, ReserveFullPageViewData>(
+          builder: (context, state) {
+            return Image.asset(
+              state.fieldSelected.imageCropped,
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            );
+          },
         ),
         const SizedBox(height: 24),
         Container(
@@ -106,29 +81,38 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text(
-                    fieldSelected.name,
-                    style: styleSemiBold(20, cBlack),
-                  ),
-                  const Expanded(child: SizedBox.shrink()),
-                  Text(
-                    "\$${fieldSelected.price}",
-                    style: styleSemiBold(20, cBlue),
-                  ),
-                ],
+              BlocBuilder<ReserveFullPageViewCubit, ReserveFullPageViewData>(
+                builder: (context, state) {
+                  return Row(
+                    children: [
+                      Text(
+                        state.fieldSelected.name,
+                        style: styleSemiBold(20, cBlack),
+                      ),
+                      const Expanded(child: SizedBox.shrink()),
+                      Text(
+                        "\$${state.fieldSelected.price}",
+                        style: styleSemiBold(20, cBlue),
+                      ),
+                    ],
+                  );
+                },
               ),
               const SizedBox(height: 4),
               Row(
                 children: [
-                  Text(
-                    (fieldSelected.fieldType == FieldType.a)
-                        ? uiTexts.fieldA
-                        : (fieldSelected.fieldType == FieldType.b)
-                            ? uiTexts.fieldB
-                            : uiTexts.fieldC,
-                    style: styleRegular(12, cBlack),
+                  BlocBuilder<ReserveFullPageViewCubit,
+                      ReserveFullPageViewData>(
+                    builder: (context, state) {
+                      return Text(
+                        (state.fieldSelected.fieldType == FieldType.a)
+                            ? uiTexts.fieldA
+                            : (state.fieldSelected.fieldType == FieldType.b)
+                                ? uiTexts.fieldB
+                                : uiTexts.fieldC,
+                        style: styleRegular(12, cBlack),
+                      );
+                    },
                   ),
                   const Expanded(child: SizedBox.shrink()),
                   Text(
@@ -138,8 +122,10 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                 ],
               ),
               const SizedBox(height: 12),
-              hasAvailableHours
-                  ? Row(
+              BlocBuilder<ReserveFullPageViewCubit, ReserveFullPageViewData>(
+                builder: (context, state) {
+                  if (state.hasAvailableHours) {
+                    return Row(
                       children: [
                         Text(
                           uiTexts.available,
@@ -160,13 +146,18 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                           fit: BoxFit.none,
                         ),
                         const SizedBox(width: 4),
-                        Text(
-                          fieldSelected.availableHours.isEmpty
-                              ? availableHours
-                              : "${fieldSelected.availableHours[0]} - ${fieldSelected.availableHours.last}",
-                          style: styleRegular(12, cBlack),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                        BlocBuilder<ReserveFullPageViewCubit,
+                            ReserveFullPageViewData>(
+                          builder: (context, state) {
+                            return Text(
+                              state.fieldSelected.availableHours.isEmpty
+                                  ? state.availableHours
+                                  : "${state.fieldSelected.availableHours[0]} - ${state.fieldSelected.availableHours.last}",
+                              style: styleRegular(12, cBlack),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            );
+                          },
                         ),
                         const Expanded(child: SizedBox.shrink()),
                         SvgPicture.asset(
@@ -174,30 +165,38 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                           fit: BoxFit.none,
                         ),
                         const SizedBox(width: 4),
-                        Text(
-                          rainProbability,
-                          style: styleRegular(12, cBlack),
+                        BlocBuilder<ReserveFullPageViewCubit,
+                            ReserveFullPageViewData>(
+                          builder: (context, state) {
+                            return Text(
+                              state.rainProbability,
+                              style: styleRegular(12, cBlack),
+                            );
+                          },
                         ),
                       ],
-                    )
-                  : Row(
-                      children: [
-                        Text(
-                          uiTexts.notAvailable,
-                          style: styleRegular(12, cBlack),
+                    );
+                  }
+                  return Row(
+                    children: [
+                      Text(
+                        uiTexts.notAvailable,
+                        style: styleRegular(12, cBlack),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        width: 8,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: cRed,
+                          borderRadius: BorderRadius.circular(1000),
                         ),
-                        const SizedBox(width: 8),
-                        Container(
-                          width: 8,
-                          height: 8,
-                          decoration: BoxDecoration(
-                            color: cRed,
-                            borderRadius: BorderRadius.circular(1000),
-                          ),
-                        ),
-                        const Expanded(child: SizedBox.shrink()),
-                      ],
-                    ),
+                      ),
+                      const Expanded(child: SizedBox.shrink()),
+                    ],
+                  );
+                },
+              ),
               const SizedBox(height: 12),
               Row(
                 children: [
@@ -206,9 +205,14 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                     fit: BoxFit.none,
                   ),
                   const SizedBox(width: 4),
-                  Text(
-                    fieldSelected.address,
-                    style: styleRegular(12, cBlack),
+                  BlocBuilder<ReserveFullPageViewCubit,
+                      ReserveFullPageViewData>(
+                    builder: (context, state) {
+                      return Text(
+                        state.fieldSelected.address,
+                        style: styleRegular(12, cBlack),
+                      );
+                    },
                   ),
                   const Expanded(child: SizedBox.shrink()),
                 ],
@@ -239,42 +243,15 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                 style: styleMedium(18, cBlack),
               ),
               const SizedBox(height: 20),
-              CustomButtonWithTitle(
-                index: 1,
-                title: uiTexts.date,
-                hint: dateOfToday,
-                actionsToDo: () async {
-                  List<DateTime>? datePicked =
-                      await getDateTimeFromPicker(uiTexts);
-
-                  if (datePicked == null || datePicked.isEmpty) {
-                    return;
-                  }
-
-                  if (datePicked[0] == datePicked[1]) {
-                    datePicked[1] = datePicked[1].add(const Duration(hours: 1));
-                  }
-
-                  stamp(tag, "datePicked: $datePicked");
-
-                  customButtonWithTitleData[1].value =
-                      turnDateTimeIntoLatinDate(datePicked[0]);
-                  customButtonWithTitleData[2].value =
-                      "${datePicked[0].hour}:00";
-                  customButtonWithTitleData[3].value =
-                      "${datePicked[1].hour}:00";
-
-                  Repository repository = Repository();
-                  BaseForecast forecast = await repository
-                      .getForecastOfDayWithDateTime(datePicked[0]);
-
-                  rainProbability =
-                      "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
-                  rainProbability = rainProbability.replaceAll(".0", "%");
-
-                  stamp(tag, "rainProbability: $rainProbability");
-
-                  setState(() {});
+              BlocBuilder<ReserveFullPageViewCubit, ReserveFullPageViewData>(
+                builder: (context, state) {
+                  return CustomButtonWithTitle(
+                    index: 1,
+                    title: uiTexts.date,
+                    hint: state.dateOfToday,
+                    actionsToDo:
+                        reserveFullPageViewUseCases.setDateTime(context),
+                  );
                 },
               ),
               const SizedBox(height: 20),
@@ -282,85 +259,31 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
-                    child: CustomButtonWithTitle(
-                      index: 2,
-                      title: uiTexts.initHour,
-                      hint: timeToday,
-                      actionsToDo: () async {
-                        List<DateTime>? datePicked =
-                            await getDateTimeFromPicker(uiTexts);
-
-                        if (datePicked == null || datePicked.isEmpty) {
-                          return;
-                        }
-
-                        if (datePicked[0] == datePicked[1]) {
-                          datePicked[1] =
-                              datePicked[1].add(const Duration(hours: 1));
-                        }
-
-                        stamp(tag, "datePicked: $datePicked");
-
-                        customButtonWithTitleData[1].value =
-                            turnDateTimeIntoLatinDate(datePicked[0]);
-                        customButtonWithTitleData[2].value =
-                            "${datePicked[0].hour}:00";
-                        customButtonWithTitleData[3].value =
-                            "${datePicked[1].hour}:00";
-
-                        Repository repository = Repository();
-                        BaseForecast forecast = await repository
-                            .getForecastOfDayWithDateTime(datePicked[0]);
-
-                        rainProbability =
-                            "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
-                        rainProbability = rainProbability.replaceAll(".0", "%");
-
-                        stamp(tag, "rainProbability: $rainProbability");
-
-                        setState(() {});
+                    child: BlocBuilder<ReserveFullPageViewCubit,
+                        ReserveFullPageViewData>(
+                      builder: (context, state) {
+                        return CustomButtonWithTitle(
+                          index: 2,
+                          title: uiTexts.initHour,
+                          hint: state.timeToday,
+                          actionsToDo:
+                              reserveFullPageViewUseCases.setDateTime(context),
+                        );
                       },
                     ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: CustomButtonWithTitle(
-                      index: 3,
-                      title: uiTexts.endHour,
-                      hint: timeToday,
-                      actionsToDo: () async {
-                        List<DateTime>? datePicked =
-                            await getDateTimeFromPicker(uiTexts);
-
-                        if (datePicked == null || datePicked.isEmpty) {
-                          return;
-                        }
-
-                        if (datePicked[0] == datePicked[1]) {
-                          datePicked[1] =
-                              datePicked[1].add(const Duration(hours: 1));
-                        }
-
-                        stamp(tag, "datePicked: $datePicked");
-
-                        customButtonWithTitleData[1].value =
-                            turnDateTimeIntoLatinDate(datePicked[0]);
-                        customButtonWithTitleData[2].value =
-                            "${datePicked[0].hour}:00";
-                        customButtonWithTitleData[3].value =
-                            "${datePicked[1].hour}:00";
-
-                        Repository repository = Repository();
-                        BaseForecast forecast = await repository
-                            .getForecastOfDayWithDateTime(datePicked[0]);
-
-                        rainProbability =
-                            "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
-                        rainProbability = rainProbability.replaceAll(".0", "%");
-
-                        stamp(tag, "rainProbability: $rainProbability");
-
-                        setState(() {});
+                    child: BlocBuilder<ReserveFullPageViewCubit,
+                        ReserveFullPageViewData>(
+                      builder: (context, state) {
+                        return CustomButtonWithTitle(
+                          index: 3,
+                          title: uiTexts.endHour,
+                          hint: state.timeToday,
+                          actionsToDo:
+                              reserveFullPageViewUseCases.setDateTime(context),
+                        );
                       },
                     ),
                   ),
@@ -381,15 +304,19 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                 size: const Size(double.infinity, 112),
               ),
               const SizedBox(height: 40),
-              CustomButton(
-                context: context,
-                text: uiTexts.reserve,
-                backgroundColor: cGreenForeground,
-                actionsToDo: reserveFullPageViewUseCases.makePayment(
-                  context,
-                  uiTexts,
-                  rainProbability,
-                ),
+              BlocBuilder<ReserveFullPageViewCubit, ReserveFullPageViewData>(
+                builder: (context, state) {
+                  return CustomButton(
+                    context: context,
+                    text: uiTexts.reserve,
+                    backgroundColor: cGreenForeground,
+                    actionsToDo: reserveFullPageViewUseCases.makePayment(
+                      context,
+                      uiTexts,
+                      state.rainProbability,
+                    ),
+                  );
+                },
               ),
               const LowerMargin(hasKeyboard: true),
             ],
@@ -397,120 +324,5 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
         ),
       ],
     );
-  }
-
-  Future<List<DateTime>?> getDateTimeFromPicker(UiTexts uiTexts) async {
-    DateTime todayHourZero = DateTime(today.year, today.month, today.day);
-    DateTime twoWeeksLater = today.add(const Duration(days: 14));
-    DateTime twoWeeksLaterMinusHour =
-        twoWeeksLater.subtract(const Duration(hours: 1));
-
-    List<DateTime>? datePicked = await showOmniDateTimeRangePicker(
-      context: context,
-      title: Container(
-        margin: const EdgeInsets.only(top: 8),
-        child: Text(
-          uiTexts.dateTime,
-          style: styleMedium(18, cBlack),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.start,
-        ),
-      ),
-      titleSeparator: Container(
-        width: 160,
-        height: 1,
-        color: cGray2,
-        margin: const EdgeInsets.symmetric(vertical: 4),
-      ),
-      startInitialDate: getNextDay(today, fieldSelected.availableDates),
-      endInitialDate: getNextDay(today, fieldSelected.availableDates),
-      startFirstDate: todayHourZero,
-      endFirstDate: todayHourZero,
-      startLastDate: twoWeeksLaterMinusHour,
-      endLastDate: twoWeeksLater,
-      isForceEndDateAfterStartDate: true,
-      minutesInterval: 60,
-      onStartDateAfterEndDateError: () {
-        showDialog(
-          context: context,
-          barrierColor: cBlackOpacity50,
-          useSafeArea: false,
-          builder: (BuildContext context) {
-            return const WrongDatesDialog();
-          },
-        );
-      },
-      borderRadius: BorderRadius.circular(4),
-      startSelectableDayPredicate: allowedDates,
-      endSelectableDayPredicate: allowedDates,
-    );
-
-    return datePicked;
-  }
-
-  bool allowedDates(dateTime) {
-    if (dateTime.weekday == 1 &&
-        fieldSelected.availableDates
-                .indexWhere((element) => element == FieldDays.monday) >
-            -1) {
-      return true;
-    }
-
-    if (dateTime.weekday == 2 &&
-        fieldSelected.availableDates
-                .indexWhere((element) => element == FieldDays.tuesday) >
-            -1) {
-      return true;
-    }
-
-    if (dateTime.weekday == 3 &&
-        fieldSelected.availableDates
-                .indexWhere((element) => element == FieldDays.wednesday) >
-            -1) {
-      return true;
-    }
-
-    if (dateTime.weekday == 4 &&
-        fieldSelected.availableDates
-                .indexWhere((element) => element == FieldDays.thursday) >
-            -1) {
-      return true;
-    }
-
-    if (dateTime.weekday == 5 &&
-        fieldSelected.availableDates
-                .indexWhere((element) => element == FieldDays.friday) >
-            -1) {
-      return true;
-    }
-
-    if (dateTime.weekday == 6 &&
-        fieldSelected.availableDates
-                .indexWhere((element) => element == FieldDays.saturday) >
-            -1) {
-      return true;
-    }
-
-    if (dateTime.weekday == 7 &&
-        fieldSelected.availableDates
-                .indexWhere((element) => element == FieldDays.sunday) >
-            -1) {
-      return true;
-    }
-
-    return false;
-  }
-
-  DateTime getNextDay(DateTime dateTime, List<FieldDays> daysList) {
-    final currentDay = dateTime.weekday;
-    final targetDay = daysList[0].index + 1;
-
-    int daysToAdd = targetDay - currentDay;
-    if (daysToAdd <= 0) {
-      daysToAdd += 7;
-    }
-
-    return dateTime.add(Duration(days: daysToAdd));
   }
 }
