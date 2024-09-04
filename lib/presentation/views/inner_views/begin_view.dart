@@ -140,7 +140,7 @@ class _BeginViewState extends State<BeginView> {
                           scheduledField: list[index],
                         ),
                         actionToDo: (direction) {
-                          beginViewUseCases.deleteSchedule(tag, index);
+                          beginViewUseCases.deleteSchedule(tag, index)();
                         },
                       );
                     },

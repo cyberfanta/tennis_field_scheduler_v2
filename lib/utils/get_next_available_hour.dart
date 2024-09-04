@@ -5,7 +5,7 @@ String getNextAvailableHour(String field, DateTime currentDate) {
   final TennisField fieldSchedule = fields.firstWhere(
     (h) => h.name == field,
     orElse: () => const TennisField(
-        "", FieldType.a, "", "", "", 0, "", [FieldDays.sunday], []),
+        "", "", FieldType.a, "", "", "", 0, "", [FieldDays.sunday], []),
   );
 
   if (fieldSchedule.name == "") {

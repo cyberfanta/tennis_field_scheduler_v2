@@ -75,17 +75,23 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       children: [
-        FlutterCarousel(
-          options: CarouselOptions(
-            height: 236,
-            viewportFraction: 1.0,
-            slideIndicator: CircularWaveSlideIndicator(),
-            floatingIndicator: true,
-            onPageChanged: (value, _) {
-              reserveFullPageViewUseCases.changeField(context, value)();
-            },
-          ),
-          items: slides,
+        BlocBuilder<ReserveFullPageViewCubit, ReserveFullPageViewData>(
+          builder: (context, state) {
+            return FlutterCarousel(
+              options: CarouselOptions(
+                height: 236,
+                initialPage: int.parse(state.fieldSelected.id),
+                viewportFraction: 1.0,
+                slideIndicator: CircularWaveSlideIndicator(),
+                floatingIndicator: true,
+                enableInfiniteScroll: true,
+                onPageChanged: (value, _) {
+                  reserveFullPageViewUseCases.changeField(context, value)();
+                },
+              ),
+              items: slides,
+            );
+          },
         ),
         const SizedBox(height: 24),
         Container(

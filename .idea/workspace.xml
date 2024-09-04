@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Reserve Full Page View): Now using cubit to manage all states.">
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Reserve Full Page View): Adding carrousel to select fields.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +248,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725400861111</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Feat (Reserve Full Page View): Adding carrousel to select fields.">
+      <option name="closed" value="true" />
+      <created>1725410469887</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1725410469887</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Feat (Reserve Full Page View): Adding carrousel to select fields.">
+      <option name="closed" value="true" />
+      <created>1725410580332</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1725410580332</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -286,6 +299,7 @@
     <MESSAGE value="Feat (Weather): Including support in full page view." />
     <MESSAGE value="Feat (UX): Improving the ux when reserving the scheduled fields." />
     <MESSAGE value="Feat (Reserve Full Page View): Now using cubit to manage all states." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Reserve Full Page View): Now using cubit to manage all states." />
+    <MESSAGE value="Feat (Reserve Full Page View): Adding carrousel to select fields." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Reserve Full Page View): Adding carrousel to select fields." />
   </component>
 </project>

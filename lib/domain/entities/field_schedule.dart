@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 import '../../app/static_data/static_data.dart';
 
 class TennisField extends Equatable {
+  final String id;
   final String name;
   final FieldType fieldType;
   final String image;
@@ -14,6 +15,7 @@ class TennisField extends Equatable {
   final List<String> availableHours;
 
   const TennisField(
+    this.id,
     this.name,
     this.fieldType,
     this.image,
@@ -27,6 +29,7 @@ class TennisField extends Equatable {
 
   @override
   List<Object?> get props => [
+        id,
         name,
         fieldType,
         image,

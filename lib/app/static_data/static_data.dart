@@ -25,6 +25,7 @@ enum FieldDays {
 
 final List<TennisField> fields = [
   const TennisField(
+    "0",
     "Epic Box",
     FieldType.a,
     "assets/images/field_1.png",
@@ -36,6 +37,7 @@ final List<TennisField> fields = [
     ['8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm'],
   ),
   const TennisField(
+    "1",
     "Rusty Tennis",
     FieldType.b,
     "assets/images/field_2.png",
@@ -47,6 +49,7 @@ final List<TennisField> fields = [
     ['10am', '11am', '12pm', '1pm', '2pm'],
   ),
   const TennisField(
+    "2",
     "Sport Box",
     FieldType.c,
     "assets/images/field_3.png",
