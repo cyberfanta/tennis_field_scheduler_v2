@@ -1,5 +1,5 @@
 import '../app/static_data/static_data.dart';
-import '../domain/entities/field_schedule.dart';
+import '../domain/entities/tennis_field.dart';
 
 String getNextAvailableHour(String field, DateTime currentDate) {
   final TennisField fieldSchedule = fields.firstWhere(

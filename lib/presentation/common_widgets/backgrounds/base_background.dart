@@ -135,8 +135,8 @@ class BaseBackground extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 8,
+                            horizontal: 18,
+                            vertical: 14,
                           ),
                           margin: const EdgeInsets.only(bottom: 40),
                           decoration: BoxDecoration(
@@ -145,7 +145,7 @@ class BaseBackground extends StatelessWidget {
                           ),
                           child: Text(
                             message,
-                            style: styleRegular(),
+                            style: styleRegular(14),
                             textAlign: TextAlign.center,
                           ),
                         ),

@@ -254,4 +254,36 @@ class UiTextEn {
   String get addedFavorite {
     return "Item added to favorites";
   }
+
+  String get summarize {
+    return "Summarize";
+  }
+
+  String get teacher {
+    return "Teacher";
+  }
+
+  String get totalToPay {
+    return "Total to pay";
+  }
+
+  String get per {
+    return "Per";
+  }
+
+  String get pay {
+    return "Pay";
+  }
+
+  String get cancel {
+    return "Cancel";
+  }
+
+  String get scheduleNotUpdated {
+    return "Need update your schedule";
+  }
+
+  String get dayNotAvailable {
+    return "This field already has 3 reserves this day, please select another day";
+  }
 }

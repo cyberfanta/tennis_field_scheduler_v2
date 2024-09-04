@@ -18,7 +18,7 @@ class ReservationsViewUseCases {
         stamp(tag, "Button Pressed: \"goReserve\"",
             decoratorChar: " * ", extraLine: true);
 
-        context.read<ReserveFullPageViewCubit>().setFieldSelected(0);
+        context.read<ReserveFullPageViewCubit>().setFieldSelected(fields[0]);
 
         viewManager.push(context, ReserveFullPageView.routeName);
       };

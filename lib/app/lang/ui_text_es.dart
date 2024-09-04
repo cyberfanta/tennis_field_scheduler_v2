@@ -250,4 +250,36 @@ class UiTextEs {
   String get addedFavorite {
     return "Item agregado a favoritos";
   }
+
+  String get summarize {
+    return "Resumen";
+  }
+
+  String get teacher {
+    return "Instructor";
+  }
+
+  String get totalToPay {
+    return "Total a pagar";
+  }
+
+  String get per {
+    return "Por";
+  }
+
+  String get pay {
+    return "Pagar";
+  }
+
+  String get cancel {
+    return "Cancelar";
+  }
+
+  String get scheduleNotUpdated {
+    return "Debe actualizar el calendario";
+  }
+
+  String get dayNotAvailable {
+    return "Este campo ya tiene otras 3 reservaciones, por favor seleccione otro día";
+  }
 }

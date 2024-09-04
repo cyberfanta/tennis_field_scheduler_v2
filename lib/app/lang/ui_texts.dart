@@ -527,4 +527,68 @@ class UiTexts extends ChangeNotifier {
 
     return UiTextEn().addedFavorite;
   }
+
+  String get summarize {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().summarize;
+    }
+
+    return UiTextEn().summarize;
+  }
+
+  String get teacher {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().teacher;
+    }
+
+    return UiTextEn().teacher;
+  }
+
+  String get totalToPay {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().totalToPay;
+    }
+
+    return UiTextEn().totalToPay;
+  }
+
+  String get per {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().per;
+    }
+
+    return UiTextEn().per;
+  }
+
+  String get pay {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().pay;
+    }
+
+    return UiTextEn().pay;
+  }
+
+  String get cancel {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().cancel;
+    }
+
+    return UiTextEn().cancel;
+  }
+
+  String get scheduleNotUpdated {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().scheduleNotUpdated;
+    }
+
+    return UiTextEn().scheduleNotUpdated;
+  }
+
+  String get dayNotAvailable {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().dayNotAvailable;
+    }
+
+    return UiTextEn().dayNotAvailable;
+  }
 }

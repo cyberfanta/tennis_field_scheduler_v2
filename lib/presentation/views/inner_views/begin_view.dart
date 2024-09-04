@@ -137,7 +137,7 @@ class _BeginViewState extends State<BeginView> {
                       return DismissibleWrapper(
                         id: item.id,
                         widgetToWrap: ReservedFieldCard(
-                          scheduledField: list[index],
+                          scheduledField: item,
                         ),
                         actionToDo: (direction) {
                           beginViewUseCases.deleteSchedule(tag, index)();

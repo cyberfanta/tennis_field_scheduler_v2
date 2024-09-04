@@ -9,7 +9,7 @@ import '../../../app/lang/ui_texts.dart';
 import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_text_styles.dart';
 import '../../../domain/entities/base_forecast.dart';
-import '../../../domain/entities/field_schedule.dart';
+import '../../../domain/entities/tennis_field.dart';
 import '../../../domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart';
 import '../../../utils/get_next_available_day.dart';
 import '../../views/full_page_view/reserve_full_page_view.dart';

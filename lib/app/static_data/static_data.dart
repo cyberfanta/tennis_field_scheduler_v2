@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tennis_field_scheduler_v2/domain/entities/base_user.dart';
 
-import '../../domain/entities/field_schedule.dart';
+import '../../domain/entities/tennis_field.dart';
 import '../../domain/entities/scheduled_field.dart';
 import '../../utils/view_manager.dart';
 

@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:omni_datetime_picker/omni_datetime_picker.dart';
+import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 
 import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_colors.dart';
@@ -10,7 +11,7 @@ import '../../../presentation/common_widgets/dialog/wrong_dates_dialog.dart';
 import '../../../presentation/common_widgets/other_widgets/date_picker_title.dart';
 import '../../../utils/turn_timestamp_into_dates.dart';
 import '../../entities/base_forecast.dart';
-import '../../entities/field_schedule.dart';
+import '../../entities/tennis_field.dart';
 
 class ReserveFullPageViewData {
   final TennisField fieldSelected;
@@ -117,9 +118,9 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
     ));
   }
 
-  void setFieldSelected(int index) {
+  void setFieldSelected(TennisField value) {
     emit(ReserveFullPageViewData(
-      fieldSelected: fields[index],
+      fieldSelected: value,
       isGettingRainChance: state.isGettingRainChance,
       rainProbability: state.rainProbability,
       selectedTeacher: state.selectedTeacher,
@@ -226,6 +227,21 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
     customButtonWithTitleData[2].value = "${datePicked[0].hour}:00";
     customButtonWithTitleData[3].value = "${datePicked[1].hour}:00";
 
+    emit(ReserveFullPageViewData(
+      fieldSelected: state.fieldSelected,
+      isGettingRainChance: state.isGettingRainChance,
+      rainProbability: state.rainProbability,
+      selectedTeacher: state.selectedTeacher,
+      today: state.today,
+      dateOfToday: state.dateOfToday,
+      timeToday: state.timeToday,
+      hasAvailableHours: state.hasAvailableHours,
+      availableDate: state.availableDate,
+      availableHours: state.availableHours,
+      comments: state.comments,
+      isPaying: state.isPaying,
+    ));
+
     await getForecast(datePicked[0]);
   }
 
@@ -279,6 +295,7 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       endLastDate: twoWeeksLater,
       isForceEndDateAfterStartDate: true,
       minutesInterval: 60,
+        is24HourMode:true,
       onStartDateAfterEndDateError: () {
         showDialog(
           context: context,
@@ -293,6 +310,8 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       startSelectableDayPredicate: _allowedDates,
       endSelectableDayPredicate: _allowedDates,
     );
+
+    stamp("tag", "datePicked: $datePicked");
 
     return datePicked;
   }

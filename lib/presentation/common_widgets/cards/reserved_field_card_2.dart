@@ -6,7 +6,7 @@ import 'package:tennis_field_scheduler_v2/app/theme/ui_colors.dart';
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_text_styles.dart';
-import '../../../domain/entities/field_schedule.dart';
+import '../../../domain/entities/tennis_field.dart';
 import '../../../domain/entities/scheduled_field.dart';
 
 class ReservedFieldCard2 extends StatelessWidget {
@@ -70,8 +70,8 @@ class ReservedFieldCard2 extends StatelessWidget {
                   (field.fieldType == FieldType.a)
                       ? uiTexts.fieldA
                       : (field.fieldType == FieldType.b)
-                      ? uiTexts.fieldB
-                      : uiTexts.fieldC,
+                          ? uiTexts.fieldB
+                          : uiTexts.fieldC,
                   style: styleRegular(12, cBlack),
                 ),
                 const SizedBox(height: 8),

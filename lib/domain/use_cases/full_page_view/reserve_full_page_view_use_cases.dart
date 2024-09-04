@@ -3,18 +3,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tennis_field_scheduler_v2/app/lang/ui_texts.dart';
 import 'package:tennis_field_scheduler_v2/domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/backgrounds/error_message_cubit.dart';
+import 'package:tennis_field_scheduler_v2/presentation/common_widgets/dialog/day_not_available_dialog.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../app/static_data/static_data.dart';
+import '../../../app/theme/ui_colors.dart';
 import '../../../presentation/common_widgets/custom_button/custom_button_with_title.dart';
 import '../../../presentation/common_widgets/custom_dropdown/custom_dropdown_data_cubit.dart';
 import '../../../presentation/views/full_page_view/reserve_full_page_view.dart';
 import '../../../utils/copy_list.dart';
+import '../../../utils/find_index_repeated_three_times.dart';
 import '../../../utils/get_next_available_day.dart';
 import '../../../utils/stamp.dart';
 import '../../../utils/turn_timestamp_into_dates.dart';
-import '../../entities/field_schedule.dart';
 import '../../entities/scheduled_field.dart';
+import '../../entities/tennis_field.dart';
 
 class ReserveFullPageViewUseCases {
   final String _tag = ReserveFullPageView.routeName
@@ -22,24 +25,23 @@ class ReserveFullPageViewUseCases {
 
   Future<void> Function() initState(BuildContext context) => () async {
         WidgetsBinding.instance.addPostFrameCallback((_) async {
-          ReserveFullPageViewCubit reserveFullPageViewCubit =
+          ReserveFullPageViewCubit cubit =
               context.read<ReserveFullPageViewCubit>();
 
-          reserveFullPageViewCubit.reset();
-
-          reserveFullPageViewCubit.getForecast(getNextClosestDay(
+          cubit.getForecast(getNextClosestDay(
             DateTime.now(),
-            reserveFullPageViewCubit.state.fieldSelected.availableDates,
+            cubit.state.fieldSelected.availableDates,
           ));
 
-          reserveFullPageViewCubit
-              .setDateOfToday(turnDateTimeIntoLatinDate(DateTime.now()));
+          cubit.setDateOfToday(turnDateTimeIntoLatinDate(DateTime.now()));
         });
       };
 
   Future<void> Function() changeField(BuildContext context, int index) =>
       () async {
-        context.read<ReserveFullPageViewCubit>().setFieldSelected(index);
+        context
+            .read<ReserveFullPageViewCubit>()
+            .setFieldSelected(fields[index]);
       };
 
   Future<void> Function() toggleFavorite(
@@ -62,10 +64,40 @@ class ReserveFullPageViewUseCases {
         context.read<ErrorMessageCubit>().setValue(uiTexts.addedFavorite);
       };
 
-  Future<void> Function() makeReserve(BuildContext context) => () async {
+  Future<void> Function() makeReserve(BuildContext context, UiTexts uiTexts) =>
+      () async {
         stamp(_tag, "Button Pressed: \"makeReserve\"",
             decoratorChar: " * ", extraLine: true);
-        context.read<ReserveFullPageViewCubit>().setPaying();
+
+        ReserveFullPageViewCubit cubit =
+            context.read<ReserveFullPageViewCubit>();
+
+        if (customButtonWithTitleData[2].value.isEmpty) {
+          context
+              .read<ErrorMessageCubit>()
+              .setValue(uiTexts.scheduleNotUpdated);
+          return;
+        }
+
+        if (hasThreeOccurrencesOnDate(
+          scheduleList.value,
+          fields.indexWhere(
+            (element) => element.id == cubit.getFieldSelected().id,
+          ),
+          customButtonWithTitleData[1].value.replaceAll("-", "/"),
+        )) {
+          showDialog(
+            context: context,
+            barrierColor: cBlackOpacity50,
+            useSafeArea: false,
+            builder: (BuildContext context) {
+              return const DayNotAvailableDialog();
+            },
+          );
+          return;
+        }
+
+        cubit.setPaying();
       };
 
   Future<void> Function() returnScheduling(BuildContext context) => () async {
@@ -121,7 +153,11 @@ class ReserveFullPageViewUseCases {
               : 2,
       customButtonWithTitleData[1].value.replaceAll("-", "/"),
       customButtonWithTitleData[2].value,
-      int.parse(customButtonWithTitleData[3].value.split(":")[0]) -
+      int.parse(customButtonWithTitleData[3].value.split(":")[0]) +
+          (int.parse(customButtonWithTitleData[2].value.split(":")[0]) >
+                  int.parse(customButtonWithTitleData[3].value.split(":")[0])
+              ? 24
+              : 0) -
           int.parse(customButtonWithTitleData[2].value.split(":")[0]),
       "${currentUser.name}",
       context.read<CustomDropdownDataCubit>().getData(0),
