@@ -5,7 +5,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_dropdown/custom_dropdown.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/other_widgets/lower_margin.dart';
-import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/static_data/static_data.dart';
@@ -83,7 +82,6 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
             slideIndicator: CircularWaveSlideIndicator(),
             floatingIndicator: true,
             onPageChanged: (value, _) {
-              stamp(tag, "FlutterCarousel: $value");
               reserveFullPageViewUseCases.changeField(context, value)();
             },
           ),
@@ -98,8 +96,6 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
             children: [
               BlocBuilder<ReserveFullPageViewCubit, ReserveFullPageViewData>(
                 builder: (context, state) {
-                  stamp(tag, "state: ${state.fieldSelected}");
-
                   return Row(
                     children: [
                       Text(
