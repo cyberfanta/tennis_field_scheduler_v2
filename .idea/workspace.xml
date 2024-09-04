@@ -4,29 +4,26 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Reserve Full Page View): Resetting the initial states of set date time section.">
-      <change afterPath="$PROJECT_DIR$/assets/images/person.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/sports_tennis.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialog/day_not_available_dialog.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/find_index_repeated_three_times.dart" afterDir="false" />
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Reserve Full Page View): Work flow with reserve and payment, now working.">
+      <change afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apk/app-debug.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015222.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015246.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015302.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015318.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015340.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015348.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015357.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015410.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015441.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015453.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015509.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015530.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015552.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015606.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015638.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_en.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_text_es.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/lang/ui_texts.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/static_data/static_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/entities/field_schedule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/entities/tennis_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/reservations_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/reservations_view_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/backgrounds/base_background.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/backgrounds/base_background.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card_2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_field_card_2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/full_page_view/reserve_full_page_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/get_next_available_hour.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/get_next_available_hour.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,13 +66,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "ScreenshotViewer.SavePath": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/assets/extras",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/lib/presentation/common_widgets/dialog",
+    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/assets/extras",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -300,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725417301119</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Feat (Reserve Full Page View): Work flow with reserve and payment, now working.">
+      <option name="closed" value="true" />
+      <created>1725428069509</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1725428069509</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,6 +344,7 @@
     <MESSAGE value="Feat (Reserve Full Page View): Adding carrousel to select fields." />
     <MESSAGE value="Feat (Field Schedules): Sorting now working properly also fix a problem with the carrousel initial state." />
     <MESSAGE value="Feat (Reserve Full Page View): Resetting the initial states of set date time section." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Reserve Full Page View): Resetting the initial states of set date time section." />
+    <MESSAGE value="Feat (Reserve Full Page View): Work flow with reserve and payment, now working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Reserve Full Page View): Work flow with reserve and payment, now working." />
   </component>
 </project>
