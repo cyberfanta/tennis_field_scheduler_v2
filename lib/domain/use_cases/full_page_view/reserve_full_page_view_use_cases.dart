@@ -25,6 +25,8 @@ class ReserveFullPageViewUseCases {
           ReserveFullPageViewCubit reserveFullPageViewCubit =
               context.read<ReserveFullPageViewCubit>();
 
+          reserveFullPageViewCubit.reset();
+
           reserveFullPageViewCubit.getForecast(getNextClosestDay(
             DateTime.now(),
             reserveFullPageViewCubit.state.fieldSelected.availableDates,
@@ -63,6 +65,13 @@ class ReserveFullPageViewUseCases {
   Future<void> Function() makeReserve(BuildContext context) => () async {
         stamp(_tag, "Button Pressed: \"makeReserve\"",
             decoratorChar: " * ", extraLine: true);
+        context.read<ReserveFullPageViewCubit>().setPaying();
+      };
+
+  Future<void> Function() returnScheduling(BuildContext context) => () async {
+        stamp(_tag, "Button Pressed: \"returnScheduling\"",
+            decoratorChar: " * ", extraLine: true);
+        context.read<ReserveFullPageViewCubit>().setScheduling();
       };
 
   Future<void> Function() setDateTime(BuildContext context) => () async {

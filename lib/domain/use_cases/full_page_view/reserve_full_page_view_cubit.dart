@@ -29,6 +29,8 @@ class ReserveFullPageViewData {
 
   final String comments;
 
+  final bool isPaying;
+
   ReserveFullPageViewData({
     required this.fieldSelected,
     required this.isGettingRainChance,
@@ -41,6 +43,7 @@ class ReserveFullPageViewData {
     required this.availableDate,
     required this.availableHours,
     required this.comments,
+    required this.isPaying,
   });
 
   @override
@@ -56,7 +59,8 @@ class ReserveFullPageViewData {
         " hasAvailableHours: $hasAvailableHours,"
         " availableDate: \"$availableDate\","
         " availableHours: \"$availableHours\","
-        " comments: \"$comments\""
+        " comments: \"$comments\","
+        " isPaying: $isPaying"
         ")";
   }
 }
@@ -73,10 +77,45 @@ ReserveFullPageViewData _default = ReserveFullPageViewData(
   availableDate: "",
   availableHours: "",
   comments: "",
+  isPaying: false,
 );
 
 class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
   ReserveFullPageViewCubit() : super(_default);
+
+  void setPaying() {
+    emit(ReserveFullPageViewData(
+      fieldSelected: state.fieldSelected,
+      isGettingRainChance: state.isGettingRainChance,
+      rainProbability: state.rainProbability,
+      selectedTeacher: state.selectedTeacher,
+      today: state.today,
+      dateOfToday: state.dateOfToday,
+      timeToday: state.timeToday,
+      hasAvailableHours: state.hasAvailableHours,
+      availableDate: state.availableDate,
+      availableHours: state.availableHours,
+      comments: state.comments,
+      isPaying: true,
+    ));
+  }
+
+  void setScheduling() {
+    emit(ReserveFullPageViewData(
+      fieldSelected: state.fieldSelected,
+      isGettingRainChance: state.isGettingRainChance,
+      rainProbability: state.rainProbability,
+      selectedTeacher: state.selectedTeacher,
+      today: state.today,
+      dateOfToday: state.dateOfToday,
+      timeToday: state.timeToday,
+      hasAvailableHours: state.hasAvailableHours,
+      availableDate: state.availableDate,
+      availableHours: state.availableHours,
+      comments: state.comments,
+      isPaying: false,
+    ));
+  }
 
   void setFieldSelected(int index) {
     emit(ReserveFullPageViewData(
@@ -91,6 +130,7 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       availableDate: state.availableDate,
       availableHours: state.availableHours,
       comments: state.comments,
+      isPaying: state.isPaying,
     ));
   }
 
@@ -115,6 +155,7 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       availableDate: state.availableDate,
       availableHours: state.availableHours,
       comments: state.comments,
+      isPaying: state.isPaying,
     ));
   }
 
@@ -131,6 +172,7 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       availableDate: state.availableDate,
       availableHours: state.availableHours,
       comments: state.comments,
+      isPaying: state.isPaying,
     ));
   }
 
@@ -147,6 +189,7 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       availableDate: state.availableDate,
       availableHours: state.availableHours,
       comments: state.comments,
+      isPaying: state.isPaying,
     ));
   }
 
@@ -163,6 +206,7 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       availableDate: state.availableDate,
       availableHours: state.availableHours,
       comments: state.comments,
+      isPaying: state.isPaying,
     ));
   }
 
@@ -205,6 +249,7 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       availableDate: state.availableDate,
       availableHours: state.availableHours,
       comments: state.comments,
+      isPaying: state.isPaying,
     ));
   }
 
@@ -319,5 +364,9 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
 
   void reset() {
     emit(_default);
+
+    customButtonWithTitleData[1].value = "";
+    customButtonWithTitleData[2].value = "";
+    customButtonWithTitleData[3].value = "";
   }
 }

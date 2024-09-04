@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Reserve Full Page View): Adding carrousel to select fields.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_use_cases.dart" afterDir="false" />
-    </list>
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Field Schedules): Sorting now working properly also fix a problem with the carrousel initial state." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -264,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725410580332</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Feat (Field Schedules): Sorting now working properly also fix a problem with the carrousel initial state.">
+      <option name="closed" value="true" />
+      <created>1725416399702</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1725416399702</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,6 +305,7 @@
     <MESSAGE value="Feat (UX): Improving the ux when reserving the scheduled fields." />
     <MESSAGE value="Feat (Reserve Full Page View): Now using cubit to manage all states." />
     <MESSAGE value="Feat (Reserve Full Page View): Adding carrousel to select fields." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Reserve Full Page View): Adding carrousel to select fields." />
+    <MESSAGE value="Feat (Field Schedules): Sorting now working properly also fix a problem with the carrousel initial state." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Field Schedules): Sorting now working properly also fix a problem with the carrousel initial state." />
   </component>
 </project>
