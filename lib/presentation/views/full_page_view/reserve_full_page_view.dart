@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_dropdown/custom_dropdown.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/other_widgets/lower_margin.dart';
+import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/static_data/static_data.dart';
@@ -30,6 +32,15 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
       .substring(1, ReserveFullPageView.routeName.length);
   ReserveFullPageViewUseCases reserveFullPageViewUseCases =
       ReserveFullPageViewUseCases();
+
+  List<Widget> slides = List.generate(
+    fields.length,
+    (index) => Image.asset(
+      fields[index].imageCropped,
+      width: double.infinity,
+      fit: BoxFit.fitWidth,
+    ),
+  );
 
   @override
   void initState() {
@@ -65,14 +76,18 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       children: [
-        BlocBuilder<ReserveFullPageViewCubit, ReserveFullPageViewData>(
-          builder: (context, state) {
-            return Image.asset(
-              state.fieldSelected.imageCropped,
-              width: double.infinity,
-              fit: BoxFit.fitWidth,
-            );
-          },
+        FlutterCarousel(
+          options: CarouselOptions(
+            height: 236,
+            viewportFraction: 1.0,
+            slideIndicator: CircularWaveSlideIndicator(),
+            floatingIndicator: true,
+            onPageChanged: (value, _) {
+              stamp(tag, "FlutterCarousel: $value");
+              reserveFullPageViewUseCases.changeField(context, value)();
+            },
+          ),
+          items: slides,
         ),
         const SizedBox(height: 24),
         Container(
@@ -83,6 +98,8 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
             children: [
               BlocBuilder<ReserveFullPageViewCubit, ReserveFullPageViewData>(
                 builder: (context, state) {
+                  stamp(tag, "state: ${state.fieldSelected}");
+
                   return Row(
                     children: [
                       Text(

@@ -34,6 +34,11 @@ class ReserveFullPageViewUseCases {
         });
       };
 
+  Future<void> Function() changeField(BuildContext context, int index) =>
+      () async {
+        context.read<ReserveFullPageViewCubit>().setFieldSelected(index);
+      };
+
   Future<void> Function() toggleFavorite(
           BuildContext context, UiTexts uiTexts, String rainChance) =>
       () async {
