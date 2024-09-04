@@ -67,7 +67,8 @@ Created using:
 
 ## UI Design 🎨
 The planning for the UI was made using [Figma](https://www.figma.com/downloads/)
-Figma project used: https://www.figma.com/board/MCpl5bhPowKlgPA2eiCKB4/Tennis-Field-Scheduler?node-id=0-1&node-type=CANVAS&t=6z5cLxYgKQafAmJK-0 
+
+- Figma project used: https://www.figma.com/board/MCpl5bhPowKlgPA2eiCKB4/Tennis-Field-Scheduler?node-id=0-1&node-type=CANVAS&t=6z5cLxYgKQafAmJK-0 
 
 ## Screenshots 🖼
 <div style="display: flex; justify-content: center;">
@@ -107,6 +108,6 @@ This project is under license (Apache License) - please check the file [LICENSE.
 
 ## Author ✒️
 * **Julio César León** - *Initial Work* - [Julio César León](https://github.com/cyberfanta)
-  Project Link: [tennis_field_scheduler](https://github.com/cyberfanta/tennis_field_scheduler_v2)
+  Project Link: [tennis_field_scheduler_v2](https://github.com/cyberfanta/tennis_field_scheduler_v2)
 
 Enjoy my app.
