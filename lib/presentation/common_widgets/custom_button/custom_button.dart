@@ -44,11 +44,14 @@ class CustomButton extends StatelessWidget {
             imageIcon != null
                 ? const SizedBox(width: 14.5)
                 : const SizedBox.shrink(),
-            Text(
-              text,
-              style: textStyle ?? styleSemiBold(18, textColor),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+            Expanded(
+              child: Text(
+                text,
+                style: textStyle ?? styleSemiBold(18, textColor),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),

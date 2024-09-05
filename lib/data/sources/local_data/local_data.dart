@@ -14,7 +14,7 @@ class LocalData {
 
   // String
   Future<String> getString(String stringName) async {
-    return (await _prefs).getString(stringName) ?? "";
+    return Future.value((await _prefs).getString(stringName) ?? "");
   }
 
   Future<List<String>> getStringList(String stringName) async {

@@ -2,8 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/app/lang/ui_texts.dart';
+import 'package:tennis_field_scheduler_v2/app/static_data/static_data.dart';
+import 'package:tennis_field_scheduler_v2/data/repository.dart';
+import 'package:tennis_field_scheduler_v2/data/sources/local_data/local_data.dart';
+import 'package:tennis_field_scheduler_v2/domain/entities/base_user.dart';
 import 'package:tennis_field_scheduler_v2/domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart';
 import 'package:tennis_field_scheduler_v2/domain/use_cases/login_views/login_view_cubit.dart';
 import 'package:tennis_field_scheduler_v2/domain/use_cases/login_views/signup_view_cubit.dart';
@@ -20,29 +25,6 @@ import 'package:tennis_field_scheduler_v2/presentation/views/login_views/login_v
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/signup_view.dart';
 
 void main() {
-  final targetPlatformTest = [
-    TargetPlatform.android,
-    TargetPlatform.iOS,
-  ];
-
-  final sizesTest = [
-    [
-      const Size(340, 740),
-      const Size(360, 740),
-      const Size(360, 780),
-      const Size(1080, 1800),
-      const Size(1080, 1920),
-      const Size(1080, 2340),
-      const Size(1284, 2778),
-    ],
-    [
-      const Size(320, 480),
-      const Size(408, 886),
-      const Size(428, 926),
-      const Size(1284, 2778),
-    ],
-  ];
-
   final viewTest = [
     const WelcomeView(),
     const LoginView(),
@@ -53,7 +35,97 @@ void main() {
     const ReserveFullPageView(),
   ];
 
-  Widget makeTestWidget({required Widget child, required Size size}) {
+  setUp(() {
+    currentUser = BaseUser(
+      name: "Julio Leon",
+      email: "julioleon2004@gmail.com",
+      phone: "04242259220",
+      pass: "123",
+      remember: false,
+    );
+
+    // final localData = MockLocalData();
+    // when(localData.getString("User"))
+    //     .thenAnswer((_) => Future.value(baseUserToJson(currentUser)));
+    //
+    // final repository = MockRepository();
+    // when(repository.getLogin()).thenAnswer((_) async => currentUser);
+    // when(repository.getForecastOfDayWithDateTime(DateTime.now())).thenAnswer(
+    //   (_) async => BaseForecast(
+    //       forecast: Forecast(
+    //           forecastDay: [ForecastDay(day: Day(dailyChanceOfRain: 20.0))])),
+    // );
+  });
+
+  for (final config in testConfigurations) {
+    group('Test platform: ${config.platform}', () {
+      for (final view in viewTest) {
+        group('View: $view', () {
+          _runTestsForView(view, config.sizes, config.platform);
+        });
+      }
+    });
+  }
+}
+
+class MockRepository extends Mock implements Repository {}
+
+class MockLocalData extends Mock implements LocalData {}
+
+final testConfigurations = [
+  TestConfiguration(
+    platform: TargetPlatform.android,
+    sizes: [
+      const Size(340, 740),
+      const Size(340, 740),
+      const Size(360, 740),
+      const Size(360, 780),
+      const Size(1080, 1800),
+      const Size(1080, 1920),
+      const Size(1080, 2340),
+      const Size(1284, 2778),
+    ],
+  ),
+  TestConfiguration(
+    platform: TargetPlatform.iOS,
+    sizes: [
+      const Size(320, 480),
+      const Size(408, 886),
+      const Size(428, 926),
+      const Size(1284, 2778),
+    ],
+  ),
+];
+
+void _runTestsForView(Widget view, List<Size> sizes, TargetPlatform platform) {
+  for (final size in sizes) {
+    testWidgets("Basic Overflow: Size: (${size.width}, ${size.height})",
+        (tester) async {
+      tester.binding.window.physicalSizeTestValue = size;
+      tester.binding.window.devicePixelRatioTestValue = 1.0;
+      debugDefaultTargetPlatformOverride = platform;
+
+      await tester.runAsync(() async {
+        await tester.pumpWidget(TestWidgetBuilder.build(
+            child: view, size: size, platform: platform));
+        expect(tester.takeException(), isNull);
+      });
+
+      await tester.pumpAndSettle();
+    });
+  }
+}
+
+class TestConfiguration {
+  final TargetPlatform platform;
+  final List<Size> sizes;
+
+  TestConfiguration({required this.platform, required this.sizes});
+}
+
+class TestWidgetBuilder {
+  static Widget build(
+      {required Widget child, required Size size, TargetPlatform? platform}) {
     return MaterialApp(
       home: MediaQuery(
         data: MediaQueryData(size: size),
@@ -88,38 +160,5 @@ void main() {
         ),
       ),
     );
-  }
-
-  for (var i = 0; i < targetPlatformTest.length; i++) {
-    group('Test platform: ${targetPlatformTest[i]}', () {
-      final sizes = sizesTest[i];
-      final platform = targetPlatformTest[i];
-
-      for (final view in viewTest) {
-        group('View: $view', () {
-          for (final size in sizes) {
-            testWidgets("Basic Overflow: Size: (${size.width}, ${size.height})",
-                (tester) async {
-              final TestWidgetsFlutterBinding binding =
-                  TestWidgetsFlutterBinding.ensureInitialized();
-
-              binding.window.physicalSizeTestValue = size;
-              binding.window.devicePixelRatioTestValue = 1.0;
-
-              debugDefaultTargetPlatformOverride = platform;
-
-              await tester.runAsync(() async {
-                await tester
-                    .pumpWidget(makeTestWidget(child: view, size: size));
-
-                expect(tester.takeException(), isNull);
-              });
-
-              await tester.pumpAndSettle();
-            });
-          }
-        });
-      }
-    });
   }
 }

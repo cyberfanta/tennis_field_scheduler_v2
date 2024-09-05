@@ -86,11 +86,15 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
               children: [
                 Row(
                   children: [
-                    Text(
-                      widget.field.name,
-                      style: styleMedium(18, cBlack),
+                    Expanded(
+                      child: Text(
+                        widget.field.name,
+                        style: styleMedium(18, cBlack),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.start,
+                      ),
                     ),
-                    const Expanded(child: SizedBox.shrink()),
                     SvgPicture.asset(
                       "assets/images/rain.svg",
                       fit: BoxFit.none,
