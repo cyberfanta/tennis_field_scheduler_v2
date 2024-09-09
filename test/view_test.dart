@@ -24,53 +24,12 @@ import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/reserva
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/login_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/signup_view.dart';
 
-void main() {
-  final viewTest = [
-    const WelcomeView(),
-    const LoginView(),
-    const SignUpView(),
-    const BeginView(),
-    const ReservationsView(),
-    const FavoritesView(),
-    const ReserveFullPageView(),
-  ];
+class TestConfiguration {
+  final TargetPlatform platform;
+  final List<Size> sizes;
 
-  setUp(() {
-    currentUser = BaseUser(
-      name: "Julio Leon",
-      email: "julioleon2004@gmail.com",
-      phone: "04242259220",
-      pass: "123",
-      remember: false,
-    );
-
-    // final localData = MockLocalData();
-    // when(localData.getString("User"))
-    //     .thenAnswer((_) => Future.value(baseUserToJson(currentUser)));
-    //
-    // final repository = MockRepository();
-    // when(repository.getLogin()).thenAnswer((_) async => currentUser);
-    // when(repository.getForecastOfDayWithDateTime(DateTime.now())).thenAnswer(
-    //   (_) async => BaseForecast(
-    //       forecast: Forecast(
-    //           forecastDay: [ForecastDay(day: Day(dailyChanceOfRain: 20.0))])),
-    // );
-  });
-
-  for (final config in testConfigurations) {
-    group('Test platform: ${config.platform}', () {
-      for (final view in viewTest) {
-        group('View: $view', () {
-          _runTestsForView(view, config.sizes, config.platform);
-        });
-      }
-    });
-  }
+  TestConfiguration({required this.platform, required this.sizes});
 }
-
-class MockRepository extends Mock implements Repository {}
-
-class MockLocalData extends Mock implements LocalData {}
 
 final testConfigurations = [
   TestConfiguration(
@@ -97,35 +56,8 @@ final testConfigurations = [
   ),
 ];
 
-void _runTestsForView(Widget view, List<Size> sizes, TargetPlatform platform) {
-  for (final size in sizes) {
-    testWidgets("Basic Overflow: Size: (${size.width}, ${size.height})",
-        (tester) async {
-      tester.binding.window.physicalSizeTestValue = size;
-      tester.binding.window.devicePixelRatioTestValue = 1.0;
-      debugDefaultTargetPlatformOverride = platform;
-
-      await tester.runAsync(() async {
-        await tester.pumpWidget(TestWidgetBuilder.build(
-            child: view, size: size, platform: platform));
-        expect(tester.takeException(), isNull);
-      });
-
-      await tester.pumpAndSettle();
-    });
-  }
-}
-
-class TestConfiguration {
-  final TargetPlatform platform;
-  final List<Size> sizes;
-
-  TestConfiguration({required this.platform, required this.sizes});
-}
-
 class TestWidgetBuilder {
-  static Widget build(
-      {required Widget child, required Size size, TargetPlatform? platform}) {
+  static Widget build({required Widget child, required Size size}) {
     return MaterialApp(
       home: MediaQuery(
         data: MediaQueryData(size: size),
@@ -160,5 +92,69 @@ class TestWidgetBuilder {
         ),
       ),
     );
+  }
+}
+
+void _runTestsForView(Widget view, List<Size> sizes, TargetPlatform platform) {
+  for (final size in sizes) {
+    testWidgets("Basic Overflow: Size: (${size.width}, ${size.height})",
+        (tester) async {
+      tester.binding.window.physicalSizeTestValue = size;
+      tester.binding.window.devicePixelRatioTestValue = 1.0;
+      debugDefaultTargetPlatformOverride = platform;
+
+      await tester.runAsync(() async {
+        await tester.pumpWidget(
+          TestWidgetBuilder.build(child: view, size: size),
+        );
+        expect(tester.takeException(), isNull);
+      });
+
+      await tester.pumpAndSettle();
+    });
+  }
+}
+
+class MockLocalData extends Mock implements LocalData {}
+
+class MockRepository extends Mock implements Repository {}
+
+void main() {
+  final viewTest = [
+    const WelcomeView(),
+    const LoginView(),
+    const SignUpView(),
+    const BeginView(),
+    const ReservationsView(),
+    const FavoritesView(),
+    const ReserveFullPageView(),
+  ];
+
+  setUp(() {
+    currentUser = BaseUser(
+      name: "Julio Leon",
+      email: "julioleon2004@gmail.com",
+      phone: "04242259220",
+      pass: "123",
+      remember: false,
+    );
+
+    // String sharedPreferenceUser = "User";
+    //
+    // final localData = MockLocalData();
+    // when(localData.getString(sharedPreferenceUser)).thenAnswer((_) => Future.value(""));
+    //
+    // final repository = MockRepository();
+    // when(repository.getLogin()).thenAnswer((_) => Future.value(currentUser));
+  });
+
+  for (final config in testConfigurations) {
+    group('Test platform: ${config.platform}', () {
+      for (final view in viewTest) {
+        group('View: $view', () {
+          _runTestsForView(view, config.sizes, config.platform);
+        });
+      }
+    });
   }
 }

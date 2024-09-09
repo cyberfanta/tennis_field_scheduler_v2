@@ -11,30 +11,29 @@ import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 import '../utils/turn_timestamp_into_dates.dart';
 
 class Repository {
-  final LocalData _localData = LocalData();
-  final Api _api = Api();
-
   final String _tag = "Repository";
 
   final String sharedPreferenceUser = "User";
   final String sharedPreferenceReservations = "Reservations";
 
   Future<BaseUser?> getLogin() async {
-    final String data = await _localData.getString(sharedPreferenceUser);
+    final LocalData localData = LocalData();
+    final String data = await localData.getString(sharedPreferenceUser);
 
     if (data.isEmpty) {
       stamp(_tag, "No user saved");
-      return null;
+      return Future.value(null);
     }
 
     stamp(_tag, "Restoring saved user");
     BaseUser baseUser = baseUserFromJson(data);
     currentUser = baseUser;
-    return baseUser;
+    return Future.value(baseUser);
   }
 
   Future<BaseUser?> validateLogin() async {
-    final String data = await _localData.getString(sharedPreferenceUser);
+    final LocalData localData = LocalData();
+    final String data = await localData.getString(sharedPreferenceUser);
 
     if (data.isEmpty) {
       stamp(_tag, "No user saved");
@@ -45,16 +44,19 @@ class Repository {
   }
 
   Future<void> saveLogin(BaseUser baseUser) async {
-    await _localData.setString(sharedPreferenceUser, baseUserToJson(baseUser));
+    final LocalData localData = LocalData();
+    await localData.setString(sharedPreferenceUser, baseUserToJson(baseUser));
   }
 
   Future<void> removeLogin() async {
-    await _localData.setString(sharedPreferenceUser, "");
+    final LocalData localData = LocalData();
+    await localData.setString(sharedPreferenceUser, "");
   }
 
   Future<List<ReservedDate>> loadReservedDates() async {
+    final LocalData localData = LocalData();
     final List<String> data =
-        await _localData.getStringList(sharedPreferenceReservations);
+        await localData.getStringList(sharedPreferenceReservations);
     return data
         .map((str) =>
             ReservedDate.fromJson(json.decode(str) as Map<String, dynamic>))
@@ -62,16 +64,19 @@ class Repository {
   }
 
   Future<void> saveReservedDate(List<ReservedDate> reservedDatesList) async {
+    final LocalData localData = LocalData();
     final List<String> data =
         reservedDatesList.map((reservedDate) => reservedDate.toJson()).toList();
-    await _localData.setStringList(sharedPreferenceReservations, data);
+    await localData.setStringList(sharedPreferenceReservations, data);
   }
 
   Future<BaseForecast> getForecast(String date, String time) {
-    return _api.getForecast(date, time);
+    final Api api = Api();
+    return api.getForecast(date, time);
   }
 
   Future<BaseForecast> getForecastOfDayWithDateTime(DateTime date) {
-    return _api.getForecastWithoutTime(turnDateTimeIntoAsianDate(date));
+    final Api api = Api();
+    return api.getForecastWithoutTime(turnDateTimeIntoAsianDate(date));
   }
 }
