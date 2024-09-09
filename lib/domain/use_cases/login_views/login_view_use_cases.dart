@@ -25,6 +25,7 @@ class LoginViewUseCases {
         LoginViewCubit loginViewCubit = context.read<LoginViewCubit>();
         loginViewCubit.reset();
 
+        WidgetsBinding.instance.addPostFrameCallback((_) async {
         BaseUser? baseUser = await repository.getLogin();
 
         if (baseUser != null) {
@@ -40,6 +41,7 @@ class LoginViewUseCases {
           controllers[1].text = "";
           loginViewCubit.removePass();
         }
+        });
       };
 
   Future<void> Function() doForgotPass(BuildContext context) => () async {
