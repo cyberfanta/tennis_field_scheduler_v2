@@ -139,8 +139,8 @@ void main() {
       remember: false,
     );
 
-    // String sharedPreferenceUser = "User";
-    //
+    String sharedPreferenceUser = "User";
+
     // final localData = MockLocalData();
     // when(localData.getString(sharedPreferenceUser)).thenAnswer((_) => Future.value(""));
     //
