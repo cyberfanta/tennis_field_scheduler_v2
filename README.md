@@ -91,7 +91,7 @@ Full Page Views
 <div style="display: flex; justify-content: space-between;">
     <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015410.png" height="300"/>
     <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015441.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015453.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240909_222807.png" height="300"/>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015509.png" height="300"/>
