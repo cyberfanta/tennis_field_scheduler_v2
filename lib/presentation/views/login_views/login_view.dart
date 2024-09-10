@@ -154,7 +154,6 @@ class _LoginViewState extends State<LoginView> {
                     const SizedBox(height: 13),
                     OnTapWrapper(
                       widgetToWrap: Row(
-                        mainAxisSize: MainAxisSize.min,
                         children: [
                           const SizedBox(width: 6),
                           BlocBuilder<LoginViewCubit, LoginViewData>(
@@ -169,9 +168,14 @@ class _LoginViewState extends State<LoginView> {
                             },
                           ),
                           const SizedBox(width: 8),
-                          Text(
-                            uiTexts.rememberPass,
-                            style: styleRegular(12, cBlack),
+                          Expanded(
+                            child: Text(
+                              uiTexts.rememberPass,
+                              style: styleRegular(12, cBlack),
+                              textAlign: TextAlign.start,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ],
                       ),

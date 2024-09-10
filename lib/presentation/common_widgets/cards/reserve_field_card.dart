@@ -12,6 +12,7 @@ import '../../../domain/entities/base_forecast.dart';
 import '../../../domain/entities/tennis_field.dart';
 import '../../../domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart';
 import '../../../utils/get_next_available_day.dart';
+import '../../../view_test_cubit.dart';
 import '../../views/full_page_view/reserve_full_page_view.dart';
 
 class ReserveFieldCard extends StatefulWidget {
@@ -40,6 +41,10 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (context.read<ViewTestCubit>().isTesting()) {
+        return;
+      }
+
       Repository repository = Repository();
       BaseForecast forecast =
           await repository.getForecastOfDayWithDateTime(getNextClosestDay(
@@ -123,12 +128,16 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
                       fit: BoxFit.none,
                     ),
                     const SizedBox(width: 8),
-                    Text(
-                      buildAvailableDates(
-                          availableDate, widget.field.availableDates),
-                      style: styleRegular(12, cBlack),
+                    Expanded(
+                      child: Text(
+                        buildAvailableDates(
+                            availableDate, widget.field.availableDates),
+                        style: styleRegular(12, cBlack),
+                        textAlign: TextAlign.start,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
-                    const Expanded(child: SizedBox.shrink()),
                   ],
                 ),
                 const SizedBox(height: 12),

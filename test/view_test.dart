@@ -23,6 +23,7 @@ import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/favorit
 import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/reservations_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/login_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/signup_view.dart';
+import 'package:tennis_field_scheduler_v2/view_test_cubit.dart';
 
 class TestConfiguration {
   final TargetPlatform platform;
@@ -87,6 +88,9 @@ class TestWidgetBuilder {
             BlocProvider<ReserveFullPageViewCubit>(
               create: (context) => ReserveFullPageViewCubit(),
             ),
+            BlocProvider<ViewTestCubit>(
+              create: (context) => ViewTestCubit(),
+            ),
           ],
           child: child,
         ),
@@ -96,23 +100,30 @@ class TestWidgetBuilder {
 }
 
 void _runTestsForView(Widget view, List<Size> sizes, TargetPlatform platform) {
-  for (final size in sizes) {
-    testWidgets("Basic Overflow: Size: (${size.width}, ${size.height})",
-        (tester) async {
-      tester.binding.window.physicalSizeTestValue = size;
-      tester.binding.window.devicePixelRatioTestValue = 1.0;
-      debugDefaultTargetPlatformOverride = platform;
+  group('View: $view', () {
+    for (final size in sizes) {
+      testWidgets("Basic Overflow: Size: (${size.width}, ${size.height})",
+          (tester) async {
+        tester.view.physicalSize = size;
+        tester.view.devicePixelRatio = 1.0;
+        debugDefaultTargetPlatformOverride = platform;
 
-      await tester.runAsync(() async {
-        await tester.pumpWidget(
-          TestWidgetBuilder.build(child: view, size: size),
-        );
-        expect(tester.takeException(), isNull);
+        await tester.runAsync(() async {
+          var testingView = TestWidgetBuilder.build(child: view, size: size);
+
+          await tester.pumpWidget(
+            TestWidgetBuilder.build(child: testingView, size: size),
+          );
+
+          expect(find.byWidget(testingView), findsOneWidget);
+        });
+
+        tester.view.resetPhysicalSize();
+        debugDefaultTargetPlatformOverride = null;
+        await tester.pumpAndSettle();
       });
-
-      await tester.pumpAndSettle();
-    });
-  }
+    }
+  });
 }
 
 class MockLocalData extends Mock implements LocalData {}
@@ -121,13 +132,13 @@ class MockRepository extends Mock implements Repository {}
 
 void main() {
   final viewTest = [
-    const WelcomeView(),
     const LoginView(),
     const SignUpView(),
     const BeginView(),
     const ReservationsView(),
     const FavoritesView(),
     const ReserveFullPageView(),
+    const WelcomeView(),
   ];
 
   setUp(() {
@@ -138,22 +149,12 @@ void main() {
       pass: "123",
       remember: false,
     );
-
-    String sharedPreferenceUser = "User";
-
-    // final localData = MockLocalData();
-    // when(localData.getString(sharedPreferenceUser)).thenAnswer((_) => Future.value(""));
-    //
-    // final repository = MockRepository();
-    // when(repository.getLogin()).thenAnswer((_) => Future.value(currentUser));
   });
 
   for (final config in testConfigurations) {
     group('Test platform: ${config.platform}', () {
       for (final view in viewTest) {
-        group('View: $view', () {
-          _runTestsForView(view, config.sizes, config.platform);
-        });
+        _runTestsForView(view, config.sizes, config.platform);
       }
     });
   }

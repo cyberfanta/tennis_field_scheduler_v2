@@ -14,6 +14,7 @@ import 'package:tennis_field_scheduler_v2/presentation/views/initial_views/welco
 import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/reservations_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/login_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/signup_view.dart';
+import 'package:tennis_field_scheduler_v2/view_test_cubit.dart';
 
 import 'app/lang/ui_texts.dart';
 import 'domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart';
@@ -52,6 +53,9 @@ void main() {
           ),
           BlocProvider<ReserveFullPageViewCubit>(
             create: (context) => ReserveFullPageViewCubit(),
+          ),
+          BlocProvider<ViewTestCubit>(
+            create: (context) => ViewTestCubit(),
           ),
         ],
         child: const MyApp(),

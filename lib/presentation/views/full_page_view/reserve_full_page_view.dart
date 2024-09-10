@@ -126,11 +126,15 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                 children: [
                   Row(
                     children: [
-                      Text(
-                        state.fieldSelected.name,
-                        style: styleSemiBold(20, cBlack),
+                      Expanded(
+                        child: Text(
+                          state.fieldSelected.name,
+                          style: styleSemiBold(20, cBlack),
+                          textAlign: TextAlign.start,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
-                      const Expanded(child: SizedBox.shrink()),
                       Text(
                         "\$${state.fieldSelected.price}",
                         style: styleSemiBold(20, cBlue),
@@ -140,15 +144,19 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                   const SizedBox(height: 4),
                   Row(
                     children: [
-                      Text(
-                        (state.fieldSelected.fieldType == FieldType.a)
-                            ? uiTexts.fieldA
-                            : (state.fieldSelected.fieldType == FieldType.b)
-                                ? uiTexts.fieldB
-                                : uiTexts.fieldC,
-                        style: styleRegular(12, cBlack),
+                      Expanded(
+                        child: Text(
+                          (state.fieldSelected.fieldType == FieldType.a)
+                              ? uiTexts.fieldA
+                              : (state.fieldSelected.fieldType == FieldType.b)
+                                  ? uiTexts.fieldB
+                                  : uiTexts.fieldC,
+                          style: styleRegular(12, cBlack),
+                          textAlign: TextAlign.start,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
-                      const Expanded(child: SizedBox.shrink()),
                       Text(
                         uiTexts.perHour,
                         style: styleRegular(12, cGray2),
@@ -178,15 +186,17 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                               fit: BoxFit.none,
                             ),
                             const SizedBox(width: 4),
-                            Text(
-                              state.fieldSelected.availableHours.isEmpty
-                                  ? state.availableHours
-                                  : "${state.fieldSelected.availableHours[0]} - ${state.fieldSelected.availableHours.last}",
-                              style: styleRegular(12, cBlack),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
+                            Expanded(
+                              child: Text(
+                                state.fieldSelected.availableHours.isEmpty
+                                    ? state.availableHours
+                                    : "${state.fieldSelected.availableHours[0]} - ${state.fieldSelected.availableHours.last}",
+                                style: styleRegular(12, cBlack),
+                                textAlign: TextAlign.start,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                            const Expanded(child: SizedBox.shrink()),
                             SvgPicture.asset(
                               "assets/images/rain.svg",
                               fit: BoxFit.none,
@@ -213,7 +223,6 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                                 borderRadius: BorderRadius.circular(1000),
                               ),
                             ),
-                            const Expanded(child: SizedBox.shrink()),
                           ],
                         ),
                   const SizedBox(height: 12),
@@ -224,11 +233,15 @@ class _ReserveFullPageViewState extends State<ReserveFullPageView> {
                         fit: BoxFit.none,
                       ),
                       const SizedBox(width: 4),
-                      Text(
-                        state.fieldSelected.address,
-                        style: styleRegular(12, cBlack),
+                      Expanded(
+                        child: Text(
+                          state.fieldSelected.address,
+                          style: styleRegular(12, cBlack),
+                          textAlign: TextAlign.start,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
-                      const Expanded(child: SizedBox.shrink()),
                     ],
                   ),
                   state.isPaying

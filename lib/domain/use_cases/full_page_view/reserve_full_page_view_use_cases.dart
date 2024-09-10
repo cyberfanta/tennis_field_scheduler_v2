@@ -16,6 +16,7 @@ import '../../../utils/find_index_repeated_three_times.dart';
 import '../../../utils/get_next_available_day.dart';
 import '../../../utils/stamp.dart';
 import '../../../utils/turn_timestamp_into_dates.dart';
+import '../../../view_test_cubit.dart';
 import '../../entities/scheduled_field.dart';
 import '../../entities/tennis_field.dart';
 
@@ -24,6 +25,10 @@ class ReserveFullPageViewUseCases {
       .substring(1, ReserveFullPageView.routeName.length);
 
   Future<void> Function() initState(BuildContext context) => () async {
+        if (context.read<ViewTestCubit>().isTesting()) {
+          return;
+        }
+
         WidgetsBinding.instance.addPostFrameCallback((_) async {
           ReserveFullPageViewCubit cubit =
               context.read<ReserveFullPageViewCubit>();

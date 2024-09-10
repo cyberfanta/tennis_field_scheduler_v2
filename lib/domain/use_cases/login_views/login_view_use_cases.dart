@@ -12,6 +12,7 @@ import '../../../presentation/common_widgets/backgrounds/error_message_cubit.dar
 import '../../../presentation/common_widgets/dialog/not_implemented_dialog.dart';
 import '../../../presentation/views/login_views/login_view.dart';
 import '../../../utils/stamp.dart';
+import '../../../view_test_cubit.dart';
 import '../../entities/base_user.dart';
 
 class LoginViewUseCases {
@@ -24,6 +25,10 @@ class LoginViewUseCases {
       () async {
         LoginViewCubit loginViewCubit = context.read<LoginViewCubit>();
         loginViewCubit.reset();
+
+        if (context.read<ViewTestCubit>().isTesting()) {
+          return;
+        }
 
         BaseUser? baseUser = await repository.getLogin();
 

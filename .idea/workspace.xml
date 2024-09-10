@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Unit Test): Adding upgrades, based on unit testing. Pending add mocks for the repository class.">
+      <change afterPath="$PROJECT_DIR$/lib/view_test_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/initial_views/welcome_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/initial_views/welcome_view_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/view_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/view_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,11 +78,11 @@
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\cards" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\full_page_view" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\inner_views\begin_view" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\dialog\templates" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\backgrounds" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\views\inner_view" />
     </key>
   </component>
   <component name="RunManager" selected="Flutter Test.tests in view_test.dart">
@@ -349,7 +354,31 @@
       <option name="project" value="LOCAL" />
       <updated>1725925569946</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Feat (Unit Test): Adding upgrades, based on unit testing. Pending add mocks for the repository class.">
+      <option name="closed" value="true" />
+      <created>1725926154246</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1725926154246</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Feat (Unit Test): Adding upgrades, based on unit testing. Pending add mocks for the repository class.">
+      <option name="closed" value="true" />
+      <created>1725926164532</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1725926164532</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Feat (Unit Test): Adding upgrades, based on unit testing. Pending add mocks for the repository class.">
+      <option name="closed" value="true" />
+      <created>1725926187246</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1725926187246</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
