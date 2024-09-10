@@ -230,6 +230,7 @@ class ViewManager {
         );
     }
 
-    Navigator.of(context).pushAndRemoveUntil(pageRouteBuilder, (r) => false);
+    Navigator.of(context).pop();
+    Navigator.of(context).push(pageRouteBuilder);
   }
 }

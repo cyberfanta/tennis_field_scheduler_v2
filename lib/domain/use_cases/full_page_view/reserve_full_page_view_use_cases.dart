@@ -33,6 +33,8 @@ class ReserveFullPageViewUseCases {
           ReserveFullPageViewCubit cubit =
               context.read<ReserveFullPageViewCubit>();
 
+          cubit.reset();
+
           cubit.getForecast(getNextClosestDay(
             DateTime.now(),
             cubit.state.fieldSelected.availableDates,
@@ -54,6 +56,13 @@ class ReserveFullPageViewUseCases {
       () async {
         stamp(_tag, "Button Pressed: \"toggleFavorite\"",
             decoratorChar: " * ", extraLine: true);
+
+        if (customButtonWithTitleData[1].value.isEmpty ||
+            customButtonWithTitleData[2].value.isEmpty ||
+            customButtonWithTitleData[3].value.isEmpty) {
+          context.read<ErrorMessageCubit>().setValue(uiTexts.emptyFavorite);
+          return;
+        }
 
         Uuid uuid = const Uuid();
         String id = uuid.v4();

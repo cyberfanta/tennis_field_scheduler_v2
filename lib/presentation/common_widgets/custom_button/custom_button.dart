@@ -32,29 +32,41 @@ class CustomButton extends StatelessWidget {
       widgetToWrap: Container(
         width: double.infinity,
         height: 53,
-        decoration: decoration ?? BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(8),
-        ),
+        decoration: decoration ??
+            BoxDecoration(
+              color: backgroundColor,
+              borderRadius: BorderRadius.circular(8),
+            ),
         alignment: Alignment.center,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            imageIcon != null ? imageIcon! : const SizedBox.shrink(),
-            imageIcon != null
-                ? const SizedBox(width: 14.5)
-                : const SizedBox.shrink(),
-            Expanded(
-              child: Text(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        clipBehavior: Clip.hardEdge,
+        child: imageIcon != null
+            ? Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  imageIcon!,
+                  const SizedBox(width: 14.5),
+                  Container(
+                    constraints: const BoxConstraints(
+                      maxWidth: 178,
+                    ),
+                    child: Text(
+                      text,
+                      style: textStyle ?? styleSemiBold(18, textColor),
+                      textAlign: TextAlign.start,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              )
+            : Text(
                 text,
                 style: textStyle ?? styleSemiBold(18, textColor),
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-            ),
-          ],
-        ),
       ),
       actionsToDo: actionsToDo,
     );

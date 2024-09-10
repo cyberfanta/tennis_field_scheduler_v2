@@ -44,6 +44,7 @@ class _WelcomeViewState extends State<WelcomeView> {
     return Container(
       margin: const EdgeInsets.only(top: 90, bottom: 51),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 83),
@@ -53,7 +54,6 @@ class _WelcomeViewState extends State<WelcomeView> {
               fit: BoxFit.fitWidth,
             ),
           ),
-          const Expanded(child: SizedBox.shrink()),
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [

@@ -251,6 +251,10 @@ class UiTextEs {
     return "Item agregado a favoritos";
   }
 
+  String get emptyFavorite {
+    return "Debe agregar fecha y horas para salvar como favorito";
+  }
+
   String get summarize {
     return "Resumen";
   }

@@ -255,6 +255,10 @@ class UiTextEn {
     return "Item added to favorites";
   }
 
+  String get emptyFavorite {
+    return "Need add date and hours to save as favorite";
+  }
+
   String get summarize {
     return "Summarize";
   }

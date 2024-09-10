@@ -528,6 +528,14 @@ class UiTexts extends ChangeNotifier {
     return UiTextEn().addedFavorite;
   }
 
+  String get emptyFavorite {
+    if (_locale.languageCode == 'es') {
+      return UiTextEs().emptyFavorite;
+    }
+
+    return UiTextEn().emptyFavorite;
+  }
+
   String get summarize {
     if (_locale.languageCode == 'es') {
       return UiTextEs().summarize;

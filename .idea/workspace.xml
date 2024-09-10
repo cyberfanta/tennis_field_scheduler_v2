@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Unit Test): Adding upgrades, based on unit testing. Pending add mocks for the repository class.">
-      <change afterPath="$PROJECT_DIR$/lib/view_test_cubit.dart" afterDir="false" />
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Unit Test): Now is working the testing.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/initial_views/welcome_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/initial_views/welcome_view_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/view_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/view_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +82,7 @@
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\backgrounds" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter Test.tests in view_test.dart">
+  <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="tests in view_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testFile" value="$PROJECT_DIR$/test/view_test.dart" />
       <option name="useRegexp" value="false" />
@@ -378,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725926187246</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Feat (Unit Test): Now is working the testing.">
+      <option name="closed" value="true" />
+      <created>1725929358013</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1725929358013</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -394,7 +399,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Feat (Icon): Uploading icons from Adobe XD." />
     <MESSAGE value="Feat (Login View): Custom input and majority of login view functionalities done." />
     <MESSAGE value="Feat (Login View): Custom dialogs to improve UX." />
     <MESSAGE value="Feat (Login View): Login and Sign up view full functional." />
@@ -419,6 +423,7 @@
     <MESSAGE value="Feat (Docs): Updating README.md." />
     <MESSAGE value="Feat (Unit Test): Validating all responsiveness problems in views." />
     <MESSAGE value="Feat (Unit Test): Adding upgrades, based on unit testing. Pending add mocks for the repository class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Unit Test): Adding upgrades, based on unit testing. Pending add mocks for the repository class." />
+    <MESSAGE value="Feat (Unit Test): Now is working the testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Unit Test): Now is working the testing." />
   </component>
 </project>
