@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Unit Test): Now is working the testing.">
+    <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (Unit Test): Now is working the testing. Pending investigate the use of the mocks in unit testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/custom_button/custom_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/view_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/view_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -383,7 +381,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725929358013</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Feat (Unit Test): Now is working the testing. Pending investigate the use of the mocks in unit testing">
+      <option name="closed" value="true" />
+      <created>1725933933498</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1725933933498</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -399,7 +405,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Feat (Login View): Custom input and majority of login view functionalities done." />
     <MESSAGE value="Feat (Login View): Custom dialogs to improve UX." />
     <MESSAGE value="Feat (Login View): Login and Sign up view full functional." />
     <MESSAGE value="Feat (Inner View): Scaffold for inner views." />
@@ -424,6 +429,7 @@
     <MESSAGE value="Feat (Unit Test): Validating all responsiveness problems in views." />
     <MESSAGE value="Feat (Unit Test): Adding upgrades, based on unit testing. Pending add mocks for the repository class." />
     <MESSAGE value="Feat (Unit Test): Now is working the testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Unit Test): Now is working the testing." />
+    <MESSAGE value="Feat (Unit Test): Now is working the testing. Pending investigate the use of the mocks in unit testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Unit Test): Now is working the testing. Pending investigate the use of the mocks in unit testing" />
   </component>
 </project>

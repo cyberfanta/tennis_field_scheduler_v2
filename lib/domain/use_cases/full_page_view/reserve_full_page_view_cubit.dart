@@ -295,7 +295,7 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       endLastDate: twoWeeksLater,
       isForceEndDateAfterStartDate: true,
       minutesInterval: 60,
-        is24HourMode:true,
+      is24HourMode: true,
       onStartDateAfterEndDateError: () {
         showDialog(
           context: context,
@@ -309,6 +309,12 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
       borderRadius: BorderRadius.circular(4),
       startSelectableDayPredicate: _allowedDates,
       endSelectableDayPredicate: _allowedDates,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: cWhite,
+          brightness: Brightness.light,
+        ),
+      ),
     );
 
     stamp("tag", "datePicked: $datePicked");
