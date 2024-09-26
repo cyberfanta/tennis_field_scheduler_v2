@@ -6,6 +6,8 @@ import 'package:tennis_field_scheduler_v2/presentation/views/login_views/login_v
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/static_data/static_data.dart';
 import '../../../data/repository.dart';
+import '../../../data/sources/local_data/local_data.dart';
+import '../../../data/sources/weather_api/weather_api.dart';
 import '../../../presentation/common_widgets/backgrounds/error_message_cubit.dart';
 import '../../../presentation/views/inner_views/begin_view.dart';
 import '../../../presentation/views/login_views/signup_view.dart';
@@ -15,7 +17,6 @@ import '../../entities/base_user.dart';
 class SignUpViewUseCases {
   final String _tag =
       SignUpView.routeName.substring(1, SignUpView.routeName.length);
-  Repository repository = Repository();
 
   Future<void> Function() initState(BuildContext context) => () async {
         context.read<SignUpViewCubit>().reset();
@@ -66,6 +67,7 @@ class SignUpViewUseCases {
         scheduleList.value = defaultScheduled;
         favoriteList.value = defaultScheduled;
 
+        Repository repository = Repository(localData: LocalData(), api: Api());
         await repository.saveLogin(baseUser);
 
         // ignore: use_build_context_synchronously

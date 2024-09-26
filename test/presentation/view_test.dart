@@ -2,14 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/app/lang/ui_texts.dart';
 import 'package:tennis_field_scheduler_v2/app/static_data/static_data.dart';
-import 'package:tennis_field_scheduler_v2/data/repository.dart';
-import 'package:tennis_field_scheduler_v2/data/sources/local_data/local_data.dart';
 import 'package:tennis_field_scheduler_v2/domain/entities/base_user.dart';
 import 'package:tennis_field_scheduler_v2/domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart';
+import 'package:tennis_field_scheduler_v2/domain/use_cases/inner_views/begin_view/reserve_field_card_cubit.dart';
 import 'package:tennis_field_scheduler_v2/domain/use_cases/login_views/login_view_cubit.dart';
 import 'package:tennis_field_scheduler_v2/domain/use_cases/login_views/signup_view_cubit.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/backgrounds/error_message_cubit.dart';
@@ -88,6 +86,9 @@ class TestWidgetBuilder {
             BlocProvider<ReserveFullPageViewCubit>(
               create: (context) => ReserveFullPageViewCubit(),
             ),
+            BlocProvider<ReserveFieldCardCubit>(
+              create: (context) => ReserveFieldCardCubit(),
+            ),
             BlocProvider<ViewTestCubit>(
               create: (context) => ViewTestCubit(),
             ),
@@ -126,10 +127,6 @@ void _runTestsForView(Widget view, List<Size> sizes, TargetPlatform platform) {
   });
 }
 
-class MockLocalData extends Mock implements LocalData {}
-
-class MockRepository extends Mock implements Repository {}
-
 void main() {
   final viewTest = [
     const LoginView(),
@@ -142,7 +139,7 @@ void main() {
   ];
 
   setUp(() {
-    currentUser = BaseUser(
+    currentUser = const BaseUser(
       name: "Julio Leon",
       email: "julioleon2004@gmail.com",
       phone: "04242259220",
@@ -150,6 +147,8 @@ void main() {
       remember: false,
     );
   });
+
+  tearDown(() {});
 
   for (final config in testConfigurations) {
     group('Test platform: ${config.platform}', () {

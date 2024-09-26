@@ -6,6 +6,8 @@ import 'package:tennis_field_scheduler_v2/utils/stamp.dart';
 import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_colors.dart';
 import '../../../data/repository.dart';
+import '../../../data/sources/local_data/local_data.dart';
+import '../../../data/sources/weather_api/weather_api.dart';
 import '../../../presentation/common_widgets/custom_button/custom_button_with_title.dart';
 import '../../../presentation/common_widgets/dialog/wrong_dates_dialog.dart';
 import '../../../presentation/common_widgets/other_widgets/date_picker_title.dart';
@@ -246,7 +248,7 @@ class ReserveFullPageViewCubit extends Cubit<ReserveFullPageViewData> {
   }
 
   Future<void> getForecast(DateTime date) async {
-    Repository repository = Repository();
+    Repository repository = Repository(localData: LocalData(), api: Api());
     BaseForecast forecast = await repository.getForecastOfDayWithDateTime(date);
 
     String rainProbability =

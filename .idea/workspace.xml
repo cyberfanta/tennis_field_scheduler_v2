@@ -1,11 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d5fa077-5cbd-4fef-ad23-5905eeeeb959" name="Changes" comment="Feat (UI): Quick fixes.">
-      <change afterPath="$PROJECT_DIR$/assets/extras/Screenshot_20240909_222807.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshot_20240926_131159.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/app/src/main/kotlin/com/cyberfanta/tennis_field_scheduler_v2/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/begin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/begin_scrolled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/favorites.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/full_page_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/full_page_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/full_page_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/full_page_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/full_page_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/full_page_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/reserved.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/signup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/extras/welcome.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/app_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/begin_view/reserve_field_card_cubit.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data/repository_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data/sources/api_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data/sources/local_data_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/kotlin/com/example/tennis_field_scheduler_v2/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015222.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015246.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015302.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015318.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015340.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015348.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015357.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015410.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015441.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015453.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015509.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015530.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015552.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015606.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240904_015638.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/extras/Screenshot_20240909_222807.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/sources/local_data/local_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/sources/local_data/local_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/entities/base_user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/entities/base_user.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/login_views/login_view_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/use_cases/login_views/signup_view_use_cases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/use_cases/login_views/signup_view_use_cases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/app_bar/app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/app_bar/app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/behaviors/dismissable_wrapper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/behaviors/dismissible_wrapper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserve_field_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/begin_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/favorites_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/inner_views/reservations_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/view_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/presentation/view_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,46 +109,65 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Flutter Test.tests in view_test.dart.executor&quot;: &quot;Run&quot;,
-    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;ScreenshotViewer.SavePath&quot;: &quot;C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/assets/extras&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Cyber/StudioProjects/tennis_field_scheduler_v2/assets/extras&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.android.studio.ml.bot.mainConfigurable&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Flutter Test.tests in local_data_test.dart.executor": "Run",
+    "Flutter Test.tests in repository_test.dart.executor": "Run",
+    "Flutter Test.tests in view_test.dart (1).executor": "Run",
+    "Flutter Test.tests in view_test.dart.executor": "Run",
+    "Flutter.main.dart.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "ScreenshotViewer.SavePath": "C:/Users/julio/StudioProjects/tennis_field_scheduler_v2/assets/extras",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/julio/StudioProjects/tennis_field_scheduler_v2/assets/extras",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.android.studio.ml.bot.mainConfigurable",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\test\data\sources" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\test\data\sources\" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\inner_views\begin_view" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\dialog" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\login_views" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\custom_button" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\other_widgets" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\cards" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\test\presentation" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\full_page_view" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\inner_views\begin_view" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\presentation\common_widgets\dialog\templates" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler_v2\lib\domain\use_cases\backgrounds" />
     </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="tests in local_data_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/test/data/sources/local_data_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in repository_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/test/data/repository_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in view_test.dart (1)" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/test/presentation/view_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="tests in view_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testFile" value="$PROJECT_DIR$/test/view_test.dart" />
       <option name="useRegexp" value="false" />
@@ -88,6 +175,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter Test.tests in local_data_test.dart" />
+        <item itemvalue="Flutter Test.tests in repository_test.dart" />
+        <item itemvalue="Flutter Test.tests in view_test.dart (1)" />
         <item itemvalue="Flutter Test.tests in view_test.dart" />
       </list>
     </recent_temporary>
@@ -397,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725935274296</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Feat (UI): Quick fixes.">
+      <option name="closed" value="true" />
+      <created>1725935345320</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1725935345320</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

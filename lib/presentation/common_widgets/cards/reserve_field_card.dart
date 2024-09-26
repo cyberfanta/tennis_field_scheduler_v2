@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler_v2/app/theme/ui_colors.dart';
-import 'package:tennis_field_scheduler_v2/data/repository.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_button/custom_button.dart';
 
 import '../../../app/lang/ui_texts.dart';
 import '../../../app/static_data/static_data.dart';
 import '../../../app/theme/ui_text_styles.dart';
-import '../../../domain/entities/base_forecast.dart';
 import '../../../domain/entities/tennis_field.dart';
+import '../../../domain/use_cases/inner_views/begin_view/reserve_field_card_cubit.dart';
 import '../../../domain/use_cases/inner_views/begin_view/reserve_field_card_use_cases.dart';
-import '../../../utils/get_next_available_day.dart';
-import '../../../view_test_cubit.dart';
 import '../../views/full_page_view/reserve_full_page_view.dart';
 
 class ReserveFieldCard extends StatefulWidget {
@@ -39,25 +37,7 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
   @override
   void initState() {
     super.initState();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      if (context.read<ViewTestCubit>().isTesting()) {
-        return;
-      }
-
-      Repository repository = Repository();
-      BaseForecast forecast =
-          await repository.getForecastOfDayWithDateTime(getNextClosestDay(
-        DateTime.now(),
-        widget.field.availableDates,
-      ));
-
-      rainProbability =
-          "${forecast.forecast!.forecastday?[0].day!.dailyChanceOfRain}";
-      rainProbability = rainProbability.replaceAll(".0", "%");
-
-      setState(() {});
-    });
+    reserveFieldCardUseCases.initState(context, widget.field, rainProbability);
   }
 
   @override
@@ -67,149 +47,153 @@ class _ReserveFieldCardState extends State<ReserveFieldCard> {
     UiTexts uiTexts = Provider.of<UiTexts>(context);
     double margin = 16;
 
-    return Container(
-      width: 245,
-      height: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(color: cCardBorder),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      clipBehavior: Clip.hardEdge,
-      padding: EdgeInsets.zero,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset(
-            widget.field.image,
-            width: double.infinity,
+    return BlocBuilder<ReserveFieldCardCubit, bool>(
+      builder: (context, state) {
+        return Container(
+          width: 245,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(color: cCardBorder),
+            borderRadius: BorderRadius.circular(12),
           ),
-          const SizedBox(height: 12),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: margin),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+          clipBehavior: Clip.hardEdge,
+          padding: EdgeInsets.zero,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset(
+                widget.field.image,
+                width: double.infinity,
+              ),
+              const SizedBox(height: 12),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: margin),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
-                      child: Text(
-                        widget.field.name,
-                        style: styleMedium(18, cBlack),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.start,
-                      ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            widget.field.name,
+                            style: styleMedium(18, cBlack),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.start,
+                          ),
+                        ),
+                        SvgPicture.asset(
+                          "assets/images/rain.svg",
+                          fit: BoxFit.none,
+                        ),
+                        const SizedBox(width: 4),
+                        Text(
+                          rainProbability,
+                          style: styleRegular(12, cBlack),
+                        ),
+                      ],
                     ),
-                    SvgPicture.asset(
-                      "assets/images/rain.svg",
-                      fit: BoxFit.none,
-                    ),
-                    const SizedBox(width: 4),
+                    const SizedBox(height: 4),
                     Text(
-                      rainProbability,
+                      (widget.field.fieldType == FieldType.a)
+                          ? uiTexts.fieldA
+                          : (widget.field.fieldType == FieldType.b)
+                              ? uiTexts.fieldB
+                              : uiTexts.fieldC,
                       style: styleRegular(12, cBlack),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  (widget.field.fieldType == FieldType.a)
-                      ? uiTexts.fieldA
-                      : (widget.field.fieldType == FieldType.b)
-                          ? uiTexts.fieldB
-                          : uiTexts.fieldC,
-                  style: styleRegular(12, cBlack),
-                ),
-                const SizedBox(height: 12),
-                Row(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/images/date.svg",
-                      fit: BoxFit.none,
+                    const SizedBox(height: 12),
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          "assets/images/date.svg",
+                          fit: BoxFit.none,
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            buildAvailableDates(
+                                availableDate, widget.field.availableDates),
+                            style: styleRegular(12, cBlack),
+                            textAlign: TextAlign.start,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        buildAvailableDates(
-                            availableDate, widget.field.availableDates),
-                        style: styleRegular(12, cBlack),
-                        textAlign: TextAlign.start,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                    const SizedBox(height: 12),
+                    hasAvailableHours
+                        ? Row(
+                            children: [
+                              Text(
+                                uiTexts.available,
+                                style: styleRegular(12, cBlack),
+                              ),
+                              const SizedBox(width: 8),
+                              Container(
+                                width: 8,
+                                height: 8,
+                                decoration: BoxDecoration(
+                                  color: cBlue,
+                                  borderRadius: BorderRadius.circular(1000),
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              SvgPicture.asset(
+                                "assets/images/time.svg",
+                                fit: BoxFit.none,
+                              ),
+                              const SizedBox(width: 4),
+                              Expanded(
+                                child: Text(
+                                  widget.field.availableHours.isEmpty
+                                      ? availableHours
+                                      : "${widget.field.availableHours[0]} - ${widget.field.availableHours.last}",
+                                  style: styleRegular(12, cBlack),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
+                          )
+                        : Row(
+                            children: [
+                              Text(
+                                uiTexts.notAvailable,
+                                style: styleRegular(12, cBlack),
+                              ),
+                              const SizedBox(width: 8),
+                              Container(
+                                width: 8,
+                                height: 8,
+                                decoration: BoxDecoration(
+                                  color: cRed,
+                                  borderRadius: BorderRadius.circular(1000),
+                                ),
+                              ),
+                              const Expanded(child: SizedBox.shrink()),
+                            ],
+                          ),
+                    const SizedBox(height: 42),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 34),
+                      child: CustomButton(
+                        context: context,
+                        text: uiTexts.reserve,
+                        backgroundColor: cGreenForeground,
+                        actionsToDo: reserveFieldCardUseCases.goReserve(
+                            tag, context, widget.field),
                       ),
                     ),
+                    const SizedBox(height: 12),
                   ],
                 ),
-                const SizedBox(height: 12),
-                hasAvailableHours
-                    ? Row(
-                        children: [
-                          Text(
-                            uiTexts.available,
-                            style: styleRegular(12, cBlack),
-                          ),
-                          const SizedBox(width: 8),
-                          Container(
-                            width: 8,
-                            height: 8,
-                            decoration: BoxDecoration(
-                              color: cBlue,
-                              borderRadius: BorderRadius.circular(1000),
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          SvgPicture.asset(
-                            "assets/images/time.svg",
-                            fit: BoxFit.none,
-                          ),
-                          const SizedBox(width: 4),
-                          Expanded(
-                            child: Text(
-                              widget.field.availableHours.isEmpty
-                                  ? availableHours
-                                  : "${widget.field.availableHours[0]} - ${widget.field.availableHours.last}",
-                              style: styleRegular(12, cBlack),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      )
-                    : Row(
-                        children: [
-                          Text(
-                            uiTexts.notAvailable,
-                            style: styleRegular(12, cBlack),
-                          ),
-                          const SizedBox(width: 8),
-                          Container(
-                            width: 8,
-                            height: 8,
-                            decoration: BoxDecoration(
-                              color: cRed,
-                              borderRadius: BorderRadius.circular(1000),
-                            ),
-                          ),
-                          const Expanded(child: SizedBox.shrink()),
-                        ],
-                      ),
-                const SizedBox(height: 42),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 34),
-                  child: CustomButton(
-                    context: context,
-                    text: uiTexts.reserve,
-                    backgroundColor: cGreenForeground,
-                    actionsToDo: reserveFieldCardUseCases.goReserve(
-                        tag, context, widget.field),
-                  ),
-                ),
-                const SizedBox(height: 12),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 

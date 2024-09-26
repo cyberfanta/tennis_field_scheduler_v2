@@ -8,6 +8,8 @@ import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/begin_v
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/signup_view.dart';
 
 import '../../../app/static_data/static_data.dart';
+import '../../../data/sources/local_data/local_data.dart';
+import '../../../data/sources/weather_api/weather_api.dart';
 import '../../../presentation/common_widgets/backgrounds/error_message_cubit.dart';
 import '../../../presentation/common_widgets/dialog/not_implemented_dialog.dart';
 import '../../../presentation/views/login_views/login_view.dart';
@@ -18,7 +20,7 @@ import '../../entities/base_user.dart';
 class LoginViewUseCases {
   final String _tag =
       LoginView.routeName.substring(1, LoginView.routeName.length);
-  Repository repository = Repository();
+  Repository repository = Repository(localData: LocalData(), api: Api());
 
   Future<void> Function() initState(
           BuildContext context, List<TextEditingController> controllers) =>
@@ -33,12 +35,12 @@ class LoginViewUseCases {
         BaseUser? baseUser = await repository.getLogin();
 
         if (baseUser != null) {
-          controllers[0].text = "${baseUser.email}";
-          loginViewCubit.setEmail("${baseUser.email}");
+          controllers[0].text = baseUser.email;
+          loginViewCubit.setEmail(baseUser.email);
 
           if (baseUser.remember == true) {
-            controllers[1].text = "${baseUser.pass}";
-            loginViewCubit.setPass("${baseUser.pass}");
+            controllers[1].text = baseUser.pass;
+            loginViewCubit.setPass(baseUser.pass);
             return;
           }
 

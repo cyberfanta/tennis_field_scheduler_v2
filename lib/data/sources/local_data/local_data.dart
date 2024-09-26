@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalData {
   // Int
-  Future<int> getInt(String intName) async {
+  Future<int>? getInt(String intName) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return Future.value(prefs.getInt(intName) ?? -25000);
   }
@@ -13,12 +13,12 @@ class LocalData {
   }
 
   // String
-  Future<String> getString(String stringName) async {
+  Future<String>? getString(String stringName) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return Future.value(prefs.getString(stringName) ?? "");
   }
 
-  Future<List<String>> getStringList(String stringName) async {
+  Future<List<String>>? getStringList(String stringName) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return Future.value(prefs.getStringList(stringName) ?? []);
   }

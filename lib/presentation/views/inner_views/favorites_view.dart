@@ -8,7 +8,7 @@ import '../../../app/theme/ui_text_styles.dart';
 import '../../../domain/entities/scheduled_field.dart';
 import '../../../domain/use_cases/inner_views/favorites_view_use_cases.dart';
 import '../../common_widgets/backgrounds/base_background.dart';
-import '../../common_widgets/behaviors/dismissable_wrapper.dart';
+import '../../common_widgets/behaviors/dismissible_wrapper.dart';
 import '../../common_widgets/cards/reserved_field_card_2.dart';
 import '../../common_widgets/other_widgets/lower_margin.dart';
 import '../../common_widgets/other_widgets/no_favorites_text.dart';

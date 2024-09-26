@@ -8,9 +8,9 @@ import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_dro
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/custom_dropdown/custom_dropdown_open_cubit.dart';
 import 'package:tennis_field_scheduler_v2/presentation/common_widgets/menu/menu_cubit.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/full_page_view/reserve_full_page_view.dart';
+import 'package:tennis_field_scheduler_v2/presentation/views/initial_views/welcome_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/begin_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/favorites_view.dart';
-import 'package:tennis_field_scheduler_v2/presentation/views/initial_views/welcome_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/inner_views/reservations_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/login_view.dart';
 import 'package:tennis_field_scheduler_v2/presentation/views/login_views/signup_view.dart';
@@ -18,6 +18,7 @@ import 'package:tennis_field_scheduler_v2/view_test_cubit.dart';
 
 import 'app/lang/ui_texts.dart';
 import 'domain/use_cases/full_page_view/reserve_full_page_view_cubit.dart';
+import 'domain/use_cases/inner_views/begin_view/reserve_field_card_cubit.dart';
 import 'domain/use_cases/login_views/login_view_cubit.dart';
 import 'domain/use_cases/login_views/signup_view_cubit.dart';
 
@@ -54,6 +55,9 @@ void main() {
           BlocProvider<ReserveFullPageViewCubit>(
             create: (context) => ReserveFullPageViewCubit(),
           ),
+          BlocProvider<ReserveFieldCardCubit>(
+            create: (context) => ReserveFieldCardCubit(),
+          ),
           BlocProvider<ViewTestCubit>(
             create: (context) => ViewTestCubit(),
           ),
@@ -73,14 +77,11 @@ class MyApp extends StatelessWidget {
       initialRoute: WelcomeView.routeName,
       routes: {
         WelcomeView.routeName: (context) => const WelcomeView(),
-
         LoginView.routeName: (context) => const LoginView(),
         SignUpView.routeName: (context) => const SignUpView(),
-
         BeginView.routeName: (context) => const BeginView(),
         ReservationsView.routeName: (context) => const ReservationsView(),
         FavoritesView.routeName: (context) => const FavoritesView(),
-
         ReserveFullPageView.routeName: (context) => const ReserveFullPageView(),
       },
       localizationsDelegates: const [

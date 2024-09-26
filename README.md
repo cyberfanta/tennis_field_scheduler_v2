@@ -71,37 +71,45 @@ The planning for the UI was made using [Figma](https://www.figma.com/downloads/)
 - Figma project used: https://www.figma.com/board/MCpl5bhPowKlgPA2eiCKB4/Tennis-Field-Scheduler?node-id=0-1&node-type=CANVAS&t=6z5cLxYgKQafAmJK-0 
 
 ## Screenshots 🖼
+Logo
+<div style="display: flex; justify-content: center;">
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/logo.png" height="300"/>
+</div>
+
+Banner
+<div style="display: flex; justify-content: center;">
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/banner.png" height="300"/>
+</div>
+
 Welcome View
 <div style="display: flex; justify-content: center;">
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015222.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/welcome.png" height="300"/>
 </div>
+
 Login Views
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015246.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015302.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/login.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/signup.png" height="300"/>
 </div>
+
 Inner Views
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015318.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015340.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015348.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015357.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/begin.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/begin_scrolled.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/reserved.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/favorites.png" height="300"/>
 </div>
+
 Full Page Views
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015410.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015441.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240909_222807.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/full_page_1.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/full_page_2.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/full_page_3.png" height="300"/>
 </div>
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015509.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015530.png" height="300"/>
-</div>
-Others
-<div style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015552.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015606.png" height="300"/>
-    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/Screenshot_20240904_015638.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/full_page_4.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/full_page_5.png" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler_v2/blob/master/assets/extras/full_page_6.png" height="300"/>
 </div>
 
 ## Try this project ⚔
