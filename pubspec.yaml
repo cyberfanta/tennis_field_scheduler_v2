@@ -2,7 +2,7 @@ name: tennis_field_scheduler_v2
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 1.0.3+3
+version: 1.0.4+4
 
 environment:
   sdk: ^3.5.1
@@ -106,3 +106,21 @@ flutter:
         - asset: assets/fonts/Poppins/Poppins-ThinItalic.ttf
           weight: 100
           style: italic
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path_android: "assets/extras/logo.png"
+  image_path_ios: "assets/extras/logo.png"
+  background_color_ios: "assets/extras/logo.png"
+  adaptive_icon_background: "assets/extras/logo.png"
+  adaptive_icon_foreground: "assets/extras/logo.png"
+
+flutter_native_splash:
+  color: "#11437B"
+  image: assets/extras/logo.png
+  background_image: "assets/extras/logo.png"
+  icon_background_color: "#11437B"
+  android: true
+  ios: true
